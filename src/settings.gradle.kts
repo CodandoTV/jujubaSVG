@@ -19,16 +19,8 @@ dependencyResolutionManagement {
 }
 
 include(
-    ":composeApp",
-    ":data",
-    ":domain",
-    ":designsystem",
-    ":feature:wishlist",
-    ":feature:search",
-    ":feature:details",
-    ":feature:movies",
-    ":platform",
-    ":resources"
+    ":sampleApp",
+    ":jujubasvg",
 )
 
-rootProject.name = "MovieDBApp"
+rootProject.name = "jujubaSVGProject"
