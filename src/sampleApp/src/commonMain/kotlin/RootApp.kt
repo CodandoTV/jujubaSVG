@@ -21,8 +21,8 @@ fun RootApp() {
                 "   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\n" +
                 "   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\n" +
                 "   xml:space=\"preserve\"\n" +
-                "   width=\"220mm\"\n" +
-                "   height=\"194mm\"\n" +
+                "   width=\"820px\"\n" +
+                "   height=\"794px\"\n" +
                 "   style=\"shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd\"\n" +
                 "   viewBox=\"0 0 220000 194010\"\n" +
                 "   id=\"svg2\"\n" +
