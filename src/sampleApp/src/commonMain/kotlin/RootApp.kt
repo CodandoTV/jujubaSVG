@@ -9,7 +9,7 @@ fun RootApp() {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
-        val svg = "\n" +
+        val svgText = "\n" +
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
                 "<!-- Creator: CorelDRAW -->\n" +
                 "<svg\n" +
@@ -325,7 +325,7 @@ fun RootApp() {
                 "\n" +
                 "</svg>"
         JujubaSVG(
-            data = "<html style=\"background-color:powderblue;\"><body><svg height=\"auto\" width=\"auto\">$svg</svg></body></html>",
+            svgText = svgText,
             modifier = Modifier.fillMaxSize()
         )
     }
