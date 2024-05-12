@@ -326,6 +326,9 @@ fun RootApp() {
                 "</svg>"
         JujubaSVG(
             svgText = svgText,
+            onElementClick = {
+                 println("ID $it")
+            },
             modifier = Modifier.fillMaxSize()
         )
     }

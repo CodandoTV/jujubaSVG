@@ -4,5 +4,5 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-actual fun JujubaSVG(svgText: String, modifier: Modifier) {
+actual fun JujubaSVG(svgText: String, onElementClick: (String) -> Unit, modifier: Modifier) {
 }
