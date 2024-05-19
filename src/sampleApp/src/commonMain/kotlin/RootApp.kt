@@ -339,7 +339,7 @@ fun RootApp() {
                 println("ID $id")
                 coroutineScope.launch {
                     commander.execute(
-                        Command.UpdateColor(
+                        Command.UpdateStrokeColor(
                             id, "#000000"
                         )
                     )

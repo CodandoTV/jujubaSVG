@@ -10,9 +10,15 @@ actual class JujubaCommander {
 
     actual suspend fun execute(command: Command) {
         when (command) {
-            is Command.UpdateColor -> {
+            is Command.UpdateBackgroundColor -> {
                 _state.emit(
                     concat(command.id) + "style.fill=\'${command.colorInHex}\';"
+                )
+            }
+
+            is Command.UpdateStrokeColor -> {
+                _state.emit(
+                    concat(command.id) + "style.stroke=\'${command.colorInHex}\';"
                 )
             }
         }
