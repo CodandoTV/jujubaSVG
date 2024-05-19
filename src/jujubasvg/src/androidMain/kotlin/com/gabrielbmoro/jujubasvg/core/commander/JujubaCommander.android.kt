@@ -27,6 +27,12 @@ actual class JujubaCommander {
                     concat(command.id) + "style.strokeWidth=\'${command.widthInPx}\';"
                 )
             }
+
+            is Command.RemoveNode -> {
+                _state.emit(
+                    concat(command.id) + "remove();"
+                )
+            }
         }
     }
 

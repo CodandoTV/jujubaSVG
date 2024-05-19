@@ -339,8 +339,8 @@ fun RootApp() {
                 println("ID $id")
                 coroutineScope.launch {
                     commander.execute(
-                        Command.UpdateStrokeWidth(
-                            id, 800
+                        Command.RemoveNode(
+                            id
                         )
                     )
                 }
