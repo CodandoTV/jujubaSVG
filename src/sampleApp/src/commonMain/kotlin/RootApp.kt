@@ -339,8 +339,8 @@ fun RootApp() {
                 println("ID $id")
                 coroutineScope.launch {
                     commander.execute(
-                        Command.UpdateStrokeColor(
-                            id, "#000000"
+                        Command.UpdateStrokeWidth(
+                            id, 800
                         )
                     )
                 }

@@ -21,6 +21,12 @@ actual class JujubaCommander {
                     concat(command.id) + "style.stroke=\'${command.colorInHex}\';"
                 )
             }
+
+            is Command.UpdateStrokeWidth -> {
+                _state.emit(
+                    concat(command.id) + "style.strokeWidth=\'${command.widthInPx}\';"
+                )
+            }
         }
     }
 
