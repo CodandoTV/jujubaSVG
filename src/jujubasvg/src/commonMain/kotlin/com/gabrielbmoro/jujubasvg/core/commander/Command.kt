@@ -10,4 +10,13 @@ sealed class Command {
         val id: String,
         val colorInHex: String,
     ) : Command()
+
+    data class UpdateStrokeWidth(
+        val id: String,
+        val widthInPx: Int,
+    ) : Command()
+
+    data class RemoveNode(
+        val id: String,
+    ) : Command()
 }
