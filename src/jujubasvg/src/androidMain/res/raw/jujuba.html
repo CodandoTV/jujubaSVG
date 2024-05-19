@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
+    <script>
+        function onClickEvent(event) {
+            JujubaInterface.onElementClicked(event.target.id);
+            console.log(event.target.id);
+        }
+    </script>
     <head></head>
-    <body>
+    <body onclick = "onClickEvent(event)">
         <!-- svg here -->
     </body>
 </html>

@@ -1,8 +1,12 @@
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.gabrielbmoro.jujubasvg.core.JujubaSVG
+import com.gabrielbmoro.jujubasvg.core.commander.Command
+import com.gabrielbmoro.jujubasvg.core.rememberCommander
+import kotlinx.coroutines.launch
 
 @Composable
 fun RootApp() {
@@ -12,7 +16,7 @@ fun RootApp() {
         val svgText = "\n" +
                 "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
                 "<!-- Creator: CorelDRAW -->\n" +
-                "<svg\n" +
+                "<svg id=\"jujubaSVG\"\n" +
                 "   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n" +
                 "   xmlns:cc=\"http://web.resource.org/cc/\"\n" +
                 "   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n" +
@@ -324,8 +328,24 @@ fun RootApp() {
                 " \n" +
                 "\n" +
                 "</svg>"
+
+        val commander = rememberCommander()
+
+        val coroutineScope = rememberCoroutineScope()
+
         JujubaSVG(
             svgText = svgText,
+            onElementClick = { id ->
+                println("ID $id")
+                coroutineScope.launch {
+                    commander.execute(
+                        Command.UpdateStrokeColor(
+                            id, "#000000"
+                        )
+                    )
+                }
+            },
+            commander = commander,
             modifier = Modifier.fillMaxSize()
         )
     }
