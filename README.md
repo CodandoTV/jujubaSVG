@@ -10,9 +10,3 @@ Welcome to the jujubaSVG library!
 ### Tech stack summary 🛠️
 
 - [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform)
-
----
-
-## Wiki 📚
-
-More details about the project you can visit the [Wiki](https://github.com/gabrielbmoro/MovieDB-Android/wiki). 
