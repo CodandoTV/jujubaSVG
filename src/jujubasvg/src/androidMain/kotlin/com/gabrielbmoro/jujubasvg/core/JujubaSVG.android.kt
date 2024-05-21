@@ -1,22 +1,18 @@
 package com.gabrielbmoro.jujubasvg.core
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebView
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
+import com.gabrielbmoro.jujubajujubasvg.R
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
-import com.gabrielbmoro.moviedbjujubasvg.R
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import java.lang.StringBuilder
 
