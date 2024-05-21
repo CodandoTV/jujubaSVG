@@ -5,8 +5,14 @@
 # Welcome! 👋
 
 Welcome to the jujubaSVG library!
+
+jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
+
 ---
 
-### Tech stack summary 🛠️
 
-- [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform)
+## Sample app 🎬
+
+In this sample app, we have a SVG of the Brazil's map. Every time the user taps in a state, the color updates to white.
+
+<img src="img/teaser.gif" height="500" />
