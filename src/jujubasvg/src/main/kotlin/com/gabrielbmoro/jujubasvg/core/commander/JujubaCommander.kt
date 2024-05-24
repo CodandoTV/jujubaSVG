@@ -3,12 +3,12 @@ package com.gabrielbmoro.jujubasvg.core.commander
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-actual class JujubaCommander {
+class JujubaCommander {
 
     private val _state = MutableStateFlow("")
     val state: StateFlow<String> = _state
 
-    actual suspend fun execute(command: Command) {
+    suspend fun execute(command: Command) {
         when (command) {
             is Command.UpdateBackgroundColor -> {
                 _state.emit(
