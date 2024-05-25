@@ -1,4 +1,5 @@
 import config.Config
+import gradle.kotlin.dsl.accessors._baee36425e0baa694975157087c92977.kotlin
 
 import org.gradle.kotlin.dsl.kotlin
 
@@ -8,6 +9,10 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-parcelize")
+}
+
+kotlin {
+    explicitApi()
 }
 
 android {

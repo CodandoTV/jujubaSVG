@@ -11,7 +11,7 @@ import com.gabrielbmoro.jujubasvg.core.rememberCommander
 import kotlinx.coroutines.launch
 
 @Composable
-fun RootApp() {
+internal fun RootApp() {
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {

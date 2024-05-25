@@ -20,7 +20,7 @@ private const val BaseInterfaceName = "JujubaInterface"
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
-fun JujubaSVG(
+public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
     onElementClick: (String) -> Unit,

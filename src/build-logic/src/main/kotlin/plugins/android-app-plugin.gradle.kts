@@ -8,6 +8,10 @@ plugins {
     kotlin("kapt")
 }
 
+kotlin {
+    explicitApi()
+}
+
 android {
     compileSdk = Config.compileSdk
 
