@@ -1,20 +1,21 @@
-import config.Config
 
 plugins {
     id("com.android.library")
     id("maven-publish")
 }
-
-android {
-    defaultConfig {
-        aarMetadata {
-            minCompileSdk = Config.minSdk
+publishing {
+    repositories {
+        maven {
+            name = "JitPack"
+            url = uri("https://jitpack.io")
         }
     }
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
+    publications {
+        create<MavenPublication>("release") {
+            groupId = "com.github.gabrielbmoro"
+            artifactId = "jujubaSVG"
+
+            from(components["release"])
         }
     }
 }
