@@ -1,7 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     id("android-compose-library-plugin")
-    id("maven-publish")
+    id("android-publish-plugin")
 }
 
 android {
@@ -11,16 +11,6 @@ android {
         release {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("mavenJava") {
-            groupId = "com.github.gabrielbmoro"
-            artifactId = "jujubaSVG"
-            version = "0.0.3"
         }
     }
 }
