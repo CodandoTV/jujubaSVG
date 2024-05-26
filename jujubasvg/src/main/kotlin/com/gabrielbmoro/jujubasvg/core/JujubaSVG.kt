@@ -10,9 +10,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
-import com.gabrielbmoro.jujubasvg.R
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
+import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.flow.collectLatest
 import java.lang.StringBuilder
 

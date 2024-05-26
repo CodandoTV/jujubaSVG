@@ -5,6 +5,7 @@ plugins {
 }
 buildscript {
     repositories {
+        maven(url= "https://jitpack.io")
         mavenCentral()
         google()
     }
