@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+plugins {
+    id("maven-publish")
+}
 buildscript {
     repositories {
         mavenCentral()

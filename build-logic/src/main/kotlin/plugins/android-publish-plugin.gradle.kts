@@ -1,7 +1,6 @@
 import config.Config
 
 plugins {
-    id("maven-publish")
     id("com.android.library")
 }
 
