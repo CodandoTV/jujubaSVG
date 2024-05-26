@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.gabrielbmoro.jujubasvg"
+    namespace = "com.github.gabrielbmoro.jujubasvg"
 
     buildTypes {
         release {
