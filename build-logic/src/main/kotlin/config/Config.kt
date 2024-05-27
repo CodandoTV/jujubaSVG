@@ -9,8 +9,8 @@ object Config {
     const val compileSdk = 34
     private const val localVersionCode = 10
     private const val localVersionName = "1.0.0"
-    val javaCompatibilityVersion = JavaVersion.VERSION_17
-    const val javaVMTarget = "17"
+    val javaCompatibilityVersion = JavaVersion.VERSION_11
+    const val javaVMTarget = "11"
     const val haveUnitTestsDefaultValues = true
     const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
