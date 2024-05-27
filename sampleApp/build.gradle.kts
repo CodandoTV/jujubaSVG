@@ -11,5 +11,5 @@ dependencies {
     debugImplementation(libs.bundles.compose.debug.impl)
     implementation(libs.bundles.compose.extras)
 
-    implementation(projects.jujubasvg)
+    api(projects.jujubasvg)
 }
