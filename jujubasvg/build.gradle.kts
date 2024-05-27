@@ -38,6 +38,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.gabrielbmoro"
                 artifactId = "jujubaSVG"
+                version = "0.1.0"
 
                 from(components["release"])
             }
