@@ -1,7 +1,7 @@
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.23-blue.svg?logo=kotlin)](http://kotlinlang.org)
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/gabrielbmoro/MovieDB-Android/issues)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.gabrielbmoro/jujubasvg/badge.(svg|png)?style={style}&gav=true)
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.gabrielbmoro/jujubasvg)
 
 # Welcome to the JujubaSVG library 👋
 
