@@ -3,6 +3,7 @@ firebase-crashlytics-gradle = "2.9.9"
 google-services = "4.4.0"
 kotlin = "1.9.20"
 compose_bom = "2023.10.01"
+compose_ui_version = "1.5.4"
 compose_compiler = "1.5.4"
 compose_material_3 = "1.1.2"
 multidex = "2.0.1"
@@ -38,6 +39,7 @@ material = "1.11.0"
 ktlint_plugin = "11.5.1"
 ksp = "1.9.20-1.0.13"
 kover = "0.7.5"
+vanniktech = "0.28.0"
 
 [libraries]
 androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
@@ -60,12 +62,10 @@ truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 
-compose_bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose_bom" }
-compose_bom_ui = { module = "androidx.compose.ui:ui" }
-compose_bom_preview = { module = "androidx.compose.ui:ui-tooling-preview" }
-compose_bom_activity = { module = "androidx.activity:activity-compose" }
-compose_bom_ui_tooling = { module = "androidx.compose.ui:ui-tooling" }
-compose_bom_ui_test_manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+compose_ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose_ui_version" }
+compose_preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose_ui_version" }
+compose_activity = { group = "androidx.activity", name ="activity-compose", version.ref = "compose_ui_version" }
+compose_ui_tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose_ui_version" }
 
 ui_compose_test = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose_compiler" }
 compose_material_3 = { group = "androidx.compose.material3", name = "material3", version.ref = "compose_material_3" }
@@ -82,12 +82,13 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+vanniktech_publish = { module = "com.vanniktech.maven.publish:com.vanniktech.maven.publish.gradle.plugin", version.ref = "vanniktech" }
 
 [bundles]
 lifecycle = ["lifecycle_viewmodel_ktx", "lifecycle_compose_runtime"]
 test = ["junit", "arc_core_common", "arc_core_runtime", "arc_core_testing", "truth", "mockk", "kotlinx_coroutines_test"]
 compose_extras = ["compose_material_3", "navigation_compose", "paging_compose"]
-compose_impl = ["compose_bom_ui", "compose_bom_preview", "compose_bom_activity"]
-compose_debug_impl = ["compose_bom_ui_tooling", "compose_bom_ui_test_manifest"]
+compose_impl = ["compose_ui", "compose_preview", "compose_activity"]
+compose_debug_impl = ["compose_ui_tooling"]
 
 [plugins]

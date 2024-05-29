@@ -3,7 +3,10 @@ package config
 import org.gradle.api.JavaVersion
 
 object Config {
-    const val applicationId = "com.gabrielbmoro.moviedb"
+    const val applicationId = "com.gabrielbmoro.sample"
+    const val groupId = "io.github.gabrielbmoro"
+    const val artifactId = "jujubasvg"
+    const val libVersion = "0.0.1"
     const val minSdk = 22
     const val targetSdk = 34
     const val compileSdk = 34

@@ -1,3 +1,6 @@
+import com.vanniktech.maven.publish.SonatypeHost
+import config.Config
+
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     id("android-compose-library-plugin")
@@ -15,10 +18,24 @@ android {
     }
 }
 
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    coordinates(
+        groupId = Config.groupId,
+        artifactId = Config.artifactId,
+        version = Config.libVersion
+    )
+
+    pom {
+        name.set("JujubaSVG")
+        description.set("SVG handler for Android projects")
+    }
+}
+
 dependencies {
     // Compose
-    implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose.impl)
     debugImplementation(libs.bundles.compose.debug.impl)
+
     implementation(libs.bundles.compose.extras)
 }
