@@ -7,7 +7,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.gabrielbmoro.jujubasvg.core.JujubaSVG
 import com.gabrielbmoro.jujubasvg.core.commander.Command
-import com.gabrielbmoro.jujubasvg.core.rememberCommander
+import com.gabrielbmoro.jujubasvg.core.rememberJujubaCommander
 import kotlinx.coroutines.launch
 
 @Composable
@@ -331,7 +331,7 @@ internal fun RootApp() {
                 "\n" +
                 "</svg>"
 
-        val commander = rememberCommander()
+        val jujubaCommander = rememberJujubaCommander()
 
         val coroutineScope = rememberCoroutineScope()
 
@@ -340,14 +340,14 @@ internal fun RootApp() {
             onElementClick = { id ->
                 println("ID $id")
                 coroutineScope.launch {
-                    commander.execute(
+                    jujubaCommander.execute(
                         Command.RemoveNode(
                             id
                         )
                     )
                 }
             },
-            commander = commander,
+            commander = jujubaCommander,
             modifier = Modifier.fillMaxSize()
         )
     }

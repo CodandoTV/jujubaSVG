@@ -5,6 +5,6 @@ import androidx.compose.runtime.remember
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
 
 @Composable
-public fun rememberCommander(): JujubaCommander {
+public fun rememberJujubaCommander(): JujubaCommander {
     return remember { JujubaCommander() }
 }
