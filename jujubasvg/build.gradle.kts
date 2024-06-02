@@ -38,4 +38,7 @@ dependencies {
     debugImplementation(libs.bundles.compose.debug.impl)
 
     implementation(libs.bundles.compose.extras)
+
+    testImplementation(kotlin("test"))
+    testImplementation(libs.kotlinx.coroutines.test)
 }
