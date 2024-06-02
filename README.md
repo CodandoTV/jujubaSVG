@@ -68,3 +68,11 @@ Don't forget the `svgText` should contains all content of your SVG file : )
 More details you can check at our [sample project](sampleApp)
 
 <img src="img/teaser.gif" height="500" />
+
+### How to contribute?
+
+- Fork this repository;
+- Solve an issue, or do any improvement you want;
+- Open a PR to the origin repository;
+
+As soon the PR is reviewed and merged, your update will be available.
