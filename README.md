@@ -47,13 +47,13 @@ fun YourComposable() {
 
     JujubaSVG(
         svgText = svgText,
-        onElementClick = { id ->
-            println("ID $id")
+        onElementClick = { nodeInfo ->
+            println("NodeInfo $nodeInfo")
             coroutineScope.launch {
                 // exemplo of commander
                 jujubaCommander.execute(
                     Command.RemoveNode(
-                        id
+                        nodeInfo.id
                     )
                 )
             }
