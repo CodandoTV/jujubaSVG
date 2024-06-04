@@ -13,6 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
+import com.gabrielbmoro.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.flow.collectLatest
 import java.lang.StringBuilder
@@ -23,7 +24,7 @@ private const val BaseInterfaceName = "JujubaInterface"
 public fun JujubaSVG(
     @RawRes svgRawRes: Int,
     commander: JujubaCommander,
-    onElementClick: (String) -> Unit,
+    onElementClick: (NodeInfo) -> Unit,
     modifier: Modifier
 ) {
     val resources = LocalContext.current.resources
@@ -46,7 +47,7 @@ public fun JujubaSVG(
 public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
-    onElementClick: (String) -> Unit,
+    onElementClick: (NodeInfo) -> Unit,
     modifier: Modifier
 ) {
     val context = LocalContext.current
