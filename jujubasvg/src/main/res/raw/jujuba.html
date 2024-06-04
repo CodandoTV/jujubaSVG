@@ -2,7 +2,13 @@
 <html lang="en">
     <script>
         function onClickEvent(event) {
-            JujubaInterface.onElementClicked(event.target.id);
+            const id = event.target.id;
+
+            const boundingClientRect = event.target.getBoundingClientRect();
+            const x = boundingClientRect.x;
+            const y = boundingClientRect.y;
+
+            JujubaInterface.onElementClicked(id, x, y);
             console.log(event.target.id);
         }
     </script>

@@ -337,12 +337,12 @@ internal fun RootApp() {
 
         JujubaSVG(
             svgText = svgText,
-            onElementClick = { id ->
-                println("ID $id")
+            onElementClick = { nodeInfo ->
+                println("NodeInfo ${nodeInfo}")
                 coroutineScope.launch {
                     jujubaCommander.execute(
                         Command.RemoveNode(
-                            id
+                            nodeInfo.id
                         )
                     )
                 }

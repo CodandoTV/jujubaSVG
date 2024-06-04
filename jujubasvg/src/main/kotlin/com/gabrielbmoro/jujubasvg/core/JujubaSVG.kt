@@ -3,6 +3,7 @@ package com.gabrielbmoro.jujubasvg.core
 import android.annotation.SuppressLint
 import android.view.ViewGroup
 import android.webkit.WebView
+import androidx.annotation.RawRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
@@ -12,18 +13,41 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
+import com.gabrielbmoro.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.flow.collectLatest
 import java.lang.StringBuilder
 
 private const val BaseInterfaceName = "JujubaInterface"
 
+@Composable
+public fun JujubaSVG(
+    @RawRes svgRawRes: Int,
+    commander: JujubaCommander,
+    onElementClick: (NodeInfo) -> Unit,
+    modifier: Modifier
+) {
+    val resources = LocalContext.current.resources
+    val svgText = remember {
+        resources.openRawResource(svgRawRes)
+            .bufferedReader()
+            .use { it.readText() }
+    }
+
+    JujubaSVG(
+        svgText = svgText,
+        commander = commander,
+        onElementClick = onElementClick,
+        modifier = modifier
+    )
+}
+
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
-    onElementClick: (String) -> Unit,
+    onElementClick: (NodeInfo) -> Unit,
     modifier: Modifier
 ) {
     val context = LocalContext.current

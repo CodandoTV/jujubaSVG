@@ -9,6 +9,8 @@ Welcome to the jujubaSVG library!
 
 jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
 
+<img src="img/jujube_icon.png" />
+
 ---
 
 
@@ -45,13 +47,13 @@ fun YourComposable() {
 
     JujubaSVG(
         svgText = svgText,
-        onElementClick = { id ->
-            println("ID $id")
+        onElementClick = { nodeInfo ->
+            println("NodeInfo $nodeInfo")
             coroutineScope.launch {
                 // exemplo of commander
                 jujubaCommander.execute(
                     Command.RemoveNode(
-                        id
+                        nodeInfo.id
                     )
                 )
             }
@@ -61,7 +63,11 @@ fun YourComposable() {
 }
 ```
 
-Don't forget the `svgText` should contains all content of your SVG file : )
+Don't forget:
+
+- `svgText` should contains all content of your SVG file;
+
+- ⚠️ Your root svg tag must define the id `jujubaSVG` (the only way the library will recognize your SVG elements) ⚠️
 
 ### Sample project
 
