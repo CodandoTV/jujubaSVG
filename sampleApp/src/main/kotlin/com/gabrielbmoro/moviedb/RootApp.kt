@@ -348,6 +348,7 @@ internal fun RootApp() {
                 }
             },
             commander = jujubaCommander,
+            backgroundColorInHex = "#ffb700",
             modifier = Modifier.fillMaxSize()
         )
     }
