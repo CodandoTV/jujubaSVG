@@ -33,6 +33,12 @@ public class JujubaCommander {
                     concat(command.id) + "remove();"
                 )
             }
+
+            is Command.UpdateRootBackgroundColor -> {
+                _state.emit(
+                    "document.body.style.backgroundColor=\'${command.colorInHex}\';"
+                )
+            }
         }
     }
 
