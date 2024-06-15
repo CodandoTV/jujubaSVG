@@ -19,4 +19,8 @@ public sealed class Command {
     public data class RemoveNode(
         val id: String,
     ) : Command()
+
+    public data class UpdateRootBackgroundColor(
+        val colorInHex: String,
+    ) : Command()
 }

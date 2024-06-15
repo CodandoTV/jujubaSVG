@@ -64,4 +64,17 @@ class JujubaCommanderTest {
             val result = commander.state.value
             assertEquals(jsCommand, result)
         }
+
+    @Test
+    fun `given a change root background color command when it is invoked then emit the right jsCommand`() =
+        runTest {
+            val jsCommand = "document.body.style.backgroundColor='#000000';"
+            val commander = JujubaCommander()
+
+            commander.execute(Command.UpdateRootBackgroundColor("#000000"))
+            advanceUntilIdle()
+
+            val result = commander.state.value
+            assertEquals(jsCommand, result)
+        }
 }
