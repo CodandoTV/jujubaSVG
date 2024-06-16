@@ -12,42 +12,33 @@ public class JujubaCommander {
         when (command) {
             is Command.UpdateBackgroundColor -> {
                 _state.emit(
-                    concat(command.id) + "style.fill=\'${command.colorInHex}\';"
+                    "updateBackgroundColor(\'${command.id}\',\'${command.colorInHex}\');"
                 )
             }
 
             is Command.UpdateStrokeColor -> {
                 _state.emit(
-                    concat(command.id) + "style.stroke=\'${command.colorInHex}\';"
+                    "updateStrokeColor(\'${command.id}\',\'${command.colorInHex}\');"
                 )
             }
 
             is Command.UpdateStrokeWidth -> {
                 _state.emit(
-                    concat(command.id) + "style.strokeWidth=\'${command.widthInPx}\';"
+                    "updateStrokeWidth(\'${command.id}\',${command.widthInPx});"
                 )
             }
 
             is Command.RemoveNode -> {
                 _state.emit(
-                    concat(command.id) + "remove();"
+                    "removeNode(\'${command.id}\');"
                 )
             }
 
             is Command.UpdateRootBackgroundColor -> {
                 _state.emit(
-                    "document.body.style.backgroundColor=\'${command.colorInHex}\';"
+                    "updateRootBackgroundColor(\'${command.colorInHex}\');"
                 )
             }
         }
-    }
-
-    private fun concat(elementId: String): String {
-        return "document.getElementById(\'$SVG_ID\')." +
-                "getElementById(\'$elementId\')."
-    }
-
-    private companion object {
-        private const val SVG_ID = "jujubaSVG"
     }
 }
