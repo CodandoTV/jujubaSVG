@@ -24,7 +24,7 @@ public class JujubaCommander {
 
             is Command.UpdateStrokeWidth -> {
                 _state.emit(
-                    "updateStrokeWidth(\'${command.id}\',\'${command.widthInPx}\');"
+                    "updateStrokeWidth(\'${command.id}\',${command.widthInPx});"
                 )
             }
 
