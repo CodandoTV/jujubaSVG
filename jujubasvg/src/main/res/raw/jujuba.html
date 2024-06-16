@@ -1,6 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
     <script>
+        function updateBackgroundColor(elementId, colorInHex) {
+            const node = getJujubaNodeById(elementId);
+            node.style.fill = colorInHex;
+        }
+
+        function updateStrokeColor(elementId, colorInHex) {
+            const node = getJujubaNodeById(elementId);
+            node.style.stroke = colorInHex;
+        }
+
+        function updateStrokeWidth(elementId, widthInPx) {
+            const node = getJujubaNodeById(elementId);
+            node.style.strokeWidth = widthInPx;
+        }
+
+        function removeNode(elementId) {
+            const node = getJujubaNodeById(elementId);
+            node.remove();
+        }
+
+        function updateRootBackgroundColor(colorInHex) {
+            document.body.style.backgroundColor = colorInHex;
+        }
+
+        function getJujubaNodeById(elementId) {
+            return document.getElementById('jujubaSVG').getElementById(elementId);
+        }
+
         function onClickEvent(event) {
             const id = event.target.id;
 
