@@ -39,6 +39,19 @@ public class JujubaCommander {
                     "updateRootBackgroundColor(\'${command.colorInHex}\');"
                 )
             }
+
+            is Command.AddRoundedImage -> {
+                _state.emit(
+                    "addRoundedImage(" +
+                            "\'${command.imageId}\'," +
+                            "\'${command.imageUrl}\'," +
+                            "\'${command.widthInPx}\'," +
+                            "\'${command.heightInPx}\'," +
+                            "\'${command.coordinate.x}\'," +
+                            "\'${command.coordinate.y}\'" +
+                            ");"
+                )
+            }
         }
     }
 }

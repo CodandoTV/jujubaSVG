@@ -26,8 +26,12 @@ internal fun RootApp() {
                 println("NodeInfo $nodeInfo")
                 coroutineScope.launch {
                     jujubaCommander.execute(
-                        Command.RemoveNode(
-                            nodeInfo.id
+                        Command.AddRoundedImage(
+                            imageId = "nasa",
+                            imageUrl = "https://i.imgur.com/LQIsf.jpeg",
+                            widthInPx = 100,
+                            heightInPx = 100,
+                            coordinate = nodeInfo.coordinate,
                         )
                     )
                 }
