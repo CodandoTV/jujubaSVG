@@ -29,6 +29,36 @@
             return document.getElementById('jujubaSVG').getElementById(elementId);
         }
 
+        function addImage() {
+            const baseJujubaSVG = document.getElementById('jujubaSVG');
+
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttributeNS('http://www.w3.org/2000/svg','cx','.5');
+            circle.setAttributeNS('http://www.w3.org/2000/svg','cy','.5');
+            circle.setAttributeNS('http://www.w3.org/2000/svg','r','.5');
+
+            const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
+            clipPath.setAttributeNS('http://www.w3.org/2000/svg','id','myClip');
+            clipPath.setAttributeNS('http://www.w3.org/2000/svg','clipPathUnits','objectBoundingBox');
+            clipPath.appendChild(circle);
+
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            defs.appendChild(clipPath);
+
+            baseJujubaSVG.appendChild(defs);
+
+            const svgimg = document.createElementNS('http://www.w3.org/2000/svg','image');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','x','146');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','y','14');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','width','120');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','height','120');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','clip-path','url(#myClip)');
+            svgimg.setAttributeNS('http://www.w3.org/2000/svg','href','https://i.imgur.com/LQIsf.jpeg');
+
+            baseJujubaSVG.appendChild(svgimg);
+            baseJujubaSVG.innerHTML = baseJujubaSVG.innerHTML;
+        }
+
         function onClickEvent(event) {
             const id = event.target.id;
 
