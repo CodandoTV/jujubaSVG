@@ -1,5 +1,6 @@
 package com.gabrielbmoro.jujubasvg.core.commander
 
+import com.gabrielbmoro.jujubasvg.model.NodeCoordinate
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
@@ -68,6 +69,30 @@ class JujubaCommanderTest {
             val commander = JujubaCommander()
 
             commander.execute(Command.UpdateRootBackgroundColor("#000000"))
+            advanceUntilIdle()
+
+            val result = commander.state.value
+            assertEquals(jsCommand, result)
+        }
+
+    @Test
+    fun `given a addRoundedImage command when it is invoked then emit the right jsCommand`() =
+        runTest {
+            val jsCommand = "addRoundedImage('imageId','imageUrl','45','48','0.0','1.0');"
+            val commander = JujubaCommander()
+
+            commander.execute(
+                Command.AddRoundedImage(
+                    "imageId",
+                    "imageUrl",
+                    45,
+                    48,
+                    NodeCoordinate(
+                        0f,
+                        1f
+                    ),
+                )
+            )
             advanceUntilIdle()
 
             val result = commander.state.value
