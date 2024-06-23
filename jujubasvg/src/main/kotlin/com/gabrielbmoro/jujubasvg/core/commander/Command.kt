@@ -27,6 +27,7 @@ public sealed class Command {
     ) : Command()
 
     public data class AddRoundedImage(
+        val elementId: String,
         val imageId: String,
         val imageUrl: String,
         val widthInPx: Int,

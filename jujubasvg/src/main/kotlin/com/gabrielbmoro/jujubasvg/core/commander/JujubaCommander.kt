@@ -43,6 +43,7 @@ public class JujubaCommander {
             is Command.AddRoundedImage -> {
                 _state.emit(
                     "addRoundedImage(" +
+                            "\'${command.elementId}\'," +
                             "\'${command.imageId}\'," +
                             "\'${command.imageUrl}\'," +
                             "\'${command.widthInPx}\'," +

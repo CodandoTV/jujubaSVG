@@ -29,7 +29,7 @@
             return document.getElementById('jujubaSVG').getElementById(elementId);
         }
 
-        function addRoundedImage(imageId, url, width, height, x, y) {
+        function addRoundedImage(elementId, imageId, url, width, height, x, y) {
             const baseJujubaSVG = document.getElementById('jujubaSVG');
 
             if(document.getElementById("roundedShape")) {
@@ -60,7 +60,9 @@
             svgimg.setAttributeNS('http://www.w3.org/2000/svg','href',url);
             svgimg.setAttributeNS('http://www.w3.org/2000/svg','id',imageId);
 
-            baseJujubaSVG.appendChild(svgimg);
+            const parentNode = getJujubaNodeById(elementId).parentNode;
+            parentNode.appendChild(svgimg);
+
             baseJujubaSVG.innerHTML = baseJujubaSVG.innerHTML;
         }
 

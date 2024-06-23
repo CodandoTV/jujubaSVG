@@ -27,6 +27,7 @@ internal fun RootApp() {
                 coroutineScope.launch {
                     jujubaCommander.execute(
                         Command.AddRoundedImage(
+                            elementId = nodeInfo.id,
                             imageId = "nasa",
                             imageUrl = "https://i.imgur.com/LQIsf.jpeg",
                             widthInPx = 100,
