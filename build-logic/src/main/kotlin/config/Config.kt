@@ -6,7 +6,7 @@ object Config {
     const val applicationId = "com.gabrielbmoro.sample"
     const val groupId = "io.github.gabrielbmoro"
     const val artifactId = "jujubasvg"
-    const val libVersion = "0.0.9"
+    const val libVersion = "1.0.0"
     const val minSdk = 22
     const val targetSdk = 34
     const val compileSdk = 34
