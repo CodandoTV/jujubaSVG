@@ -65,9 +65,7 @@ fun YourComposable() {
 
 Don't forget:
 
-- `svgText` should contains all content of your SVG file;
-
-- ⚠️ Your root svg tag must define the id `jujubaSVG` (the only way the library will recognize your SVG elements) ⚠️
+- `svgText` should contains all content of your SVG file.
 
 ### Sample project
 
