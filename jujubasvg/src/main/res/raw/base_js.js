@@ -1,5 +1,5 @@
 function _getJujubaNodeById(elementId) {
-    return document.getElementById('jujubaSVG').getElementById(elementId);
+    return document.getElementsByTagName('svg')[0].getElementById(elementId);
 }
 
 function updateBackgroundColor(elementId, colorInHex) {
@@ -27,7 +27,7 @@ function updateRootBackgroundColor(colorInHex) {
 }
 
 function addRoundedImage(elementId, imageId, url, width, height, x, y) {
-    const baseJujubaSVG = document.getElementById('jujubaSVG');
+    const baseJujubaSVG = document.getElementsByTagName('svg')[0];
 
     if(document.getElementById("roundedShape")) {
         console.log("shape already created");
