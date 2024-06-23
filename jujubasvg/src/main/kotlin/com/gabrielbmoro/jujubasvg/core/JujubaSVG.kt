@@ -29,15 +29,13 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.text.StringBuilder
 
-private const val BaseInterfaceName = "JujubaInterface"
-private const val DefaultRootBackgroundColor = "#FFFFFF"
 
 @Composable
 public fun JujubaSVG(
     @RawRes svgRawRes: Int,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColorInHex: String = DefaultRootBackgroundColor,
+    backgroundColorInHex: String = Const.DEFAULT_ROOT_BACKGROUND_COLOR_IN_HEX,
     modifier: Modifier
 ) {
     val resources = LocalContext.current.resources
@@ -62,7 +60,7 @@ public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColorInHex: String = DefaultRootBackgroundColor,
+    backgroundColorInHex: String = Const.DEFAULT_ROOT_BACKGROUND_COLOR_IN_HEX,
     modifier: Modifier
 ) {
     val context = LocalContext.current
@@ -77,7 +75,7 @@ public fun JujubaSVG(
                 JujubaSVGWebInterface(
                     onElementClick = onElementClick
                 ),
-                BaseInterfaceName
+                Const.BASE_INTERFACE_NAME
             )
         }
     }
@@ -97,12 +95,12 @@ public fun JujubaSVG(
 
                     context.resources.openRawResource(R.raw.jujuba).fileTextLines()
                         .forEach { line ->
-                            when {
-                                line.contains("<!-- svg here -->") -> {
+                            when (line) {
+                                Const.SVG_CODE_SIGN -> {
                                     htmlBuilder.append(svgText)
                                 }
 
-                                line.contains("// baseJS here") -> {
+                                Const.JS_CODE_SIGN -> {
                                     val jsCode = jsCodeDeferred.await()
                                     htmlBuilder.append(jsCode)
                                 }
@@ -120,8 +118,8 @@ public fun JujubaSVG(
                 webViewComponent.loadDataWithBaseURL(
                     null,
                     htmlCode,
-                    "text/html",
-                    "utf-8",
+                    Const.MIME_TYPE,
+                    Const.ENCONDING,
                     ""
                 )
             }
@@ -152,7 +150,9 @@ public fun JujubaSVG(
 
     DisposableEffect(Unit) {
         onDispose {
-            webViewComponent.removeJavascriptInterface(BaseInterfaceName)
+            webViewComponent.removeJavascriptInterface(
+                Const.BASE_INTERFACE_NAME
+            )
         }
     }
 }
