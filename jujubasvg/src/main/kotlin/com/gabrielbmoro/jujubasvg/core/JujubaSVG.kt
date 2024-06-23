@@ -16,11 +16,15 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.Command
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
+import com.gabrielbmoro.jujubasvg.core.ext.fileTextContent
+import com.gabrielbmoro.jujubasvg.core.ext.fileTextLines
 import com.gabrielbmoro.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import java.lang.StringBuilder
+import kotlin.text.StringBuilder
 
 private const val BaseInterfaceName = "JujubaInterface"
 private const val DefaultRootBackgroundColor = "#FFFFFF"
@@ -76,29 +80,44 @@ public fun JujubaSVG(
     }
     AndroidView(
         factory = { _ ->
-            val htmlBuilder = StringBuilder()
-
-            context.resources.openRawResource(R.raw.jujuba).use { inputStream ->
-                inputStream.bufferedReader().use { bufferedReader ->
-                    bufferedReader.readLines().forEach { line ->
-                        if (line.contains("<!-- svg here -->")) {
-                            htmlBuilder.append(svgText)
-                        } else {
-                            htmlBuilder.append(line)
-                        }
-                    }
+            coroutineScope.launch {
+                val jsCodeDeferred = coroutineScope.async(Dispatchers.IO) {
+                    context.resources.openRawResource(R.raw.base_js).fileTextContent()
                 }
-            }
-            webViewComponent.settings.javaScriptEnabled = true
-            webViewComponent.settings.useWideViewPort = true
 
-            webViewComponent.loadDataWithBaseURL(
-                null,
-                htmlBuilder.toString(),
-                "text/html",
-                "utf-8",
-                ""
-            )
+                val htmlCode = coroutineScope.async(Dispatchers.IO) {
+                    val htmlBuilder = StringBuilder()
+
+                    context.resources.openRawResource(R.raw.jujuba).fileTextLines()
+                        .forEach { line ->
+                            when {
+                                line.contains("<!-- svg here -->") -> {
+                                    htmlBuilder.append(svgText)
+                                }
+
+                                line.contains("// baseJS here") -> {
+                                    val jsCode = jsCodeDeferred.await()
+                                    htmlBuilder.append(jsCode)
+                                }
+
+                                else -> {
+                                    htmlBuilder.append(line)
+                                }
+                            }
+                        }
+                    htmlBuilder.toString()
+                }.await()
+
+                webViewComponent.settings.javaScriptEnabled = true
+                webViewComponent.settings.useWideViewPort = true
+                webViewComponent.loadDataWithBaseURL(
+                    null,
+                    htmlCode,
+                    "text/html",
+                    "utf-8",
+                    ""
+                )
+            }
 
             webViewComponent
         }, modifier = modifier
