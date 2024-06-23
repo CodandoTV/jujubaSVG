@@ -33,8 +33,8 @@ internal fun RootApp() {
                             widthInPx = 100,
                             heightInPx = 100,
                             coordinate = nodeInfo.coordinate,
-                            isElementRounded = false,
-                        )
+                        ),
+                        Command.RemoveNode(nodeInfo.id)
                     )
                 }
             },

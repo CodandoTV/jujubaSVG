@@ -8,50 +8,45 @@ public class JujubaCommander {
     private val _state = MutableStateFlow("")
     public val state: StateFlow<String> = _state
 
-    public suspend fun execute(command: Command) {
-        when (command) {
+    public suspend fun execute(vararg command: Command) {
+        val commandJS = command.map {
+            convertToJSCode(it)
+        }.reduce { acc, s -> acc.plus("\n").plus(s) }
+        _state.emit(commandJS)
+    }
+
+    private fun convertToJSCode(command: Command): String {
+        return when (command) {
             is Command.UpdateBackgroundColor -> {
-                _state.emit(
-                    "updateBackgroundColor(\'${command.id}\',\'${command.colorInHex}\');"
-                )
+                "updateBackgroundColor(\'${command.id}\',\'${command.colorInHex}\');"
             }
 
             is Command.UpdateStrokeColor -> {
-                _state.emit(
-                    "updateStrokeColor(\'${command.id}\',\'${command.colorInHex}\');"
-                )
+                "updateStrokeColor(\'${command.id}\',\'${command.colorInHex}\');"
             }
 
             is Command.UpdateStrokeWidth -> {
-                _state.emit(
-                    "updateStrokeWidth(\'${command.id}\',${command.widthInPx});"
-                )
+                "updateStrokeWidth(\'${command.id}\',${command.widthInPx});"
             }
 
             is Command.RemoveNode -> {
-                _state.emit(
-                    "removeNode(\'${command.id}\');"
-                )
+                "removeNode(\'${command.id}\');"
             }
 
             is Command.UpdateRootBackgroundColor -> {
-                _state.emit(
-                    "updateRootBackgroundColor(\'${command.colorInHex}\');"
-                )
+                "updateRootBackgroundColor(\'${command.colorInHex}\');"
             }
 
             is Command.AddRoundedImage -> {
-                _state.emit(
-                    "addRoundedImage(" +
-                            "\'${command.elementId}\'," +
-                            "\'${command.imageId}\'," +
-                            "\'${command.imageUrl}\'," +
-                            "\'${command.widthInPx}\'," +
-                            "\'${command.heightInPx}\'," +
-                            "\'${command.coordinate.x}\'," +
-                            "\'${command.coordinate.y}\'" +
-                            ");"
-                )
+                "addRoundedImage(" +
+                        "\'${command.elementId}\'," +
+                        "\'${command.imageId}\'," +
+                        "\'${command.imageUrl}\'," +
+                        "\'${command.widthInPx}\'," +
+                        "\'${command.heightInPx}\'," +
+                        "\'${command.coordinate.x}\'," +
+                        "\'${command.coordinate.y}\'" +
+                        ");"
             }
         }
     }
