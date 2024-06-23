@@ -100,4 +100,21 @@ class JujubaCommanderTest {
             val result = commander.state.value
             assertEquals(jsCommand, result)
         }
+
+    @Test
+    fun `given the commands update background color and remove node when they are invoked then emit the right jsCommand`() =
+        runTest {
+            val jsCommand = "updateBackgroundColor('12','#0000');\nremoveNode('12');"
+
+            val commander = JujubaCommander()
+
+            commander.execute(
+                Command.UpdateBackgroundColor("12", "#0000"),
+                Command.RemoveNode("12")
+            )
+            advanceUntilIdle()
+
+            val result = commander.state.value
+            assertEquals(jsCommand, result)
+        }
 }
