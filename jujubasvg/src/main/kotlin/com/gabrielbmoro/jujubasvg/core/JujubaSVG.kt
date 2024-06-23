@@ -8,8 +8,11 @@ import androidx.annotation.RawRes
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
@@ -78,6 +81,10 @@ public fun JujubaSVG(
             )
         }
     }
+    var isWebViewReady by remember {
+        mutableStateOf(false)
+    }
+
     AndroidView(
         factory = { _ ->
             coroutineScope.launch {
@@ -123,9 +130,11 @@ public fun JujubaSVG(
         }, modifier = modifier
     )
 
-    LaunchedEffect(Unit) {
-        commander.state.collectLatest { jsCommand ->
-            webViewComponent.evaluateJavascript(jsCommand) { }
+    LaunchedEffect(isWebViewReady) {
+        if (isWebViewReady) {
+            commander.state.collectLatest { jsCommand ->
+                webViewComponent.evaluateJavascript(jsCommand) { }
+            }
         }
     }
 
@@ -135,6 +144,8 @@ public fun JujubaSVG(
                 coroutineScope.launch {
                     commander.execute(Command.UpdateRootBackgroundColor(backgroundColorInHex))
                 }
+
+                isWebViewReady = true
             }
         }
     }
