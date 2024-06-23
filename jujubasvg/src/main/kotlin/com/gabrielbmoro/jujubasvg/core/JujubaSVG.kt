@@ -29,7 +29,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.text.StringBuilder
 
-
 @Composable
 public fun JujubaSVG(
     @RawRes svgRawRes: Int,
