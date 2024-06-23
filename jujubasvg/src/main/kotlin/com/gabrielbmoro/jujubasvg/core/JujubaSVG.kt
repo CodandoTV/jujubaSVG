@@ -39,19 +39,25 @@ public fun JujubaSVG(
     modifier: Modifier
 ) {
     val resources = LocalContext.current.resources
-    val svgText = remember {
-        resources.openRawResource(svgRawRes)
-            .bufferedReader()
-            .use { it.readText() }
+    var svgText by remember {
+        mutableStateOf<String?>(null)
     }
 
-    JujubaSVG(
-        svgText = svgText,
-        commander = commander,
-        onElementClick = onElementClick,
-        modifier = modifier,
-        backgroundColorInHex = backgroundColorInHex
-    )
+    svgText?.let {
+        JujubaSVG(
+            svgText = it,
+            commander = commander,
+            onElementClick = onElementClick,
+            modifier = modifier,
+            backgroundColorInHex = backgroundColorInHex
+        )
+    }
+
+    LaunchedEffect(key1 = Unit) {
+        launch(Dispatchers.IO) {
+            svgText = resources.openRawResource(svgRawRes).fileTextContent()
+        }
+    }
 }
 
 @SuppressLint("SetJavaScriptEnabled")
