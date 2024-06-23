@@ -49,8 +49,8 @@ function addRoundedImage(elementId, imageId, url, width, height, x, y) {
     };
 
     const svgimg = document.createElementNS('http://www.w3.org/2000/svg','image');
-    svgimg.setAttributeNS('http://www.w3.org/2000/svg','x',x);
-    svgimg.setAttributeNS('http://www.w3.org/2000/svg','y',y);
+    svgimg.setAttributeNS('http://www.w3.org/2000/svg','cx',x);
+    svgimg.setAttributeNS('http://www.w3.org/2000/svg','cy',y);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','width',width);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','height',height);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','clip-path','url(#roundedShape)');
