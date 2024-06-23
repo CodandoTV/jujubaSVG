@@ -78,11 +78,13 @@ class JujubaCommanderTest {
     @Test
     fun `given a addRoundedImage command when it is invoked then emit the right jsCommand`() =
         runTest {
-            val jsCommand = "addRoundedImage('imageId','imageUrl','45','48','0.0','1.0');"
+            val jsCommand =
+                "addRoundedImage('elementId','imageId','imageUrl','45','48','0.0','1.0');"
             val commander = JujubaCommander()
 
             commander.execute(
                 Command.AddRoundedImage(
+                    "elementId",
                     "imageId",
                     "imageUrl",
                     45,
