@@ -58,7 +58,6 @@ public sealed class Command {
      * @param widthInPx The width of the image in pixels
      * @param heightInPx The height of the image in pixels
      * @param coordinate The coordinates where the image will be added
-     * @param isElementRounded if trye, we use cx, and cy as coordinates, if false, we use x, y as coordinates.
      */
     public data class AddRoundedImage(
         val elementId: String,
@@ -66,7 +65,6 @@ public sealed class Command {
         val imageUrl: String,
         val widthInPx: Int,
         val heightInPx: Int,
-        val coordinate: NodeCoordinate,
-        val isElementRounded: Boolean = false
+        val coordinate: NodeCoordinate
     ) : Command()
 }

@@ -26,8 +26,9 @@ function updateRootBackgroundColor(colorInHex) {
     document.body.style.backgroundColor = colorInHex;
 }
 
-function addRoundedImage(elementId, imageId, url, width, height, x, y, isElementRounded) {
+function addRoundedImage(elementId, imageId, url, width, height, x, y) {
     const baseJujubaSVG = document.getElementsByTagName('svg')[0];
+    const targetElement = _getJujubaNodeById(elementId);
 
     if(document.getElementById("roundedShape")) {
         console.log("shape already created");
@@ -49,7 +50,7 @@ function addRoundedImage(elementId, imageId, url, width, height, x, y, isElement
     };
 
     const svgimg = document.createElementNS('http://www.w3.org/2000/svg','image');
-    if(isElementRounded == 'true') {
+    if(targetElement.tagName == 'circle') {
         svgimg.setAttributeNS('http://www.w3.org/2000/svg','cx',x);
         svgimg.setAttributeNS('http://www.w3.org/2000/svg','cy',y);
     } else {
@@ -62,7 +63,7 @@ function addRoundedImage(elementId, imageId, url, width, height, x, y, isElement
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','href',url);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','id',imageId);
 
-    const parentNode = _getJujubaNodeById(elementId).parentNode;
+    const parentNode = targetElement.parentNode;
     parentNode.appendChild(svgimg);
 
     baseJujubaSVG.innerHTML = baseJujubaSVG.innerHTML;

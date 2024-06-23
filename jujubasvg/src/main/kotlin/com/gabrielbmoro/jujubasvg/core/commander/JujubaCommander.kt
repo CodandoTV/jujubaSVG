@@ -50,7 +50,6 @@ public class JujubaCommander {
                             "\'${command.heightInPx}\'," +
                             "\'${command.coordinate.x}\'," +
                             "\'${command.coordinate.y}\'," +
-                            "\'${command.isElementRounded}\'" +
                             ");"
                 )
             }
