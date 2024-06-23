@@ -76,10 +76,10 @@ class JujubaCommanderTest {
         }
 
     @Test
-    fun `given a addRoundedImage command when it is invoked then emit the right jsCommand`() =
+    fun `given a addRoundedImage when element is rounded command when it is invoked then emit the right jsCommand`() =
         runTest {
             val jsCommand =
-                "addRoundedImage('elementId','imageId','imageUrl','45','48','0.0','1.0');"
+                "addRoundedImage('elementId','imageId','imageUrl','45','48','0.0','1.0','true');"
             val commander = JujubaCommander()
 
             commander.execute(
@@ -93,6 +93,34 @@ class JujubaCommanderTest {
                         0f,
                         1f
                     ),
+                    true
+                )
+            )
+            advanceUntilIdle()
+
+            val result = commander.state.value
+            assertEquals(jsCommand, result)
+        }
+
+    @Test
+    fun `given a addRoundedImage when element is not rounded command when it is invoked then emit the right jsCommand`() =
+        runTest {
+            val jsCommand =
+                "addRoundedImage('elementId','imageId','imageUrl','45','48','0.0','1.0','false');"
+            val commander = JujubaCommander()
+
+            commander.execute(
+                Command.AddRoundedImage(
+                    "elementId",
+                    "imageId",
+                    "imageUrl",
+                    45,
+                    48,
+                    NodeCoordinate(
+                        0f,
+                        1f
+                    ),
+                    false
                 )
             )
             advanceUntilIdle()

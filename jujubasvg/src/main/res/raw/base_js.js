@@ -26,7 +26,7 @@ function updateRootBackgroundColor(colorInHex) {
     document.body.style.backgroundColor = colorInHex;
 }
 
-function addRoundedImage(elementId, imageId, url, width, height, x, y) {
+function addRoundedImage(elementId, imageId, url, width, height, x, y, isElementRounded) {
     const baseJujubaSVG = document.getElementsByTagName('svg')[0];
 
     if(document.getElementById("roundedShape")) {
@@ -49,8 +49,13 @@ function addRoundedImage(elementId, imageId, url, width, height, x, y) {
     };
 
     const svgimg = document.createElementNS('http://www.w3.org/2000/svg','image');
-    svgimg.setAttributeNS('http://www.w3.org/2000/svg','cx',x);
-    svgimg.setAttributeNS('http://www.w3.org/2000/svg','cy',y);
+    if(isElementRounded == 'true') {
+        svgimg.setAttributeNS('http://www.w3.org/2000/svg','cx',x);
+        svgimg.setAttributeNS('http://www.w3.org/2000/svg','cy',y);
+    } else {
+        svgimg.setAttributeNS('http://www.w3.org/2000/svg','x',x);
+        svgimg.setAttributeNS('http://www.w3.org/2000/svg','y',y);
+    }
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','width',width);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','height',height);
     svgimg.setAttributeNS('http://www.w3.org/2000/svg','clip-path','url(#roundedShape)');

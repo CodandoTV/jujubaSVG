@@ -33,5 +33,6 @@ public sealed class Command {
         val widthInPx: Int,
         val heightInPx: Int,
         val coordinate: NodeCoordinate,
+        val isElementRounded: Boolean
     ) : Command()
 }
