@@ -7,4 +7,5 @@ public object Const {
     internal const val ENCONDING = "utf-8"
     internal const val BASE_INTERFACE_NAME = "JujubaInterface"
     internal const val DEFAULT_ROOT_BACKGROUND_COLOR_IN_HEX = "#FFFFFF"
+    internal const val TAG = "JujubaSVG"
 }

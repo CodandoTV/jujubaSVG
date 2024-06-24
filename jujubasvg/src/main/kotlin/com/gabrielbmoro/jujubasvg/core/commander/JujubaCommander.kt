@@ -1,5 +1,7 @@
 package com.gabrielbmoro.jujubasvg.core.commander
 
+import android.util.Log
+import com.gabrielbmoro.jujubasvg.core.Const.TAG
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -12,6 +14,8 @@ public class JujubaCommander {
         val commandJS = command.map {
             convertToJSCode(it)
         }.reduce { acc, s -> acc.plus("\n").plus(s) }
+
+        Log.d(TAG, "execute: $commandJS")
         _state.emit(commandJS)
     }
 

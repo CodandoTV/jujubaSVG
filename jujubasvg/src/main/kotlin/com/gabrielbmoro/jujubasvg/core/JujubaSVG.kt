@@ -1,6 +1,7 @@
 package com.gabrielbmoro.jujubasvg.core
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -127,6 +128,7 @@ public fun JujubaSVG(
                     Const.ENCONDING,
                     ""
                 )
+                Log.d(Const.TAG, "WebviewComponent: Initialized...")
             }
 
             webViewComponent
@@ -136,7 +138,9 @@ public fun JujubaSVG(
     LaunchedEffect(isWebViewReady) {
         if (isWebViewReady) {
             commander.state.collectLatest { jsCommand ->
-                webViewComponent.evaluateJavascript(jsCommand) { }
+                webViewComponent.evaluateJavascript(jsCommand) {
+                    Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
+                }
             }
         }
     }
@@ -144,6 +148,7 @@ public fun JujubaSVG(
     LaunchedEffect(Unit) {
         webViewComponent.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
+                Log.d(Const.TAG, "WebviewComponent: Ready to receive commands")
                 coroutineScope.launch {
                     commander.execute(Command.UpdateRootBackgroundColor(backgroundColorInHex))
                 }
@@ -158,6 +163,7 @@ public fun JujubaSVG(
             webViewComponent.removeJavascriptInterface(
                 Const.BASE_INTERFACE_NAME
             )
+            Log.d(Const.TAG, "WebviewComponent: Releasing resources...")
         }
     }
 }
