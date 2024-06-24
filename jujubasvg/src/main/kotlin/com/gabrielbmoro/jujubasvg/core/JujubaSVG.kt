@@ -26,7 +26,6 @@ import com.gabrielbmoro.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.text.StringBuilder
 
@@ -137,7 +136,7 @@ public fun JujubaSVG(
 
     LaunchedEffect(isWebViewReady) {
         if (isWebViewReady) {
-            commander.state.collectLatest { jsCommand ->
+            commander.command.collect { jsCommand ->
                 webViewComponent.evaluateJavascript(jsCommand) {
                     Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
                 }

@@ -1,13 +1,11 @@
 package com.gabrielbmoro.jujubasvg.core.commander
 
+import app.cash.turbine.test
 import com.gabrielbmoro.jujubasvg.model.NodeCoordinate
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
-@OptIn(ExperimentalCoroutinesApi::class)
 class JujubaCommanderTest {
 
     @Test
@@ -16,11 +14,12 @@ class JujubaCommanderTest {
             val jsCommand = "updateBackgroundColor('12','#0000');"
             val commander = JujubaCommander()
 
-            commander.execute(Command.UpdateBackgroundColor("12", "#0000"))
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(Command.UpdateBackgroundColor("12", "#0000"))
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -29,11 +28,12 @@ class JujubaCommanderTest {
             val jsCommand = "updateStrokeColor('12','#0000');"
             val commander = JujubaCommander()
 
-            commander.execute(Command.UpdateStrokeColor("12", "#0000"))
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(Command.UpdateStrokeColor("12", "#0000"))
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -42,11 +42,12 @@ class JujubaCommanderTest {
             val jsCommand = "updateStrokeWidth('12',45);"
             val commander = JujubaCommander()
 
-            commander.execute(Command.UpdateStrokeWidth("12", 45))
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(Command.UpdateStrokeWidth("12", 45))
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -55,11 +56,12 @@ class JujubaCommanderTest {
             val jsCommand = "removeNode('12');"
             val commander = JujubaCommander()
 
-            commander.execute(Command.RemoveNode("12"))
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(Command.RemoveNode("12"))
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -68,11 +70,12 @@ class JujubaCommanderTest {
             val jsCommand = "updateRootBackgroundColor('#000000');"
             val commander = JujubaCommander()
 
-            commander.execute(Command.UpdateRootBackgroundColor("#000000"))
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(Command.UpdateRootBackgroundColor("#000000"))
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -82,23 +85,24 @@ class JujubaCommanderTest {
                 "addRoundedImage('elementId','imageId','imageUrl','45','48','0.0','1.0');"
             val commander = JujubaCommander()
 
-            commander.execute(
-                Command.AddRoundedImage(
-                    "elementId",
-                    "imageId",
-                    "imageUrl",
-                    45,
-                    48,
-                    NodeCoordinate(
-                        0f,
-                        1f
+            commander.command.test {
+                commander.execute(
+                    Command.AddRoundedImage(
+                        "elementId",
+                        "imageId",
+                        "imageUrl",
+                        45,
+                        48,
+                        NodeCoordinate(
+                            0f,
+                            1f
+                        )
                     )
                 )
-            )
-            advanceUntilIdle()
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 
     @Test
@@ -108,13 +112,14 @@ class JujubaCommanderTest {
 
             val commander = JujubaCommander()
 
-            commander.execute(
-                Command.UpdateBackgroundColor("12", "#0000"),
-                Command.RemoveNode("12")
-            )
-            advanceUntilIdle()
+            commander.command.test {
+                commander.execute(
+                    Command.UpdateBackgroundColor("12", "#0000"),
+                    Command.RemoveNode("12")
+                )
 
-            val result = commander.state.value
-            assertEquals(jsCommand, result)
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
         }
 }

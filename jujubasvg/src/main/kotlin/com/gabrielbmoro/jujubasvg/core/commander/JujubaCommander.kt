@@ -2,13 +2,13 @@ package com.gabrielbmoro.jujubasvg.core.commander
 
 import android.util.Log
 import com.gabrielbmoro.jujubasvg.core.Const.TAG
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.SharedFlow
 
 public class JujubaCommander {
 
-    private val _state = MutableStateFlow("")
-    public val state: StateFlow<String> = _state
+    private val _command = MutableSharedFlow<String>()
+    public val command: SharedFlow<String> = _command
 
     public suspend fun execute(vararg command: Command) {
         val commandJS = command.map {
@@ -16,7 +16,7 @@ public class JujubaCommander {
         }.reduce { acc, s -> acc.plus("\n").plus(s) }
 
         Log.d(TAG, "execute: $commandJS")
-        _state.emit(commandJS)
+        _command.emit(commandJS)
     }
 
     private fun convertToJSCode(command: Command): String {
