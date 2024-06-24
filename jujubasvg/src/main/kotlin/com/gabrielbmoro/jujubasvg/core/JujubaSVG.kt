@@ -16,7 +16,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleOwner
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.Command
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
@@ -69,6 +72,8 @@ public fun JujubaSVG(
     modifier: Modifier
 ) {
     val context = LocalContext.current
+    val lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
+
     val coroutineScope = rememberCoroutineScope()
     val webViewComponent = remember {
         WebView(context).apply {
@@ -137,22 +142,33 @@ public fun JujubaSVG(
     LaunchedEffect(isWebViewReady) {
         if (isWebViewReady) {
             commander.command.collect { jsCommand ->
-                webViewComponent.evaluateJavascript(jsCommand) {
-                    Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
+                if (lifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
+                    webViewComponent.evaluateJavascript(jsCommand) {
+                        Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
+                    }
+                } else {
+                    Log.d(Const.TAG, "WebviewComponent: Losing $jsCommand")
                 }
             }
+        }
+    }
+
+    LaunchedEffect(key1 = isWebViewReady) {
+        if (isWebViewReady) {
+            commander.execute(
+                Command.UpdateRootBackgroundColor(
+                    backgroundColorInHex
+                )
+            )
         }
     }
 
     LaunchedEffect(Unit) {
         webViewComponent.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
-                Log.d(Const.TAG, "WebviewComponent: Ready to receive commands")
-                coroutineScope.launch {
-                    commander.execute(Command.UpdateRootBackgroundColor(backgroundColorInHex))
-                }
-
                 isWebViewReady = true
+
+                Log.d(Const.TAG, "WebviewComponent: Ready to receive commands")
             }
         }
     }
