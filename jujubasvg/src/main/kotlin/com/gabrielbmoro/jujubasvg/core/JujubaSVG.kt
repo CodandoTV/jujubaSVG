@@ -16,10 +16,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.gabrielbmoro.jujubasvg.core.commander.Command
 import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
@@ -72,7 +69,6 @@ public fun JujubaSVG(
     modifier: Modifier
 ) {
     val context = LocalContext.current
-    val lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current
 
     val coroutineScope = rememberCoroutineScope()
     val webViewComponent = remember {
@@ -142,12 +138,8 @@ public fun JujubaSVG(
     LaunchedEffect(isWebViewReady) {
         if (isWebViewReady) {
             commander.command.collect { jsCommand ->
-                if (lifecycleOwner.lifecycle.currentState == Lifecycle.State.RESUMED) {
-                    webViewComponent.evaluateJavascript(jsCommand) {
-                        Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
-                    }
-                } else {
-                    Log.d(Const.TAG, "WebviewComponent: Losing $jsCommand")
+                webViewComponent.evaluateJavascript(jsCommand) {
+                    Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
                 }
             }
         }
