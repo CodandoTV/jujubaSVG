@@ -1,6 +1,7 @@
 package com.gabrielbmoro.jujubasvg.core
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -25,10 +26,8 @@ import com.gabrielbmoro.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlin.text.StringBuilder
-
 
 @Composable
 public fun JujubaSVG(
@@ -70,6 +69,7 @@ public fun JujubaSVG(
     modifier: Modifier
 ) {
     val context = LocalContext.current
+
     val coroutineScope = rememberCoroutineScope()
     val webViewComponent = remember {
         WebView(context).apply {
@@ -128,6 +128,7 @@ public fun JujubaSVG(
                     Const.ENCONDING,
                     ""
                 )
+                Log.d(Const.TAG, "WebviewComponent: Initialized...")
             }
 
             webViewComponent
@@ -136,20 +137,30 @@ public fun JujubaSVG(
 
     LaunchedEffect(isWebViewReady) {
         if (isWebViewReady) {
-            commander.state.collectLatest { jsCommand ->
-                webViewComponent.evaluateJavascript(jsCommand) { }
+            commander.command.collect { jsCommand ->
+                webViewComponent.evaluateJavascript(jsCommand) {
+                    Log.d(Const.TAG, "WebviewComponent: $jsCommand -> result: $it")
+                }
             }
+        }
+    }
+
+    LaunchedEffect(key1 = isWebViewReady) {
+        if (isWebViewReady) {
+            commander.execute(
+                Command.UpdateRootBackgroundColor(
+                    backgroundColorInHex
+                )
+            )
         }
     }
 
     LaunchedEffect(Unit) {
         webViewComponent.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
-                coroutineScope.launch {
-                    commander.execute(Command.UpdateRootBackgroundColor(backgroundColorInHex))
-                }
-
                 isWebViewReady = true
+
+                Log.d(Const.TAG, "WebviewComponent: Ready to receive commands")
             }
         }
     }
@@ -159,6 +170,7 @@ public fun JujubaSVG(
             webViewComponent.removeJavascriptInterface(
                 Const.BASE_INTERFACE_NAME
             )
+            Log.d(Const.TAG, "WebviewComponent: Releasing resources...")
         }
     }
 }
