@@ -2,6 +2,7 @@
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/gabrielbmoro/MovieDB-Android/issues)
 ![Maven Central Version](https://img.shields.io/maven-central/v/io.github.gabrielbmoro/jujubasvg)
+[![Unit tests](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml/badge.svg)](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml)
 
 # Welcome to the JujubaSVG library 👋
 
