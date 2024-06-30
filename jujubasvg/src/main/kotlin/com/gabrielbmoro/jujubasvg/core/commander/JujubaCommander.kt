@@ -4,11 +4,12 @@ import android.util.Log
 import com.gabrielbmoro.jujubasvg.core.Const.TAG
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 
 public class JujubaCommander {
 
     private val _command = MutableSharedFlow<String>()
-    public val command: SharedFlow<String> = _command
+    public val command: SharedFlow<String> = _command.asSharedFlow()
 
     public suspend fun execute(vararg command: Command) {
         val commandJS = command.map {
