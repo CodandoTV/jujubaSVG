@@ -19,7 +19,7 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 ## How to use? 🤔
 
-You need to add the following line in your desired `module/build.gradle`:
+You need to add the following line in your desired `module/build.gradle.kts`:
 
 ```kotlin
 // ...
