@@ -4,14 +4,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 
 /**
- * Transform a Compose color to hexadecimal following this pattern:'#ffffff.
- * @param id The id of the node.
- * @param color The color in hex.
+ * Transforms a Compose Color into a hexadecimal String following the pattern "#ffffff".
  */
-@OptIn(ExperimentalStdlibApi::class)
-public fun Color.toHex(): String {
-    return "#" + this
-        .toArgb()
-        .toHexString()
-        .substring(2)
+internal fun Color.toHex(): String {
+    val argb = this.toArgb()
+    return buildString {
+        append('#')
+        append(Integer.toHexString((argb shr 16) and 0xFF).padStart(2, '0')) // alpha
+        append(Integer.toHexString((argb shr 8) and 0xFF).padStart(2, '0'))  // red
+        append(Integer.toHexString(argb and 0xFF).padStart(2, '0'))          // green
+        append(Integer.toHexString((argb shr 24) and 0xFF).padStart(2, '0')) // blue
+    }
 }
+
