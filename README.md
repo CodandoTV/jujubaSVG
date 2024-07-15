@@ -19,7 +19,7 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 ## How to use? 🤔
 
-You need to add the following line in your desired `module/build.gradle.kts`:
+You need to add the following line in your desired `module/build.gradle`:
 
 ```kotlin
 // ...
@@ -30,8 +30,8 @@ dependencies {
     // ...
 ```
 
-After that, you need to define at the top level of your composable function the 
-`commander` (a friend you will help you to send commands to the library):
+After that, you need to define at the top level of your composable function the
+`commander` (a friend that will help you to send commands to the library):
 
 ```kotlin
 @Composable
@@ -53,7 +53,7 @@ fun YourComposable() {
         onElementClick = { nodeInfo ->
             println("NodeInfo $nodeInfo")
             coroutineScope.launch {
-                // exemplo of commander
+                // commander sample
                 jujubaCommander.execute(
                     Command.RemoveNode(
                         nodeInfo.id
@@ -68,13 +68,13 @@ fun YourComposable() {
 
 Don't forget:
 
-- `svgText` should contains all content of your SVG file.
+- `svgText` should contain all content of your SVG file.
 
 ### Sample project
 
 More details you can check at our [sample project](sampleApp)
 
-<img src="img/teaser.gif" height="500" />
+<img src="img/teaser.gif" height="500"  alt="teaser showing the app working with SVG image, where onClick deletes a State from Brazil."/>
 
 ### How to contribute?
 
