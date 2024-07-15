@@ -8,7 +8,7 @@ public sealed class Command {
     /**
      * Update the background color of a node.
      * @param id The id of the node.
-     * @param color The color in hex.
+     * @param color The color for the background.
      */
     public data class UpdateBackgroundColor(
         val id: String,
@@ -18,7 +18,7 @@ public sealed class Command {
     /**
      * Update the stroke color of a node.
      * @param id The id of the node.
-     * @param color The color in hex.
+     * @param color The color for the stroke.
      */
     public data class UpdateStrokeColor(
         val id: String,
