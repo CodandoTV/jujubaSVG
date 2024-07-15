@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 
 /**
- * Transforms a Compose Color into a hexadecimal String following the pattern "#ffffff".
+ * Transforms a Compose Color into a hexadecimal String following the pattern "#ffffffff".
  */
 internal fun Color.toHex(): String {
     val argb = this.toArgb()
