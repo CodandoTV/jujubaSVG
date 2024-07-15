@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
@@ -34,7 +35,7 @@ public fun JujubaSVG(
     @RawRes svgRawRes: Int,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColorInHex: String = Const.DEFAULT_ROOT_BACKGROUND_COLOR_IN_HEX,
+    backgroundColor: Color = Color.White,
     modifier: Modifier
 ) {
     val resources = LocalContext.current.resources
@@ -48,7 +49,7 @@ public fun JujubaSVG(
             commander = commander,
             onElementClick = onElementClick,
             modifier = modifier,
-            backgroundColorInHex = backgroundColorInHex
+            backgroundColor = backgroundColor
         )
     }
 
@@ -65,7 +66,7 @@ public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColorInHex: String = Const.DEFAULT_ROOT_BACKGROUND_COLOR_IN_HEX,
+    backgroundColor: Color = Color.White,
     modifier: Modifier
 ) {
     val context = LocalContext.current
@@ -149,7 +150,7 @@ public fun JujubaSVG(
         if (isWebViewReady) {
             commander.execute(
                 Command.UpdateRootBackgroundColor(
-                    backgroundColorInHex
+                    backgroundColor
                 )
             )
         }

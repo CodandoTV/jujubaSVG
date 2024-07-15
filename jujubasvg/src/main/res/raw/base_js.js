@@ -2,14 +2,14 @@ function _getJujubaNodeById(elementId) {
     return document.getElementsByTagName('svg')[0].getElementById(elementId);
 }
 
-function updateBackgroundColor(elementId, colorInHex) {
+function updateBackgroundColor(elementId, color) {
     const node = _getJujubaNodeById(elementId);
-    node.style.fill = colorInHex;
+    node.style.fill = color;
 }
 
-function updateStrokeColor(elementId, colorInHex) {
+function updateStrokeColor(elementId, color) {
     const node = _getJujubaNodeById(elementId);
-    node.style.stroke = colorInHex;
+    node.style.stroke = color;
 }
 
 function updateStrokeWidth(elementId, widthInPx) {
@@ -22,8 +22,8 @@ function removeNode(elementId) {
     node.remove();
 }
 
-function updateRootBackgroundColor(colorInHex) {
-    document.body.style.backgroundColor = colorInHex;
+function updateRootBackgroundColor(color) {
+    document.body.style.backgroundColor = color;
 }
 
 function addRoundedImage(elementId, imageId, url, width, height, x, y) {
