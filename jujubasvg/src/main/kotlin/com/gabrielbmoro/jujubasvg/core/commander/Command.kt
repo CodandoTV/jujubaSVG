@@ -1,5 +1,6 @@
 package com.gabrielbmoro.jujubasvg.core.commander
 
+import androidx.compose.ui.graphics.Color
 import com.gabrielbmoro.jujubasvg.model.NodeCoordinate
 
 public sealed class Command {
@@ -7,21 +8,21 @@ public sealed class Command {
     /**
      * Update the background color of a node.
      * @param id The id of the node.
-     * @param colorInHex The color in hex.
+     * @param color The color for the background.
      */
     public data class UpdateBackgroundColor(
         val id: String,
-        val colorInHex: String,
+        val color: Color,
     ) : Command()
 
     /**
      * Update the stroke color of a node.
      * @param id The id of the node.
-     * @param colorInHex The color in hex.
+     * @param color The color for the stroke.
      */
     public data class UpdateStrokeColor(
         val id: String,
-        val colorInHex: String,
+        val color: Color,
     ) : Command()
 
     /**
@@ -46,7 +47,7 @@ public sealed class Command {
      * Update the root background color.
      */
     public data class UpdateRootBackgroundColor(
-        val colorInHex: String,
+        val color: Color,
     ) : Command()
 
     /**

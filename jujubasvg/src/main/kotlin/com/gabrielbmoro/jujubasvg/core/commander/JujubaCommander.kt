@@ -2,6 +2,7 @@ package com.gabrielbmoro.jujubasvg.core.commander
 
 import android.util.Log
 import com.gabrielbmoro.jujubasvg.core.Const.TAG
+import com.gabrielbmoro.jujubasvg.core.ext.toHex
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -23,11 +24,11 @@ public class JujubaCommander {
     private fun convertToJSCode(command: Command): String {
         return when (command) {
             is Command.UpdateBackgroundColor -> {
-                "updateBackgroundColor(\'${command.id}\',\'${command.colorInHex}\');"
+                "updateBackgroundColor(\'${command.id}\',\'${command.color.toHex()}\');"
             }
 
             is Command.UpdateStrokeColor -> {
-                "updateStrokeColor(\'${command.id}\',\'${command.colorInHex}\');"
+                "updateStrokeColor(\'${command.id}\',\'${command.color.toHex()}\');"
             }
 
             is Command.UpdateStrokeWidth -> {
@@ -39,7 +40,7 @@ public class JujubaCommander {
             }
 
             is Command.UpdateRootBackgroundColor -> {
-                "updateRootBackgroundColor(\'${command.colorInHex}\');"
+                "updateRootBackgroundColor(\'${command.color.toHex()}\');"
             }
 
             is Command.AddRoundedImage -> {
