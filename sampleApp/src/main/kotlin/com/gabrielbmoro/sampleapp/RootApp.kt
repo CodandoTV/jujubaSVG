@@ -120,6 +120,10 @@ private fun SelectionSheet(options: List<String>, onChangeOption: (Int) -> Unit,
     ) {}
 }
 
+/**
+ * Returns a random core Color from the rainbow.
+ */
+
 private fun getRainbowColor(): Color {
     val colors = listOf(
         Color(0xFFFF0000), // Red
