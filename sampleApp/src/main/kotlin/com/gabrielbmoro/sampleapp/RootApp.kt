@@ -33,8 +33,8 @@ import kotlin.random.Random
 @Composable
 internal fun RootApp() {
     val options = listOf(
-        "Change element color",
-        "Change root SVG color",
+        "Change element background color",
+        "Change root SVG background color",
         "Add rounded image",
         "Remove element"
     )
