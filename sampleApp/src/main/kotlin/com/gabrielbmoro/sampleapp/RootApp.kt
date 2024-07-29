@@ -26,6 +26,7 @@ import com.gabrielbmoro.jujubasvg.core.JujubaSVG
 import com.gabrielbmoro.jujubasvg.core.commander.Command
 import com.gabrielbmoro.jujubasvg.core.rememberJujubaCommander
 import com.gabrielbmoro.sample.R
+import com.gabrielbmoro.sampleapp.components.SelectionSheet
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
@@ -74,7 +75,6 @@ internal fun RootApp() {
             modifier = Modifier.fillMaxSize()
         )
 
-
         SelectionSheet(
             options = options,
             onChangeOption = { styleSheetSelectedOption = it },
@@ -83,42 +83,6 @@ internal fun RootApp() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun SelectionSheet(options: List<String>, onChangeOption: (Int) -> Unit, selected: Int) {
-    BottomSheetScaffold(
-        sheetPeekHeight = 145.dp,
-        sheetContent = {
-            Column(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    "Select a command",
-                    style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.padding(16.dp)
-                )
-                options.forEachIndexed { index, option ->
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onChangeOption(index) }
-                            .padding(vertical = 8.dp)
-
-                    ) {
-                        RadioButton(
-                            selected = index == selected,
-                            onClick = { }
-                        )
-                        Text(
-                            text = option,
-                            style = MaterialTheme.typography.bodyLarge,
-                            modifier = Modifier.padding(start = 8.dp)
-                        )
-                    }
-                }
-            }
-        }
-    ) {}
-}
 
 /**
  * Returns a random core Color from the rainbow.
