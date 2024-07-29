@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.gabrielbmoro.moviedb.JujubaSVGSampleApp"
+        android:name="com.gabrielbmoro.sampleapp.JujubaSVGSampleApp"
         android:allowBackup="true"
         android:icon="@mipmap/jujube_icon"
         android:label="SampleApp"
@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="com.gabrielbmoro.moviedb.MainActivity"
+            android:name="com.gabrielbmoro.sampleapp.MainActivity"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>

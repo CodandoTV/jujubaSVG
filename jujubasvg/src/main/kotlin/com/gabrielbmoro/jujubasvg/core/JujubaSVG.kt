@@ -36,7 +36,7 @@ public fun JujubaSVG(
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
     backgroundColor: Color = Color.White,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     val resources = LocalContext.current.resources
     var svgText by remember {
@@ -67,7 +67,7 @@ public fun JujubaSVG(
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
     backgroundColor: Color = Color.White,
-    modifier: Modifier
+    modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
 

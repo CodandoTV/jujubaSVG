@@ -1,4 +1,4 @@
-package com.gabrielbmoro.moviedb
+package com.gabrielbmoro.sampleapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
