@@ -17,7 +17,12 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-public fun SelectionSheet(options: List<String>, onChangeOption: (Int) -> Unit, selected: Int, modifier: Modifier = Modifier) {
+public fun SelectionSheet(
+    options: List<String>,
+    onChangeOption: (Int) -> Unit,
+    selected: Int,
+    modifier: Modifier = Modifier
+) {
     BottomSheetScaffold(
         sheetPeekHeight = 145.dp,
         sheetContent = {

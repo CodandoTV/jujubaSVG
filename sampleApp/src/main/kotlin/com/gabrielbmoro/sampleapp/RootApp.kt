@@ -1,27 +1,15 @@
 package com.gabrielbmoro.sampleapp
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.BottomSheetScaffold
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import com.gabrielbmoro.jujubasvg.core.JujubaSVG
 import com.gabrielbmoro.jujubasvg.core.commander.Command
 import com.gabrielbmoro.jujubasvg.core.rememberJujubaCommander
@@ -53,9 +41,17 @@ internal fun RootApp() {
                 coroutineScope.launch {
                     jujubaCommander.execute(
                         when (styleSheetSelectedOption) {
-                            0 -> Command.UpdateBackgroundColor(nodeInfo.id, getRainbowColor())
-                            1 -> Command.UpdateRootBackgroundColor(getRainbowColor())
-                            2 -> Command.AddRoundedImage(
+                            SelectSampleOptions.UPDATE_BACKGROUND_COLOR_OPTION -> Command.UpdateBackgroundColor(
+                                nodeInfo.id,
+                                getRainbowColor()
+                            )
+
+                            SelectSampleOptions.UPDATE_ROOT_BACKGROUND_COLOR_OPTION -> Command
+                                .UpdateRootBackgroundColor(
+                                    getRainbowColor()
+                                )
+
+                            SelectSampleOptions.ADD_ROUNDED_IMAGE_OPTION -> Command.AddRoundedImage(
                                 elementId = nodeInfo.id,
                                 imageId = "nasa",
                                 imageUrl = "https://i.imgur.com/LQIsf.jpeg",
@@ -63,7 +59,8 @@ internal fun RootApp() {
                                 heightInPx = 100,
                                 coordinate = nodeInfo.coordinate,
                             )
-                            3 -> Command.RemoveNode(nodeInfo.id)
+
+                            SelectSampleOptions.REMOVE_NODE_OPTION -> Command.RemoveNode(nodeInfo.id)
                             else -> Command.UpdateBackgroundColor(nodeInfo.id, getRainbowColor())
                         }
 
@@ -71,7 +68,7 @@ internal fun RootApp() {
                 }
             },
             commander = jujubaCommander,
-            backgroundColor = Color(0xffffb700),
+            backgroundColor = Color(BACKGROUND_COLOR),
             modifier = Modifier.fillMaxSize()
         )
 
@@ -87,7 +84,7 @@ internal fun RootApp() {
 /**
  * Returns a random core Color from the rainbow.
  */
-
+@Suppress("MagicNumber")
 private fun getRainbowColor(): Color {
     val colors = listOf(
         Color(0xFFFF0000), // Red
@@ -101,3 +98,12 @@ private fun getRainbowColor(): Color {
     val randomIndex = Random.nextInt(0, 6)
     return colors[randomIndex % colors.size]
 }
+
+private object SelectSampleOptions {
+    const val UPDATE_BACKGROUND_COLOR_OPTION = 0
+    const val UPDATE_ROOT_BACKGROUND_COLOR_OPTION = 1
+    const val ADD_ROUNDED_IMAGE_OPTION = 2
+    const val REMOVE_NODE_OPTION = 3
+}
+
+private const val BACKGROUND_COLOR = 0xffffb700
