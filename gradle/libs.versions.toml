@@ -8,6 +8,7 @@ coroutines = "1.6.4"
 gradle = "8.2.2"
 vanniktech = "0.28.0"
 turbine = "1.1.0"
+detekt = "1.23.6"
 
 [libraries]
 kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
@@ -23,6 +24,7 @@ navigation_compose = { group = "androidx.navigation", name = "navigation-compose
 gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 vanniktech_publish = { module = "com.vanniktech.maven.publish:com.vanniktech.maven.publish.gradle.plugin", version.ref = "vanniktech" }
+detekt-gradle-plugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
 
 [bundles]
 compose_extras = ["compose_material_3", "navigation_compose"]
@@ -30,3 +32,4 @@ compose_impl = ["compose_ui", "compose_preview", "compose_activity"]
 compose_debug_impl = ["compose_ui_tooling"]
 
 [plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

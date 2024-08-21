@@ -1,4 +1,7 @@
 @file:Suppress("UnstableApiUsage")
+plugins {
+    alias(libs.plugins.detekt) apply false
+}
 
 buildscript {
     repositories {
@@ -9,14 +12,6 @@ buildscript {
     dependencies {
         classpath(libs.gradle)
         classpath(libs.kotlin.gradle.plugin)
-    }
-}
-
-allprojects {
-    repositories {
-        google()
-        maven(url = "https://jitpack.io")
-        mavenCentral()
     }
 }
 
