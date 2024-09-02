@@ -6,6 +6,7 @@ import androidx.compose.ui.graphics.toArgb
 /**
  * Transforms a Compose Color into a hexadecimal String following the pattern "#ffffffff".
  */
+@Suppress("MagicNumber")
 internal fun Color.toHex(): String {
     val argb = this.toArgb()
     return buildString {
@@ -16,4 +17,3 @@ internal fun Color.toHex(): String {
         append(Integer.toHexString((argb shr 24) and 0xFF).padStart(2, '0')) // blue
     }
 }
-

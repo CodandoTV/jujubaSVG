@@ -9,7 +9,7 @@ private fun Project.libs() = project
     .getByType<VersionCatalogsExtension>()
     .named("libs")
 
-fun Project.getVersionFromCatalogs(alias: String): String {
+internal fun Project.getVersionFromCatalogs(alias: String): String {
     return libs()
         .findVersion(alias).get().requiredVersion
 }

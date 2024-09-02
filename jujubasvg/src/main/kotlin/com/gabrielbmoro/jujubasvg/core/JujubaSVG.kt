@@ -60,6 +60,7 @@ public fun JujubaSVG(
     }
 }
 
+@Suppress("LongMethod")
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 public fun JujubaSVG(

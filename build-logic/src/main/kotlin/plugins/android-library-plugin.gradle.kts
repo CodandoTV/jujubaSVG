@@ -8,6 +8,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-parcelize")
+    id("detekt-plugin-setup")
 }
 
 kotlin {

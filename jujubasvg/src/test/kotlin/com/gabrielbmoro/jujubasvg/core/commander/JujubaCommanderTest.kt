@@ -107,7 +107,7 @@ class JujubaCommanderTest {
         }
 
     @Test
-    fun `given the commands update background color and remove node when they are invoked then emit the right jsCommand`() =
+    fun `test commands update background color and remove node check if they emit the right jsCommand`() =
         runTest {
             val jsCommand = "updateBackgroundColor('12','#ffffffff');\nremoveNode('12');"
 
