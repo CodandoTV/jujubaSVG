@@ -1,4 +1,4 @@
-package com.gabrielbmoro.sampleapp.components
+package com.github.codandotv.sampleapp.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column

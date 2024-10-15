@@ -1,4 +1,4 @@
-package com.gabrielbmoro.sampleapp
+package com.github.codandotv.sampleapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

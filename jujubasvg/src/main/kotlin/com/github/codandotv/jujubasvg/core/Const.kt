@@ -1,4 +1,4 @@
-package com.gabrielbmoro.jujubasvg.core
+package com.github.codandotv.jujubasvg.core
 
 public object Const {
     internal const val SVG_CODE_SIGN = "        <!-- svg here -->"

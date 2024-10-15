@@ -1,8 +1,8 @@
-package com.gabrielbmoro.jujubasvg.core.commander
+package com.github.codandotv.jujubasvg.core.commander
 
 import androidx.compose.ui.graphics.Color
 import app.cash.turbine.test
-import com.gabrielbmoro.jujubasvg.model.NodeCoordinate
+import com.github.codandotv.jujubasvg.model.NodeCoordinate
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
 import kotlin.test.assertEquals

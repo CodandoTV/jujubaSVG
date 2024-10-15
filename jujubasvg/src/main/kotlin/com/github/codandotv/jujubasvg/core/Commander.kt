@@ -1,8 +1,8 @@
-package com.gabrielbmoro.jujubasvg.core
+package com.github.codandotv.jujubasvg.core
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
+import com.github.codandotv.jujubasvg.core.commander.JujubaCommander
 
 @Composable
 public fun rememberJujubaCommander(): JujubaCommander {
