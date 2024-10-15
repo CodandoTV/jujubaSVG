@@ -10,7 +10,7 @@ Welcome to the jujubaSVG library!
 
 jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
 
-<img src="img/jujube_icon.png" />
+<img src="img/jujuba-icon.svg" />
 
 📚 Our documentation is available [here](https://github.com/gabrielbmoro/jujubaSVG/wiki).
 
