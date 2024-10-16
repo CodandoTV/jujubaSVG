@@ -1,4 +1,4 @@
-package com.gabrielbmoro.sampleapp
+package com.github.codandotv.sampleapp
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
@@ -10,11 +10,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.gabrielbmoro.jujubasvg.core.JujubaSVG
-import com.gabrielbmoro.jujubasvg.core.commander.Command
-import com.gabrielbmoro.jujubasvg.core.rememberJujubaCommander
+import com.github.codandotv.jujubasvg.core.JujubaSVG
+import com.github.codandotv.jujubasvg.core.commander.Command
+import com.github.codandotv.jujubasvg.core.rememberJujubaCommander
 import com.gabrielbmoro.sample.R
-import com.gabrielbmoro.sampleapp.components.SelectionSheet
+import com.github.codandotv.sampleapp.components.SelectionSheet
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 

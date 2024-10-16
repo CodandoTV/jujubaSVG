@@ -1,4 +1,4 @@
-package com.gabrielbmoro.sampleapp
+package com.github.codandotv.sampleapp
 
 import android.app.Application
 

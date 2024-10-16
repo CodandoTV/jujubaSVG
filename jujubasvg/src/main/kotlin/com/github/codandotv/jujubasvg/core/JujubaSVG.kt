@@ -1,4 +1,4 @@
-package com.gabrielbmoro.jujubasvg.core
+package com.github.codandotv.jujubasvg.core
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -18,12 +18,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
-import com.gabrielbmoro.jujubasvg.core.bridge.JujubaSVGWebInterface
-import com.gabrielbmoro.jujubasvg.core.commander.Command
-import com.gabrielbmoro.jujubasvg.core.commander.JujubaCommander
-import com.gabrielbmoro.jujubasvg.core.ext.fileTextContent
-import com.gabrielbmoro.jujubasvg.core.ext.fileTextLines
-import com.gabrielbmoro.jujubasvg.model.NodeInfo
+import com.github.codandotv.jujubasvg.core.bridge.JujubaSVGWebInterface
+import com.github.codandotv.jujubasvg.core.commander.Command
+import com.github.codandotv.jujubasvg.core.commander.JujubaCommander
+import com.github.codandotv.jujubasvg.core.ext.fileTextContent
+import com.github.codandotv.jujubasvg.core.ext.fileTextLines
+import com.github.codandotv.jujubasvg.model.NodeInfo
 import com.github.gabrielbmoro.jujubasvg.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

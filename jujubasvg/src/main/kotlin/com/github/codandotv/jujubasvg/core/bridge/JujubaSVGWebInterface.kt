@@ -1,8 +1,8 @@
-package com.gabrielbmoro.jujubasvg.core.bridge
+package com.github.codandotv.jujubasvg.core.bridge
 
 import android.webkit.JavascriptInterface
-import com.gabrielbmoro.jujubasvg.model.NodeCoordinate
-import com.gabrielbmoro.jujubasvg.model.NodeInfo
+import com.github.codandotv.jujubasvg.model.NodeCoordinate
+import com.github.codandotv.jujubasvg.model.NodeInfo
 
 internal class JujubaSVGWebInterface(
     private val onElementClick: (NodeInfo) -> Unit,

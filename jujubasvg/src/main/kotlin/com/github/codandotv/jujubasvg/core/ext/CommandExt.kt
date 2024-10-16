@@ -1,4 +1,4 @@
-package com.gabrielbmoro.jujubasvg.core.ext
+package com.github.codandotv.jujubasvg.core.ext
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb

@@ -1,8 +1,8 @@
-package com.gabrielbmoro.jujubasvg.core.commander
+package com.github.codandotv.jujubasvg.core.commander
 
 import android.util.Log
-import com.gabrielbmoro.jujubasvg.core.Const.TAG
-import com.gabrielbmoro.jujubasvg.core.ext.toHex
+import com.github.codandotv.jujubasvg.core.Const.TAG
+import com.github.codandotv.jujubasvg.core.ext.toHex
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
