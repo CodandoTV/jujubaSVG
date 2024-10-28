@@ -80,7 +80,9 @@ More details you can check at our [sample project](sampleApp)
 ### How to contribute?
 
 - Fork this repository;
+
 - Solve an issue, or do any improvement you want;
+
 - Open a PR to the origin repository.
 
 As soon the PR is reviewed and merged, your update will be available.
