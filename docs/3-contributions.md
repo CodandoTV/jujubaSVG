@@ -8,5 +8,3 @@ We encourage contributions of all types! Whether it's reporting issues, suggesti
 ## Some tips
 
 - If you have any questions about contributions, feel free to reach out to someone from CodandoTV. You can contact [Gabriel Moro](mailto:gabrielbronzattimoro.es@gmail.com) or [Rodrigo Vianna](mailto:rodrigo.vianna.oliveira@gmail.com).
-
-🤗 Happy coding!
