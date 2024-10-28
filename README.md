@@ -12,7 +12,7 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 <img src="img/jujuba-icon.svg" />
 
-📚 Our documentation is available [here](https://github.com/gabrielbmoro/jujubaSVG/wiki).
+📚 Our documentation is available [here](https://codandotv.github.io/jujubasvg).
 
 ---
 
