@@ -5,7 +5,7 @@
 You need to add the following line in your desired module/build.gradle.kts:
 
 ```kotlin
-implementation("io.github.gabrielbmoro:jujubasvg:<library version>")
+implementation("io.github.codandotv:jujubaSVG:<library version>")
 ```
 
 ## 2. Define your Commander
