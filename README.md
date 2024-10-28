@@ -1,7 +1,7 @@
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.23-blue.svg?logo=kotlin)](http://kotlinlang.org)
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CodandoTV/jujubaSVG/issues)
-[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.gabrielbmoro/jujubasvg)](https://central.sonatype.com/artifact/io.github.gabrielbmoro/jujubasvg)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Unit tests](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml/badge.svg)](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml)
 
 # Welcome to the JujubaSVG library 👋
@@ -12,7 +12,7 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 <img src="img/jujuba-icon.svg" />
 
-📚 Our documentation is available [here](https://github.com/gabrielbmoro/jujubaSVG/wiki).
+📚 Our documentation is available [here](https://codandotv.github.io/jujubasvg).
 
 ---
 
