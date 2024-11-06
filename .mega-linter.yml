@@ -8,11 +8,11 @@ APPLY_FIXES: none
 
 # If you use ENABLE variable, all other languages/formats/tooling-formats will
 # be disabled by default
-# ENABLE:
+ENABLE: MARKDOWN,YAML,JAVASCRIPT
 
 # If you use ENABLE_LINTERS variable, all other linters will be disabled by
 # default
-ENABLE_LINTERS: JAVASCRIPT_PRETTIER, YAML_YAMLLINT, MARKDOWN_MARKDOWN_LINK_CHECK
+# ENABLE_LINTERS:
 
 DISABLE:
   - COPYPASTE # Comment to enable checks of excessive copy-pastes
