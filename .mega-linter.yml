@@ -27,3 +27,4 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
+KOTLIN_DETEKT_ARGUMENTS: -c config/detekt/detekt.yml
