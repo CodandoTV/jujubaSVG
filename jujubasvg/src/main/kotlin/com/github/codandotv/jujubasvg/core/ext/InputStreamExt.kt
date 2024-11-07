@@ -8,7 +8,7 @@ internal fun InputStream.fileTextContent(): String {
     use { inputStream ->
         inputStream.bufferedReader().use { bufferReader ->
             bufferReader.readLines().forEach { line ->
-                content.append(line)
+                content.append(line.plus("\n"))
             }
         }
     }
