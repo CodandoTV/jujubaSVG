@@ -6,24 +6,24 @@ theme:
     text: Merriweather Sans
     code: Red Hat Mono
   features:
-  - navigation.footer
-  - content.code.annotations # (1)!
+    - navigation.footer
+    - content.code.annotations # (1)!
   palette:
-      # Dark Mode
-      - scheme: slate
-        toggle:
-          icon: material/weather-sunny
-          name: Dark mode
-        primary: deep purple
-        accent: light blue
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep purple
+      accent: light blue
 
-      # Light Mode
-      - scheme: default
-        toggle:
-          icon: material/weather-night
-          name: Light mode
-        primary: deep purple
-        accent: blue
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: deep purple
+      accent: blue
 
 markdown_extensions:
   - smarty
