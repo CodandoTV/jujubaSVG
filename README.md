@@ -3,6 +3,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CodandoTV/jujubaSVG/issues)
 [![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Unit tests](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml/badge.svg)](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml)
+[![MegaLinter](https://github.com/CodandoTV/jujubaSVG/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/CodandoTV/jujubaSVG/actions?query=workflow%3AMegaLinter+branch%3Amain)
 
 # Welcome to the JujubaSVG library 👋
 

@@ -1,7 +1,7 @@
 import config.Config
 import ext.getVersionFromCatalogs
 
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -14,18 +14,18 @@ kotlin {
 }
 
 android {
-    compileSdk = Config.compileSdk
+    compileSdk = Config.COMPILE_SDK
 
     defaultConfig {
-        minSdk = Config.minSdk
-        targetSdk = Config.targetSdk
+        minSdk = Config.MIN_SDK
+        targetSdk = Config.TARGET_SDK
         versionCode = Config.versionCode()
         versionName = Config.versionName()
 
-        testInstrumentationRunner = Config.testInstrumentationRunner
+        testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
         vectorDrawables.useSupportLibrary = true
 
-        applicationId = Config.applicationId
+        applicationId = Config.APPLICATION_ID
 
         vectorDrawables.useSupportLibrary = true
 
@@ -46,9 +46,9 @@ android {
     }
     buildFeatures.compose = true
 
-    namespace = Config.applicationId
+    namespace = Config.APPLICATION_ID
 
     kotlinOptions {
-        jvmTarget = Config.javaVMTarget
+        jvmTarget = Config.JAVA_VM_TARGET
     }
 }

@@ -2,7 +2,7 @@ import config.Config
 
 import org.gradle.kotlin.dsl.kotlin
 
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -16,10 +16,10 @@ kotlin {
 }
 
 android {
-    compileSdk = Config.compileSdk
+    compileSdk = Config.COMPILE_SDK
 
     defaultConfig {
-        minSdk = Config.minSdk
+        minSdk = Config.MIN_SDK
     }
 
     compileOptions {
@@ -28,10 +28,10 @@ android {
     }
 
     testOptions {
-        unitTests.isReturnDefaultValues = Config.haveUnitTestsDefaultValues
+        unitTests.isReturnDefaultValues = Config.HAVE_UNIT_TESTS_DEFAULT_VALUES
     }
 
     kotlinOptions {
-        jvmTarget = Config.javaVMTarget
+        jvmTarget = Config.JAVA_VM_TARGET
     }
 }
