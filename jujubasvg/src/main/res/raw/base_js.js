@@ -1,38 +1,31 @@
-/* eslint-disable no-unused-vars */
 function _getJujubaNodeById (elementId) {
   return document.getElementsByTagName('svg')[0].getElementById(elementId)
 }
 
-/* eslint-disable no-unused-vars */
 function updateBackgroundColor (elementId, color) {
   const node = _getJujubaNodeById(elementId)
   node.style.fill = color
 }
 
-/* eslint-disable no-unused-vars */
 function updateStrokeColor (elementId, color) {
   const node = _getJujubaNodeById(elementId)
   node.style.stroke = color
 }
 
-/* eslint-disable no-unused-vars */
 function updateStrokeWidth (elementId, widthInPx) {
   const node = _getJujubaNodeById(elementId)
   node.style.strokeWidth = widthInPx
 }
 
-/* eslint-disable no-unused-vars */
 function removeNode (elementId) {
   const node = _getJujubaNodeById(elementId)
   node.remove()
 }
 
-/* eslint-disable no-unused-vars */
 function updateRootBackgroundColor (color) {
   document.body.style.backgroundColor = color
 }
 
-/* eslint-disable no-unused-vars */
 function addRoundedImage (elementId, imageId, url, width, height, x, y) {
   const baseJujubaSVG = document.getElementsByTagName('svg')[0]
   const targetElement = _getJujubaNodeById(elementId)

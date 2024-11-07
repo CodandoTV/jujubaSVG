@@ -26,3 +26,5 @@ SHOW_ELAPSED_TIME: true
 FILEIO_REPORTER: false
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
+
+JAVASCRIPT_ES_CONFIG_FILE: ./eslint.config.js
