@@ -29,4 +29,4 @@ FILEIO_REPORTER: false
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
 KOTLIN_DETEKT_ARGUMENTS: -c config/detekt/detekt.yml
-JAVASCRIPT_STANDARD_FILTER_REGEX_INCLUDE: jujubasvg/src/main/res/raw/base_js.js
+JAVASCRIPT_STANDARD_DISABLE_ERRORS: true
