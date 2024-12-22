@@ -1,7 +1,4 @@
 @file:Suppress("UnstableApiUsage")
-plugins {
-    alias(libs.plugins.detekt) apply false
-}
 
 buildscript {
     repositories {
