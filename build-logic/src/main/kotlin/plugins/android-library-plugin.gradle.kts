@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import config.Config
 
 import org.gradle.kotlin.dsl.kotlin
