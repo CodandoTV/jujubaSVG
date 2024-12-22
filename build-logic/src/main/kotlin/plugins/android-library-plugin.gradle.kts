@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import config.Config
 
 import org.gradle.kotlin.dsl.kotlin
@@ -8,7 +10,6 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     id("kotlin-parcelize")
-    id("detekt-plugin-setup")
 }
 
 kotlin {

@@ -14,5 +14,4 @@ dependencies {
     implementation(libs.kotlin.gradle.plugin)
     implementation(libs.gradle)
     implementation(libs.vanniktech.publish)
-    implementation(libs.detekt.gradle.plugin)
 }

@@ -6,7 +6,6 @@ plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
-    id("detekt-plugin-setup")
 }
 
 kotlin {
