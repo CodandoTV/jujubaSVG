@@ -29,6 +29,7 @@ android {
         multiDexEnabled = true
     }
 
+    @Suppress("UnstableApiUsage")
     testOptions {
         unitTests.isReturnDefaultValues = true
     }
