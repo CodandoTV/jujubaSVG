@@ -1,4 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
+import java.util.Properties
 
 plugins {
     id("com.android.library")
@@ -6,6 +7,12 @@ plugins {
     id("com.vanniktech.maven.publish")
 }
 
+val versionPropertiesFile = file("../jujubasvg/version.properties")
+val versionProperties = Properties().apply {
+    load(versionPropertiesFile.inputStream())
+}
+
+val versionPublish: String = versionProperties.getProperty("VERSION")
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
@@ -14,7 +21,7 @@ mavenPublishing {
     coordinates(
         project.property("GROUP_ID") as String,
         project.property("ARTIFACT_ID") as String,
-        project.property("VERSION") as String
+        versionPublish
     )
 
     pom {
@@ -30,8 +37,8 @@ mavenPublishing {
             }
         }
         scm {
-            connection.set("scm:git@github.com:CodandoTV/popcorn-guineapig.git")
-            url.set("https://github.com/CodandoTV/CraftD.git")
+            connection.set("scm:git@github.com:CodandoTV/jujubaSVG.git")
+            url.set("https://github.com/CodandoTV/jujubaSVG.git")
         }
         developers {
             developer {

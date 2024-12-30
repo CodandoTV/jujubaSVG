@@ -16,8 +16,8 @@ android {
     defaultConfig {
         minSdk = Config.MIN_SDK
         targetSdk = Config.TARGET_SDK
-        versionCode = Config.versionCode()
-        versionName = Config.versionName()
+        versionCode = 1
+        versionName = "1.0.0"
 
         testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
         vectorDrawables.useSupportLibrary = true
