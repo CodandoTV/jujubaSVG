@@ -1,11 +1,9 @@
 import config.Config
-import ext.getVersionFromCatalogs
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("kapt")
 }
 
 kotlin {
@@ -40,9 +38,6 @@ android {
         targetCompatibility = Config.javaCompatibilityVersion
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = getVersionFromCatalogs("compose.compiler")
-    }
     buildFeatures.compose = true
 
     namespace = Config.APPLICATION_ID

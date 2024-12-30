@@ -8,7 +8,6 @@ import org.gradle.kotlin.dsl.kotlin
 plugins {
     id("com.android.library")
     kotlin("android")
-    kotlin("kapt")
     id("kotlin-parcelize")
 }
 
