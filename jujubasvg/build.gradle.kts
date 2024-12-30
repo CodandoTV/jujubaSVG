@@ -1,8 +1,10 @@
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("android-compose-library-plugin")
+    id("android-library-plugin")
     id("android-publish-plugin")
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 android {
@@ -11,19 +13,18 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 }
 
 dependencies {
-    // Compose
-    implementation(libs.bundles.compose.impl)
-    debugImplementation(libs.bundles.compose.debug.impl)
-
-    implementation(libs.bundles.compose.extras)
+    implementation(compose.ui)
+    implementation(compose.preview)
+    implementation(compose.material3)
+    implementation(libs.compose.activity)
 
     testImplementation(kotlin("test"))
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
+    debugImplementation(compose.uiTooling)
 }

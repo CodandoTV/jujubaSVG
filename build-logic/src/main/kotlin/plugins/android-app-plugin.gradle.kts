@@ -1,11 +1,9 @@
 import config.Config
-import ext.getVersionFromCatalogs
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("kapt")
 }
 
 kotlin {
@@ -18,8 +16,8 @@ android {
     defaultConfig {
         minSdk = Config.MIN_SDK
         targetSdk = Config.TARGET_SDK
-        versionCode = Config.versionCode()
-        versionName = Config.versionName()
+        versionCode = 1
+        versionName = "1.0.0"
 
         testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
         vectorDrawables.useSupportLibrary = true
@@ -31,6 +29,7 @@ android {
         multiDexEnabled = true
     }
 
+    @Suppress("UnstableApiUsage")
     testOptions {
         unitTests.isReturnDefaultValues = true
     }
@@ -40,9 +39,6 @@ android {
         targetCompatibility = Config.javaCompatibilityVersion
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = getVersionFromCatalogs("compose.compiler")
-    }
     buildFeatures.compose = true
 
     namespace = Config.APPLICATION_ID

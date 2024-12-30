@@ -2,13 +2,17 @@
 
 plugins {
     id("android-app-plugin")
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.jetbrains.compose)
+    kotlin("android")
+    kotlin("kapt")
 }
 
 dependencies {
-    // Compose
-    implementation(libs.bundles.compose.impl)
-    debugImplementation(libs.bundles.compose.debug.impl)
-    implementation(libs.bundles.compose.extras)
+    implementation(compose.ui)
+    implementation(compose.preview)
+    implementation(compose.material3)
+    implementation(libs.compose.activity)
 
     api(projects.jujubasvg)
 }
