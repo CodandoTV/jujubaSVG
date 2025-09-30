@@ -1,4 +1,4 @@
-import 'package:panda_svg/model/node_coordinate.dart';
+import 'package:jujuba_svg/model/node_coordinate.dart';
 
 sealed class Command {}
 

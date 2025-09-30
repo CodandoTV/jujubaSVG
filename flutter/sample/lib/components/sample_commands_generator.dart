@@ -1,5 +1,5 @@
-import 'package:panda_svg/core/commander/command.dart';
-import 'package:panda_svg/model/node_info.dart';
+import 'package:jujuba_svg/core/commander/command.dart';
+import 'package:jujuba_svg/model/node_info.dart';
 import 'package:sampleapp/widgets/bottom_sheet_ui_model.dart';
 
 class SampleCommandsGenerator {

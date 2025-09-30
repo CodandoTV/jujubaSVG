@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:panda_svg/core/commander/command.dart';
+import 'package:jujuba_svg/core/commander/command.dart';
 
-class PandaCommander {
+class JujubaCommander {
   final _command = StreamController<String>.broadcast();
 
   Stream<String> get stream => _command.stream;

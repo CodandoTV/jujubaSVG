@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:panda_svg/core/commander/panda_commander.dart';
-import 'package:panda_svg/core/constants.dart';
-import 'package:panda_svg/model/node_coordinate.dart';
-import 'package:panda_svg/model/node_info.dart';
+import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
+import 'package:jujuba_svg/core/constants.dart';
+import 'package:jujuba_svg/model/node_coordinate.dart';
+import 'package:jujuba_svg/model/node_info.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class PandaWidget extends StatefulWidget {
+class JujubaSVGWidget extends StatefulWidget {
   final String svgText;
-  final PandaCommander commander;
+  final JujubaCommander commander;
   final Function(NodeInfo) onElementClick;
 
-  const PandaWidget({
+  const JujubaSVGWidget({
     super.key,
     required this.svgText,
     required this.commander,
@@ -18,13 +18,13 @@ class PandaWidget extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() => _PandaWebViewState();
+  State<StatefulWidget> createState() => _JujubaWebViewState();
 }
 
-class _PandaWebViewState extends State<PandaWidget> {
+class _JujubaWebViewState extends State<JujubaSVGWidget> {
   late final WebViewController _controller;
 
-  _PandaWebViewState();
+  _JujubaWebViewState();
 
   @override
   void initState() {
@@ -37,7 +37,7 @@ class _PandaWebViewState extends State<PandaWidget> {
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..addJavaScriptChannel(
-        pandaFlutterChannelName,
+        jujubaFlutterChannelName,
         onMessageReceived: (message) => {_processJSMessage(message.message)},
       );
 

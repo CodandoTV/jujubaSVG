@@ -1,5 +1,5 @@
 name: sampleapp
-description: "A sample app to show how to use the panda_svg library."
+description: "A sample app to show how to use the jujuba_svg library."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -10,8 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  panda_svg:
-    path: ../panda_svg
+  jujuba_svg:
+    path: ../jujuba_svg
     
 dev_dependencies:
   flutter_test:

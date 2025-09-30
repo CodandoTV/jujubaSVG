@@ -17,27 +17,27 @@ const String baseHtml = '''
 ''';
 
 const String baseJs = '''
-function _getPandaNodeById (elementId) {
+function _getJujubaNodeById (elementId) {
   return document.getElementsByTagName('svg')[0].getElementById(elementId)
 }
 
 function updateBackgroundColor (elementId, color) {
-  const node = _getPandaNodeById(elementId)
+  const node = _getJujubaNodeById(elementId)
   node.style.fill = color
 }
 
 function updateStrokeColor (elementId, color) {
-  const node = _getPandaNodeById(elementId)
+  const node = _getJujubaNodeById(elementId)
   node.style.stroke = color
 }
 
 function updateStrokeWidth (elementId, widthInPx) {
-  const node = _getPandaNodeById(elementId)
+  const node = _getJujubaNodeById(elementId)
   node.style.strokeWidth = widthInPx
 }
 
 function removeNode (elementId) {
-  const node = _getPandaNodeById(elementId)
+  const node = _getJujubaNodeById(elementId)
   node.remove()
 }
 
@@ -46,8 +46,8 @@ function updateRootBackgroundColor (color) {
 }
 
 function addRoundedImage (elementId, imageId, url, width, height, x, y) {
-  const basePandaSVG = document.getElementsByTagName('svg')[0]
-  const targetElement = _getPandaNodeById(elementId)
+  const baseJujubaSVG = document.getElementsByTagName('svg')[0]
+  const targetElement = _getJujubaNodeById(elementId)
 
   if (document.getElementById('roundedShape')) {
     console.log('shape already created')
@@ -65,7 +65,7 @@ function addRoundedImage (elementId, imageId, url, width, height, x, y) {
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs')
     defs.appendChild(clipPath)
 
-    basePandaSVG.appendChild(defs)
+    baseJujubaSVG.appendChild(defs)
   };
 
   const svgimg = document.createElementNS('http://www.w3.org/2000/svg', 'image')
@@ -85,7 +85,7 @@ function addRoundedImage (elementId, imageId, url, width, height, x, y) {
   const parentNode = targetElement.parentNode
   parentNode.appendChild(svgimg)
 
-  basePandaSVG.innerHTML = basePandaSVG.innerHTML
+  baseJujubaSVG.innerHTML = baseJujubaSVG.innerHTML
 }
 
 function onClickEvent (event) {
@@ -95,9 +95,9 @@ function onClickEvent (event) {
   const x = boundingClientRect.x
   const y = boundingClientRect.y
 
-  $pandaFlutterChannelName.postMessage(id + "," + x + "," + y);
+  $jujubaFlutterChannelName.postMessage(id + "," + x + "," + y);
   console.log(event.target.id)
 }
 ''';
 
-const pandaFlutterChannelName = 'PandaSVGChannel';
+const jujubaFlutterChannelName = 'JujubaSVGChannel';

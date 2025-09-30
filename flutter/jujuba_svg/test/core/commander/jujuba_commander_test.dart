@@ -1,13 +1,13 @@
-import 'package:panda_svg/core/commander/command.dart';
-import 'package:panda_svg/core/commander/panda_commander.dart';
-import 'package:panda_svg/model/node_coordinate.dart';
+import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
+import 'package:jujuba_svg/core/commander/command.dart';
+import 'package:jujuba_svg/model/node_coordinate.dart';
 import 'package:test/test.dart';
 
 void main() {
-  late PandaCommander commander;
+  late JujubaCommander commander;
 
   setUp(() {
-    commander = PandaCommander();
+    commander = JujubaCommander();
   });
 
   test('should emit correct JS for UpdateBackgroundColor', () async {

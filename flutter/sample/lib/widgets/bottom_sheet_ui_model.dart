@@ -1,4 +1,4 @@
-import 'package:panda_svg/core/commander/command.dart';
+import 'package:jujuba_svg/core/commander/command.dart';
 
 sealed class BottomSheetUiModel {}
 
