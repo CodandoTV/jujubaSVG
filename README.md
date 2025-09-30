@@ -9,7 +9,7 @@
 
 Welcome to the jujubaSVG library!
 
-jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
+jujubaSVG library is a friendly library to handle SVG files in your Android app, and your flutter app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
 
 <img src="img/jujuba-icon.svg" />
 
@@ -20,6 +20,8 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 
 ## How to use? 🤔
+
+### Android
 
 You need to add the following line in your desired `module/build.gradle.kts`:
 
@@ -72,11 +74,23 @@ Don't forget:
 
 - `svgText` should contain all content of your SVG file.
 
-### Sample project
+### Flutter
 
-More details you can check at our [sample project](sampleApp)
+- Coming soon.
+
+## Sample project
+
+### Android
+
+More details you can check at our [sample project](android/sampleApp)
 
 <img src="img/teaser.gif" height="500"  alt="teaser showing the app working with SVG image, where onClick deletes a State from Brazil."/>
+
+### Flutter
+
+- Coming soon
+
+--- 
 
 ### How to contribute?
 
