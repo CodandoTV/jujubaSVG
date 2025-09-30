@@ -18,13 +18,13 @@ jobs:
       - name: Set up Flutter
         uses: ./.github/actions/setup-flutter
   
-      - name: Install dependencies - Panda SVG
-        working-directory: flutter/panda_svg
+      - name: Install dependencies - Jujuba SVG
+        working-directory: flutter/jujuba_svg
         run: flutter pub get
         shell: bash
 
-      - name: Run tests - Panda SVG
-        working-directory: flutter/panda_svg
+      - name: Run tests - Jujuba SVG
+        working-directory: flutter/jujuba_svg
         run: flutter test
 
       - name: Install dependencies - Sample project
