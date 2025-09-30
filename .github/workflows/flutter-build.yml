@@ -1,0 +1,37 @@
+name: PR
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'flutter/**'
+
+jobs:
+  flutter-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: ./.github/actions/setup-flutter
+  
+      - name: Install dependencies - Panda SVG
+        working-directory: flutter/panda_svg
+        run: flutter pub get
+        shell: bash
+
+      - name: Run tests - Panda SVG
+        working-directory: flutter/panda_svg
+        run: flutter test
+
+      - name: Install dependencies - Sample project
+        working-directory: flutter/sample
+        run: flutter pub get
+        shell: bash
+
+      - name: Analyze
+        working-directory: flutter
+        run: dart analyze

@@ -1,0 +1,27 @@
+name: sampleapp
+description: "A sample app to show how to use the panda_svg library."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  panda_svg:
+    path: ../panda_svg
+    
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  test: ^1.25.7
+
+flutter:
+  uses-material-design: true
+  assets:
+    - svg/brazil.svg
+  
