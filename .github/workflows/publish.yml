@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish:
+  publish-android:
     name: Publish
     runs-on: ubuntu-latest
 
@@ -21,6 +21,7 @@ jobs:
           java-version: "17"
 
       - name: Publish to Maven Central
+        working-directory: android
         run: |
           echo "ORG_GRADLE_PROJECT_signingInMemoryKey: $ORG_GRADLE_PROJECT_signingInMemoryKey"
           echo "ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: $ORG_GRADLE_PROJECT_signingInMemoryKeyPassword"

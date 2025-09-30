@@ -18,6 +18,9 @@ jobs:
           cache: "gradle"
 
       - name: Grant execute permission for gradlew
+        working-directory: android
         run: chmod +x gradlew
+
       - name: Run Unit Test
+        working-directory: android
         run: ./gradlew jujubasvg:testDebugUnitTest
