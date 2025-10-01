@@ -9,7 +9,7 @@
 
 Welcome to the jujubaSVG library!
 
-jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
+jujubaSVG library is a friendly library to handle SVG files in your Android app, and your flutter app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
 
 <img src="img/jujuba-icon.svg" />
 
@@ -20,6 +20,8 @@ jujubaSVG library is a friendly library to handle SVG files in your Android app.
 
 
 ## How to use? 🤔
+
+### Android
 
 You need to add the following line in your desired `module/build.gradle.kts`:
 
@@ -72,11 +74,59 @@ Don't forget:
 
 - `svgText` should contain all content of your SVG file.
 
-### Sample project
+### Flutter
 
-More details you can check at our [sample project](sampleApp)
+⚠️ Not published yet
+📦 More details about installation coming soon...
+
+Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to 
+initialize the controller:
+
+```dart
+class MyBeautifulScreen extends StatelessWidget {
+  final JujubaCommander commander = JujubaCommander();
+
+  //...
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: JujubaSVGWidget(
+            commander: commander,
+            svgText: svgText,
+            onElementClick: (nodeInfo) => {},
+        ),
+    )
+//...
+```
+
+The library provides a widget called `JujubaSVGWidget`, there you can the `commander`, `svgText`, and `onElementClick`.
+
+- `commander`: allow you to send commands to manipulate the SVG;
+
+- `svgText`: your SVG;
+
+- `onElementClick`: callback to intercept click events in your SVG.
+
+## Sample project
+
+### Android
+
+More details you can check at our [sample project](android/sampleApp)
 
 <img src="img/teaser.gif" height="500"  alt="teaser showing the app working with SVG image, where onClick deletes a State from Brazil."/>
+
+### Flutter
+
+- Android
+
+<img src="flutter/img/jujuba-svg-android-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+
+- iOS
+
+<img src="flutter/img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+
+--- 
 
 ### How to contribute?
 

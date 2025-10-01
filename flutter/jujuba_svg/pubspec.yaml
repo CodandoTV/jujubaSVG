@@ -1,0 +1,22 @@
+name: jujuba_svg
+description: "A flutter library to handle SVG in flutter apps."
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: ^4.13.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  test: ^1.25.7
+
+flutter:
+  uses-material-design: true
