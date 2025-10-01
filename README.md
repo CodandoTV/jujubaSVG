@@ -76,11 +76,14 @@ Don't forget:
 
 ### Flutter
 
-⚠️ Not published yet
-📦 More details about installation coming soon...
+You need to add jujuba_svg library in your `pubspec.yaml`:
 
-Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to 
-initialize the controller:
+```yaml
+dependencies:
+  jujuba_svg: ^1.0.0
+```
+
+Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to initialize the controller:
 
 ```dart
 class MyBeautifulScreen extends StatelessWidget {
