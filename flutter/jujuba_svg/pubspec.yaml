@@ -1,7 +1,8 @@
 name: jujuba_svg
 description: "A flutter library to handle SVG in flutter apps."
+homepage: "https://github.com/CodandoTV/jujubaSVG?tab=readme-ov-file"
 
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: ^3.5.0
