@@ -1,9 +1,9 @@
 [![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Flutter](https://img.shields.io/badge/Flutter-%252302569B.svg?style=flat&logo=Flutter&logoColor=white&labelColor=%2301579b&color=%2303a9f4)](https://docs.flutter.dev/)
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CodandoTV/jujubaSVG/issues)
 [![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
-[![Unit tests](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml/badge.svg)](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml)
-[![MegaLinter](https://github.com/CodandoTV/jujubaSVG/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/CodandoTV/jujubaSVG/actions?query=workflow%3AMegaLinter+branch%3Amain)
+[![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
 # Welcome to the JujubaSVG library 👋
 
