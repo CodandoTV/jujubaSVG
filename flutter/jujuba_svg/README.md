@@ -4,6 +4,8 @@ Welcome to the JujubaSVG library!
 
 jujubaSVG is a user-friendly library for handling SVG files in Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
+📚 Check our documentation [here](https://codandotv.github.io/jujubaSVG/).
+
 ## How to use?
 
 Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to 
@@ -37,19 +39,11 @@ The library provides a widget called `JujubaSVGWidget`, there you can the `comma
 
 ### Sample project
 
-More details you can check in our [sample project](sample).
-
-#### Android
-
-<img src="img/jujuba-svg-android-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
-
-#### iOS
-
-<img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+More details you can check in our [sample project](https://github.com/CodandoTV/jujubaSVG/tree/main/flutter/sample).
 
 ### How to contribute?
 
-- Fork this repository;
+- Fork this [repository](https://github.com/CodandoTV/jujubaSVG);
 
 - Solve an issue, or do any improvement you want;
 

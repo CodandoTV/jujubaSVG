@@ -123,11 +123,11 @@ More details you can check at our [sample project](android/sampleApp)
 
 - Android
 
-<img src="flutter/jujuba_svg/img/jujuba-svg-android-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+<img src="img/jujuba-svg-android-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
 
 - iOS
 
-<img src="flutter/jujuba_svg/img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+<img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
 
 --- 
 
