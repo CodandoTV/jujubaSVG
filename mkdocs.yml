@@ -7,7 +7,9 @@ theme:
     code: Red Hat Mono
   features:
     - navigation.footer
+    - navigation.instant
     - content.code.annotations # (1)!
+    - content.code.copy
   palette:
     # Dark Mode
     - scheme: slate
@@ -24,6 +26,13 @@ theme:
         name: Light mode
       primary: deep purple
       accent: blue
+
+nav:
+  - Setup ✨:
+    - Android: setup/android.md
+    - Flutter: setup/flutter.md
+  - Available Commands 📐: available-commands.md
+  - Contributions 🤝: contributions.md
 
 markdown_extensions:
   - smarty

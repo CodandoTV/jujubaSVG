@@ -1,17 +1,22 @@
-[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)[![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
+
 
 # Welcome to the JujubaSVG documentation! 👋
 
 ![JujubaSVG logo](./assets/img/logo.svg)
 
-JujubaSVG library is a friendly Android library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
+jujubaSVG is a user-friendly library for handling SVG files in Android and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
 Take a look at our [repository](https://github.com/CodandoTV/jujubaSVG).
 
 ## Summary
 
-### 1. [Getting started](./1-getting-started.md)
+### 1. Setup
 
-### 2. [Available commands](./2-available-commands.md)
+- [Android](./setup/android.md)
 
-### 3. [Contributions](./3-contributions.md)
+- [Flutter](./setup/flutter.md)
+
+### 2. [Available commands](./available-commands.md)
+
+### 3. [Contributions](./contributions.md)
