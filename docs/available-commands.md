@@ -15,6 +15,12 @@ jujubaCommander.execute(
 )
 ```
 
+```dart
+commander.execute(
+    UpdateBackgroundColor(id: nodeInfo.id, colorHex: '#000000')
+);
+```
+
 ## Update stroke color
 
 Update the stroke color of a node.
@@ -26,6 +32,12 @@ jujubaCommander.execute(
         color = getRainbowColor()
     )
 )
+```
+
+```dart
+commander.execute(
+    UpdateStrokeColor(id: nodeInfo.id, colorHex: '#000000')
+);
 ```
 
 ## Update stroke width
@@ -41,6 +53,12 @@ jujubaCommander.execute(
 )
 ```
 
+```dart
+commander.execute(
+    UpdateStrokeWidth(id: nodeInfo.id, widthInPx: 12)
+);
+```
+
 ## Remove a node
 
 Remove a node.
@@ -53,6 +71,14 @@ jujubaCommander.execute(
 )
 ```
 
+```dart
+commander.execute(
+    RemoveNode(
+        id: nodeInfo.id,
+    )
+);
+```
+
 ## Update root background color
 
 Update the root background color.
@@ -63,6 +89,12 @@ jujubaCommander.execute(
         color = Color.White
     )
 )
+```
+
+```dart
+commander.execute(
+    UpdateRootBackgroundColor(colorInHex: '#000000')
+);
 ```
 
 ## Add Rounded Image
@@ -80,6 +112,19 @@ jujubaCommander.execute(
         coordinate = NodeCoordinate(0f, 120f)
     )
 )
+```
+
+```dart
+commander.execute(
+    AddRoundedImage(
+        elementId: nodeInfo.id,
+        imageId: 'nasa',
+        imageUrl: 'https://i.imgur.com/LQIsf.jpeg',
+        widthInPx: 100,
+        heightInPx: 100,
+        coordinate: nodeInfo.coordinate,
+    )
+);
 ```
 
 In this case, the current module should depend on any module whose name includes 'util-something'. This rule is useful if you need to enforce that a module depends only on utility modules.
