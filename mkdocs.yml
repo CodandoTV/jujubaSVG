@@ -9,6 +9,7 @@ theme:
     - navigation.footer
     - navigation.instant
     - content.code.annotations # (1)!
+    - content.code.copy
   palette:
     # Dark Mode
     - scheme: slate
