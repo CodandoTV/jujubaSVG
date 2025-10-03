@@ -11,8 +11,12 @@ Take a look at our [repository](https://github.com/CodandoTV/jujubaSVG).
 
 ## Summary
 
-### 1. [Getting started](./1-getting-started.md)
+### 1. Setup
 
-### 2. [Available commands](./2-available-commands.md)
+- [Android](./setup/android.md)
 
-### 3. [Contributions](./3-contributions.md)
+- [Flutter](./setup/flutter.md)
+
+### 2. [Available commands](./available-commands.md)
+
+### 3. [Contributions](./contributions.md)
