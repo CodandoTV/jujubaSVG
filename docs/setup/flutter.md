@@ -9,6 +9,13 @@ dependencies:
   jujuba_svg: ^1.0.0
 ```
 
+For Android, make sure your application has internet permission. This is required to run javascript commands.
+
+```xml
+// AndroidManifest.xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 ## 2. Define your Commander
 
 Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to initialize the controller:
