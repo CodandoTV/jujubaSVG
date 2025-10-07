@@ -1,6 +1,7 @@
 site_name: JujubaSVG
 repo_url: https://github.com/CodandoTV/jujubaSVG
 repo_name: jujubaSVG
+
 theme:
   name: material
   logo: assets/img/logo.svg
