@@ -8,6 +8,13 @@ You need to add the following line in your desired module/build.gradle.kts:
 implementation("io.github.codandotv:jujubaSVG:<library version>")
 ```
 
+Make sure your application has internet permission. This is required to run javascript commands:
+
+```xml
+// AndroidManifest.xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
 ## 2. Define your Commander
 
 You need to define at the top level of your composable function the commander (a friend that will help you to send commands to the library):
