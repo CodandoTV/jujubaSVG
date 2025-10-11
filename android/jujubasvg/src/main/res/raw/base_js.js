@@ -69,13 +69,3 @@ function addRoundedImage (elementId, imageId, url, width, height, x, y) {
   baseJujubaSVG.innerHTML = baseJujubaSVG.innerHTML
 }
 
-function onClickEvent (event) {
-  const id = event.target.id
-
-  const boundingClientRect = event.target.getBoundingClientRect()
-  const x = boundingClientRect.x
-  const y = boundingClientRect.y
-
-  JujubaInterface.onElementClicked(id, x, y)
-  console.log(event.target.id)
-}

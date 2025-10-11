@@ -111,6 +111,7 @@ public fun JujubaSVG(
                                 Const.JS_CODE_SIGN -> {
                                     val jsCode = jsCodeDeferred.await()
                                     htmlBuilder.append(jsCode)
+                                    htmlBuilder.append(Const.JS_CLICK_EVENT)
                                 }
 
                                 else -> {
