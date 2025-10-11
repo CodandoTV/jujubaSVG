@@ -5,7 +5,7 @@ import 'package:jujuba_svg/model/node_coordinate.dart';
 /// The [NodeInfo] class holds the identifier of a node along with its
 /// position or coordinate information, as described by a [NodeCoordinate].
 ///
-/// This class is used by the [Commander] to trigger commands in a specific
+/// This class is used by the [JujubaCommander] to trigger commands in a specific
 /// SVG region or node.
 ///
 /// Example:
