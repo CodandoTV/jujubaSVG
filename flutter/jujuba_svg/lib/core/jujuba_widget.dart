@@ -3,6 +3,7 @@ import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
 import 'package:jujuba_svg/core/constants.dart';
 import 'package:jujuba_svg/model/node_coordinate.dart';
 import 'package:jujuba_svg/model/node_info.dart';
+import 'package:jujuba_svg/util/asset_helper.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class JujubaSVGWidget extends StatefulWidget {
@@ -42,8 +43,12 @@ class _JujubaWebViewState extends State<JujubaSVGWidget> {
       );
 
     final svgText = widget.svgText;
-
-    final completeHtml = baseHtml.replaceFirst(htmlSVGMarker, svgText);
+    final baseJS = await AssetHelper.loadAssetContent(
+      'packages/jujuba_svg/js/base_js.js',
+    );
+    final completeHtml = baseHtml
+        .replaceFirst(htmlBaseJSMarker, baseJS)
+        .replaceFirst(htmlSVGMarker, svgText);
 
     await _controller.loadHtmlString(completeHtml);
 
