@@ -59,7 +59,7 @@ class _JujubaWebViewState extends State<JujubaSVGWidget> {
     debugPrint(result.toString());
   }
 
-  _processJSMessage(String jsMessage) {
+  void _processJSMessage(String jsMessage) {
     try {
       final elements = jsMessage.split(',');
       final id = elements[0];
