@@ -1,3 +1,8 @@
+## 1.0.2
+
+- API documentation
+- Extract common javascript code to be an asset instead of an internal string
+
 ## 1.0.1
 
 - Update README.md + documentation
