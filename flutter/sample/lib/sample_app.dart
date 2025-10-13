@@ -3,7 +3,7 @@ import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
 import 'package:jujuba_svg/core/jujuba_widget.dart';
 import 'package:jujuba_svg/model/node_info.dart';
 import 'package:sampleapp/components/sample_commands_generator.dart';
-import 'package:sampleapp/util/asset_helper.dart';
+import 'package:jujuba_svg/util/asset_helper.dart';
 import 'package:sampleapp/widgets/bottom_sheet_ui_model.dart';
 import 'package:sampleapp/widgets/commands_bottom_sheet_widget.dart';
 
