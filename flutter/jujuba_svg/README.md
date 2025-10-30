@@ -1,6 +1,8 @@
-# Welcome to the JujubaSVG library 👋
+# Welcome to the JujubaSVG library
 
-Welcome to the JujubaSVG library!
+![Logo do CodandoTV](img_readme/codandotv.png)
+
+Welcome to the jujubaSVG library! A CodandoTV library 👋
 
 jujubaSVG is a user-friendly library for handling SVG files in Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
