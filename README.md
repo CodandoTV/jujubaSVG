@@ -5,7 +5,7 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
-![Logo do CodandoTV](file_readme/codandotv.png)
+![Logo do CodandoTV](img/codandotv.png)
 
 # Welcome to the JujubaSVG library
 
