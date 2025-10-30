@@ -1,8 +1,8 @@
 name: jujuba_svg
-description: "JujubaSVG is a Flutter library designed to make SVG manipulation and interaction easy and reactive. It bridges Flutter ↔️ JavaScript ↔️ SVG, allowing developers to dynamically update, animate, and respond to events within an SVG rendered in a WebView."
+description: "JujubaSVG is a Flutter library provided by CodandoTV to make SVG manipulation easy and reactive."
 homepage: "https://github.com/CodandoTV/jujubaSVG?tab=readme-ov-file"
 
-version: 1.0.2
+version: 1.0.4
 
 environment:
   sdk: ^3.5.0

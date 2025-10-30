@@ -1,3 +1,11 @@
+## 1.0.4
+
+- Remove CodandoTV logo (not supported).
+
+## 1.0.3
+
+- Update README adding CodandoTV logo.
+
 ## 1.0.2
 
 - API documentation
