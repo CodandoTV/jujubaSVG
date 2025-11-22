@@ -123,4 +123,21 @@ class JujubaCommanderTest {
                 assertEquals(jsCommand, result)
             }
         }
+
+    @Test
+    fun `test custom command check if they emit the right jsCommand`() =
+        runTest {
+            val jsCommand = "removeNode('12');"
+
+            val commander = JujubaCommander()
+
+            commander.command.test {
+                commander.execute(
+                    Command.CustomCommand(jsCommand)
+                )
+
+                val result = awaitItem()
+                assertEquals(jsCommand, result)
+            }
+        }
 }
