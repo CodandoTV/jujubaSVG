@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
@@ -14,19 +14,14 @@ import com.github.codandotv.jujubasvg.core.JujubaSVG
 import com.github.codandotv.jujubasvg.core.commander.Command
 import com.github.codandotv.jujubasvg.core.rememberJujubaCommander
 import com.codandotv.sample.R
+import com.github.codandotv.sampleapp.components.SelectionCommandType
 import com.github.codandotv.sampleapp.components.SelectionSheet
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
 @Composable
 internal fun RootApp() {
-    val options = listOf(
-        "Change element background color",
-        "Change root SVG background color",
-        "Add rounded image",
-        "Remove element"
-    )
-    var styleSheetSelectedOption by remember { mutableIntStateOf(0) }
+    var styleSheetSelectedOption by remember { mutableStateOf(SelectionCommandType.CHANGE_BACKGROUND_COLOR) }
 
     Surface(
         modifier = Modifier.fillMaxSize()
@@ -41,17 +36,17 @@ internal fun RootApp() {
                 coroutineScope.launch {
                     jujubaCommander.execute(
                         when (styleSheetSelectedOption) {
-                            SelectSampleOptions.UPDATE_BACKGROUND_COLOR_OPTION -> Command.UpdateBackgroundColor(
+                            SelectionCommandType.CHANGE_BACKGROUND_COLOR -> Command.UpdateBackgroundColor(
                                 nodeInfo.id,
                                 getRainbowColor()
                             )
 
-                            SelectSampleOptions.UPDATE_ROOT_BACKGROUND_COLOR_OPTION -> Command
+                            SelectionCommandType.CHANGE_SVG_BACKGROUND_COLOR -> Command
                                 .UpdateRootBackgroundColor(
                                     getRainbowColor()
                                 )
 
-                            SelectSampleOptions.ADD_ROUNDED_IMAGE_OPTION -> Command.AddRoundedImage(
+                            SelectionCommandType.ADD_ROUNDED_IMAGE -> Command.AddRoundedImage(
                                 elementId = nodeInfo.id,
                                 imageId = "nasa",
                                 imageUrl = "https://i.imgur.com/LQIsf.jpeg",
@@ -60,8 +55,10 @@ internal fun RootApp() {
                                 coordinate = nodeInfo.coordinate,
                             )
 
-                            SelectSampleOptions.REMOVE_NODE_OPTION -> Command.RemoveNode(nodeInfo.id)
-                            else -> Command.UpdateBackgroundColor(nodeInfo.id, getRainbowColor())
+                            SelectionCommandType.REMOVE_ELEMENT -> Command.RemoveNode(nodeInfo.id)
+                            SelectionCommandType.CUSTOM_COMMAND -> Command.CustomCommand(
+                                "updateBackgroundColor(\'${nodeInfo.id}\',\'#000000\');"
+                            )
                         }
 
                     )
@@ -73,9 +70,8 @@ internal fun RootApp() {
         )
 
         SelectionSheet(
-            options = options,
             onChangeOption = { styleSheetSelectedOption = it },
-            selected = styleSheetSelectedOption
+            selectedCommandType = styleSheetSelectedOption,
         )
     }
 }
@@ -97,13 +93,6 @@ private fun getRainbowColor(): Color {
     )
     val randomIndex = Random.nextInt(0, 6)
     return colors[randomIndex % colors.size]
-}
-
-private object SelectSampleOptions {
-    const val UPDATE_BACKGROUND_COLOR_OPTION = 0
-    const val UPDATE_ROOT_BACKGROUND_COLOR_OPTION = 1
-    const val ADD_ROUNDED_IMAGE_OPTION = 2
-    const val REMOVE_NODE_OPTION = 3
 }
 
 private const val BACKGROUND_COLOR = 0xffffb700
