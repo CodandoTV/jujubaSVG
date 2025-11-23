@@ -81,6 +81,8 @@ class JujubaCommander {
             '\'${command.coordinate.x}\','
             '\'${command.coordinate.y}\''
             ');';
+      case CustomCommand():
+        return command.jsCode;
     }
   }
 }
