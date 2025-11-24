@@ -54,6 +54,10 @@ public class JujubaCommander {
                         "\'${command.coordinate.y}\'" +
                         ");"
             }
+
+            is Command.CustomCommand -> {
+                command.jsCode
+            }
         }
     }
 }

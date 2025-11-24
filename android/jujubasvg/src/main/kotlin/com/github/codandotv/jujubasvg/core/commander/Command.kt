@@ -68,4 +68,11 @@ public sealed class Command {
         val heightInPx: Int,
         val coordinate: NodeCoordinate
     ) : Command()
+
+    /**
+     * Pass any javascript code you want to build a custom command
+     */
+    public data class CustomCommand(
+        val jsCode: String,
+    ): Command()
 }
