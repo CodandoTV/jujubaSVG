@@ -116,3 +116,15 @@ class AddRoundedImage implements Command {
     required this.coordinate,
   });
 }
+
+/// You can use CustomCommand to specify your own javascript.
+/// [jsCode] code you want to execute in the webview
+class CustomCommand implements Command {
+  /// javascript code
+  final String jsCode;
+
+  /// Create a new CustomCommand command object
+  const CustomCommand({
+    required this.jsCode,
+  });
+}

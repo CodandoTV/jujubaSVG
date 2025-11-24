@@ -74,6 +74,18 @@ void main() {
     commander.execute(command);
   });
 
+  test('should emit correct JS for CustomComamnd', () async {
+    final jsCode = "console.log('Hello world!');";
+    final command = CustomCommand(jsCode: jsCode);
+
+    expectLater(
+      commander.stream,
+      emits(jsCode),
+    );
+
+    commander.execute(command);
+  });
+
   test('should emit correct JS for AddRoundedImage', () async {
     final command = AddRoundedImage(
       elementId: 'container',

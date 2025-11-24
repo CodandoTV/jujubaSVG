@@ -1,4 +1,4 @@
-import 'package:jujuba_svg/core/commander/command.dart';
+import 'package:jujuba_svg/model/node_coordinate.dart';
 
 sealed class BottomSheetUiModel {}
 
@@ -10,11 +10,23 @@ class SelectedNodeUiModel extends BottomSheetUiModel {
 }
 
 class CommandUiModel extends BottomSheetUiModel {
+  String nodeId;
   String commandName;
-  Command command;
+  CommandType type;
+  NodeCoordinate coordinate;
 
   CommandUiModel({
+    required this.nodeId,
     required this.commandName,
-    required this.command,
+    required this.type,
+    required this.coordinate,
   });
+}
+
+enum CommandType {
+  changeElementBackgroundColor,
+  changeRootBackgroundColor,
+  addRoundedImage,
+  removeElement,
+  customCommand,
 }

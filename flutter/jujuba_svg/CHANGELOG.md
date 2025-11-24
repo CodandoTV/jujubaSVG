@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Support for custom commands.
+
 ## 1.0.4
 
 - Remove CodandoTV logo (not supported).
