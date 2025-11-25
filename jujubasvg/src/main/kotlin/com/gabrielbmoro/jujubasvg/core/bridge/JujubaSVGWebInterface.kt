@@ -19,10 +19,4 @@ internal class JujubaSVGWebInterface(
             )
         )
     }
-
-
-
-    private val x: ArrayDeque<Int>
-    x.ad
-
 }
