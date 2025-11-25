@@ -2,7 +2,7 @@
 kotlin = "2.1.0"
 activity_compose_version = "1.9.3"
 coroutines = "1.9.0"
-gradle = "8.2.2"
+gradle = "8.13.1"
 vanniktech = "0.28.0"
 turbine = "1.1.0"
 compose_plugin = "1.7.3"
