@@ -6,7 +6,7 @@ jujubaSVG already provides some commands. This page we will demonstrate how to u
     
     ## Custom command
 
-    If you need to specify a custom command that is not provided by jujubaSVG, you can use the `CustomCommand`.
+    If you need to specify a custom command that is not provided by jujubaSVG, you can use `CustomCommand`.
 
     ```kotlin
     // KOTLIN
