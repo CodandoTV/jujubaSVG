@@ -2,6 +2,29 @@
 
 jujubaSVG already provides some commands. This page we will demonstrate how to use them in Kotlin and Dart (Flutter).
 
+!!!tip "Support added - Android v1.3.0 / Flutter v1.1.0"
+    
+    ## Custom command
+
+    If you need to specify a custom command that is not provided by jujubaSVG, you can use `CustomCommand`.
+
+    ```kotlin
+    // KOTLIN
+    jujubaCommander.execute(
+        Command.CustomCommand(
+            jsCode = "yourJSCode"
+        )
+    )
+    ```
+
+    ```dart
+    // DART
+    commander.execute(
+        CustomCommand(
+            jsCode: 'yourJSCode'
+        ),
+    );
+    ```
 
 ## Update background color
 
