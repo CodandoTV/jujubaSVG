@@ -1,5 +1,7 @@
 # Flutter
 
+<img src="../../img/jujube_icon.png" width="100" />
+
 ## 1. Add the Dependency
 
 You need to add jujuba_svg library in your `pubspec.yaml`:

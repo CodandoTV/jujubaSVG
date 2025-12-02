@@ -1,5 +1,7 @@
 # Android
 
+<img src="../../img/jujube_icon.png" width="100" />
+
 ## 1. Add the Dependency
 
 You need to add the following line in your desired module/build.gradle.kts:
