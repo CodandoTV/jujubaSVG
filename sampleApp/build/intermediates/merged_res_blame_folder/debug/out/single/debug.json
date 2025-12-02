@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/raw_brazil.svg.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/raw/brazil.svg"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-hdpi_jujube_icon.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-hdpi/jujube_icon.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-mdpi_jujube_icon_adaptive_fore.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-mdpi/jujube_icon_adaptive_fore.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-mdpi_jujube_icon_adaptive_back.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-mdpi/jujube_icon_adaptive_back.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-hdpi_jujube_icon_adaptive_fore.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-hdpi/jujube_icon_adaptive_fore.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxxhdpi_jujube_icon.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxxhdpi/jujube_icon.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxhdpi_jujube_icon_adaptive_fore.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxhdpi/jujube_icon_adaptive_fore.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xhdpi_jujube_icon.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xhdpi/jujube_icon.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-mdpi_jujube_icon.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-mdpi/jujube_icon.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xhdpi_jujube_icon_adaptive_back.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xhdpi/jujube_icon_adaptive_back.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxhdpi_jujube_icon_adaptive_back.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxhdpi/jujube_icon_adaptive_back.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxxhdpi_jujube_icon_adaptive_fore.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxxhdpi/jujube_icon_adaptive_fore.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxxhdpi_jujube_icon_adaptive_back.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxxhdpi/jujube_icon_adaptive_back.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xxhdpi_jujube_icon.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xxhdpi/jujube_icon.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-hdpi_jujube_icon_adaptive_back.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-hdpi/jujube_icon_adaptive_back.png"
+    },
+    {
+        "merged": "com.gabrielbmoro.sample.sampleApp-merged_res-50:/mipmap-xhdpi_jujube_icon_adaptive_fore.png.flat",
+        "source": "com.gabrielbmoro.sample.sampleApp-main-52:/mipmap-xhdpi/jujube_icon_adaptive_fore.png"
+    }
+]

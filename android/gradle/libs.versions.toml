@@ -1,0 +1,20 @@
+[versions]
+kotlin = "2.1.0"
+activity_compose_version = "1.9.3"
+coroutines = "1.9.0"
+gradle = "8.13.1"
+vanniktech = "0.28.0"
+turbine = "1.1.0"
+compose_plugin = "1.7.3"
+
+[libraries]
+kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+turbine = { group ="app.cash.turbine", name = "turbine", version.ref = "turbine" }
+compose_activity = { group = "androidx.activity", name ="activity-compose", version.ref = "activity_compose_version" }
+gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
+kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+[plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains_compose = { id = "org.jetbrains.compose", version.ref = "compose_plugin" }
+vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech"}

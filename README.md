@@ -1,32 +1,36 @@
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.23-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Flutter](https://img.shields.io/badge/Flutter-%252302569B.svg?style=flat&logo=Flutter&logoColor=white&labelColor=%2301579b&color=%2303a9f4)](https://docs.flutter.dev/)
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/gabrielbmoro/MovieDB-Android/issues)
-[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.gabrielbmoro/jujubasvg)](https://central.sonatype.com/artifact/io.github.gabrielbmoro/jujubasvg)
-[![Unit tests](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml/badge.svg)](https://github.com/CodandoTV/jujubaSVG/actions/workflows/pr.yml)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CodandoTV/jujubaSVG/issues)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
+[![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
-# Welcome to the JujubaSVG library 👋
+![Logo do CodandoTV](img/codandotv.png)
 
-Welcome to the jujubaSVG library!
+# Welcome to the JujubaSVG library
 
-jujubaSVG library is a friendly library to handle SVG files in your Android app. The library allows you to manipulate piece by piece of your SVG. If you have an id for the element, you can access it to change background, stroke, and other things.
+Welcome to the jujubaSVG library! A CodandoTV library 👋
 
-<p align="center">
-  <img src="img/jujube_icon.png" width="275" height="275" alt="Logo">
-</p>
+jujubaSVG is a user-friendly library for handling SVG files in Android and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
-📚 Our documentation is available [here](https://github.com/gabrielbmoro/jujubaSVG/wiki).
+<img src="img/jujuba-icon.svg" />
+
+
+📚 Our documentation is available [here](https://codandotv.github.io/jujubaSVG/).
 
 ---
 
 
 ## How to use? 🤔
 
+### Android
+
 You need to add the following line in your desired `module/build.gradle.kts`:
 
 ```kotlin
 // ...
 dependencies {
-    implementation("io.github.gabrielbmoro:jujubasvg:<library version>")
+    implementation("io.github.codandotv:jujubaSVG:<library version>")
     // ...
 }
     // ...
@@ -72,16 +76,69 @@ Don't forget:
 
 - `svgText` should contain all content of your SVG file.
 
-### Sample project
+### Flutter
 
-More details you can check at our [sample project](sampleApp)
+You need to add jujuba_svg library in your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  jujuba_svg: ^1.0.0
+```
+
+Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to initialize the controller:
+
+```dart
+class MyBeautifulScreen extends StatelessWidget {
+  final JujubaCommander commander = JujubaCommander();
+
+  //...
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: JujubaSVGWidget(
+            commander: commander,
+            svgText: svgText,
+            onElementClick: (nodeInfo) => {},
+        ),
+    )
+//...
+```
+
+The library provides a widget called `JujubaSVGWidget`, there you can the `commander`, `svgText`, and `onElementClick`.
+
+- `commander`: allow you to send commands to manipulate the SVG;
+
+- `svgText`: your SVG;
+
+- `onElementClick`: callback to intercept click events in your SVG.
+
+## Sample project
+
+### Android
+
+More details you can check at our [sample project](android/sampleApp)
 
 <img src="img/teaser.gif" height="500"  alt="teaser showing the app working with SVG image, where onClick deletes a State from Brazil."/>
+
+### Flutter
+
+- Android
+
+<img src="img/jujuba-svg-android-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+
+- iOS
+
+<img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+
+--- 
 
 ### How to contribute?
 
 - Fork this repository;
+
 - Solve an issue, or do any improvement you want;
-- Open a PR to the origin repository;
+
+- Open a PR to the origin repository.
 
 As soon the PR is reviewed and merged, your update will be available.

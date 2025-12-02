@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.gabrielbmoro.sample",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 10,
+      "versionName": "1.8.null",
+      "outputFile": "sampleApp-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

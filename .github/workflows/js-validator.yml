@@ -1,0 +1,28 @@
+name: Compare Files
+
+on:
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  js-validator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compare two files
+        run: |
+          FLUTTER_LIBRARY_JS="flutter/jujuba_svg/js/base_js.js"
+          ANDROID_LIBRARY_JS="android/jujubasvg/src/main/res/raw/base_js.js"
+
+          echo "Comparing $FLUTTER_LIBRARY_JS and $ANDROID_LIBRARY_JS..."
+
+          if ! diff -q "$FLUTTER_LIBRARY_JS" "$ANDROID_LIBRARY_JS" > /dev/null; then
+            echo "❌ Files are different!"
+            diff "$FLUTTER_LIBRARY_JS" "$ANDROID_LIBRARY_JS" || true
+            exit 1
+          else
+            echo "✅ Files are identical."
+          fi

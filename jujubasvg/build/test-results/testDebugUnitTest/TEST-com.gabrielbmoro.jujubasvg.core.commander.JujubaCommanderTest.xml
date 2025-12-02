@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.gabrielbmoro.jujubasvg.core.commander.JujubaCommanderTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-23T03:05:02" hostname="ARTHUR" time="0.28">
+  <properties/>
+  <testcase name="given an update background color command when it is invoked then emit the right jsCommand" classname="com.gabrielbmoro.jujubasvg.core.commander.JujubaCommanderTest" time="0.28"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
