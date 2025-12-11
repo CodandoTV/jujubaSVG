@@ -4,7 +4,7 @@ repo_name: jujubaSVG
 
 theme:
   name: material
-  logo: assets/img/logo.svg
+  logo: ./img/jujuba_icon.png
   icon:
     repo: fontawesome/brands/github
   font:

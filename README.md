@@ -14,10 +14,8 @@ Welcome to the jujubaSVG library! A CodandoTV library 👋
 jujubaSVG is a user-friendly library for handling SVG files in Android and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
 <p align="center">
-  <img src="img/jujube_icon.png" width="200" height="200" alt="Logo">
+  <img src="img/jujuba_icon.png" width="200" height="200" alt="Logo">
 </p>
-<img src="img/jujuba-icon.svg" />
-
 
 📚 Our documentation is available [here](https://codandotv.github.io/jujubaSVG/).
 
