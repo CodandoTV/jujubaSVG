@@ -1,0 +1,15 @@
+name: Publish flutter to pub.dev
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'jujubasvg-flutter-[0-9]+.[0-9]+.[0-9]+*'
+
+jobs:
+  publish:
+    permissions:
+      id-token: write # Required for authentication using OIDC
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    # with:
+    #   working-directory: path/to/package/within/repository
