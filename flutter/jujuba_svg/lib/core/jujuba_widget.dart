@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
 import 'package:jujuba_svg/core/constants.dart';
@@ -87,6 +89,8 @@ class JujubaSVGWidget extends StatefulWidget {
 class _JujubaWebViewState extends State<JujubaSVGWidget> {
   late final WebViewController _controller;
 
+  StreamSubscription<String>? _streamSubscription = null;
+
   _JujubaWebViewState();
 
   @override
@@ -116,7 +120,7 @@ class _JujubaWebViewState extends State<JujubaSVGWidget> {
 
     await _controller.loadHtmlString(completeHtml);
 
-    widget.commander.stream.listen(
+    _streamSubscription = widget.commander.stream.listen(
       (jsCommand) => _runJavascript(jsCommand),
     );
   }
@@ -158,5 +162,12 @@ class _JujubaWebViewState extends State<JujubaSVGWidget> {
     return WebViewWidget(
       controller: _controller,
     );
+  }
+
+  @override
+  void dispose() {
+    _streamSubscription?.cancel();
+
+    super.dispose();
   }
 }
