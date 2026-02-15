@@ -1,3 +1,7 @@
+## 1.1.1
+
+- Solve memory leaks.
+
 ## 1.1.0
 
 - Support for custom commands.
