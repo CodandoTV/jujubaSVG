@@ -132,6 +132,21 @@ More details you can check at our [sample project](android/sampleApp)
 
 <img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
 
+## Minimum Requirements
+
+### Kotlin Library
+
+- Kotlin 2.1.0+
+- JDK 17+
+- Gradle 9.0+
+- Android Gradle Plugin 8.13.1+
+- Android API 22+
+
+### Flutter Package
+
+- Dart ^3.5.0+
+- Flutter (latest stable)
+
 --- 
 
 ### How to contribute?

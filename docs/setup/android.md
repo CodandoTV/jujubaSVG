@@ -1,5 +1,13 @@
 # Android
 
+## Minimum Requirements
+
+- Kotlin 2.1.0+
+- JDK 17+
+- Gradle 9.0+
+- Android Gradle Plugin 8.13.1+
+- Android API 22+
+
 ## 1. Add the Dependency
 
 You need to add the following line in your desired module/build.gradle.kts:

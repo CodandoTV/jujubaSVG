@@ -1,5 +1,10 @@
 # Flutter
 
+## Minimum Requirements
+
+- Dart ^3.5.0+
+- Flutter (latest stable)
+
 ## 1. Add the Dependency
 
 You need to add jujuba_svg library in your `pubspec.yaml`:
