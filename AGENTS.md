@@ -64,7 +64,7 @@ Load the appropriate instruction file based on what you are modifying:
 
 ## Available Skills
 
-Before starting any task, list files in `ai/skills/`, identify which covers the task, read it in full before proceeding.
+Before starting any task, list directories in `ai/skills/`, identify which covers the task, then read `ai/skills/<name>/SKILL.md` in full before proceeding.
 
 | Skill | When to use |
 |-------|-------------|

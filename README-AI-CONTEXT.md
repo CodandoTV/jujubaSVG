@@ -46,7 +46,7 @@ This means maintainers only update `AGENTS.md` and `ai/` — every assistant aut
 | `ai/module-graph.md` | All assistants | Explicit module dependency graph for both Android and Flutter |
 | `ai/instructions/android.md` | Assistants on Android tasks | Kotlin/Gradle patterns, folder structure, conventions |
 | `ai/instructions/flutter.md` | Assistants on Flutter tasks | Dart/Flutter patterns, folder structure, conventions |
-| `ai/skills/*.md` | Assistants via skill system | Task-specific guidance (testing, architecture, release, etc.) |
+| `ai/skills/*/SKILL.md` | Assistants via skill system | Task-specific guidance (testing, architecture, release, etc.) |
 | `CLAUDE.md` | Claude Code | Pointer → `AGENTS.md` |
 | `.cursorrules` | Cursor | Pointer → `AGENTS.md` |
 | `.github/copilot-instructions.md` | GitHub Copilot | Pointer → `AGENTS.md` |
@@ -61,7 +61,7 @@ This means maintainers only update `AGENTS.md` and `ai/` — every assistant aut
 1. `AGENTS.md` — update project info, rules, build commands, checklist
 2. `ai/instructions/android.md` — update Android conventions
 3. `ai/instructions/flutter.md` — update Flutter conventions
-4. `ai/skills/*.md` — update or add task-specific guidance
+4. `ai/skills/*/SKILL.md` — update or add task-specific guidance
 
 **Never** update the pointer files (`CLAUDE.md`, `.cursorrules`, etc.) with rules — they should only contain a single line pointing to `AGENTS.md`.
 
