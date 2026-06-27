@@ -3,10 +3,11 @@ import java.util.Properties
 
 plugins {
     id("plugins.android-library-plugin")
+    id("maven-publish")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
-    id("maven-publish")
     alias(libs.plugins.vanniktech.maven.publish)
+    alias(libs.plugins.serialization)
 }
 
 android {
@@ -24,7 +25,8 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
     implementation(libs.compose.activity)
-
+    implementation(libs.compose.webview.multiplatform)
+    implementation(libs.jetbrains.kotlinx.serialization.json)
     testImplementation(kotlin("test"))
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
