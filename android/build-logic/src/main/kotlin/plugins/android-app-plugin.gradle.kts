@@ -9,6 +9,10 @@ plugins {
 
 kotlin {
     explicitApi()
+
+    compilerOptions {
+        jvmTarget.set(Config.JAVA_VM_TARGET)
+    }
 }
 
 android {
@@ -43,8 +47,4 @@ android {
     buildFeatures.compose = true
 
     namespace = Config.APPLICATION_ID
-
-    kotlinOptions {
-        jvmTarget = Config.JAVA_VM_TARGET
-    }
 }

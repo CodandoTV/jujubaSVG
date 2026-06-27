@@ -14,6 +14,10 @@ plugins {
 
 kotlin {
     explicitApi()
+
+    compilerOptions {
+        jvmTarget.set(Config.JAVA_VM_TARGET)
+    }
 }
 
 android {
@@ -30,9 +34,5 @@ android {
 
     testOptions {
         unitTests.isReturnDefaultValues = Config.HAVE_UNIT_TESTS_DEFAULT_VALUES
-    }
-
-    kotlinOptions {
-        jvmTarget = Config.JAVA_VM_TARGET
     }
 }

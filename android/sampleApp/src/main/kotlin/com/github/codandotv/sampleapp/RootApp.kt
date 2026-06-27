@@ -1,7 +1,8 @@
 package com.github.codandotv.sampleapp
 
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
+import androidx.compose.material3.BottomSheetScaffold
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -10,6 +11,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import com.github.codandotv.jujubasvg.core.JujubaSVG
 import com.github.codandotv.jujubasvg.core.commander.Command
 import com.github.codandotv.jujubasvg.core.rememberJujubaCommander
@@ -19,12 +21,19 @@ import com.github.codandotv.sampleapp.components.SelectionSheet
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun RootApp() {
     var styleSheetSelectedOption by remember { mutableStateOf(SelectionCommandType.CHANGE_BACKGROUND_COLOR) }
 
-    Surface(
-        modifier = Modifier.fillMaxSize()
+    BottomSheetScaffold(
+        sheetPeekHeight = 145.dp,
+        sheetContent = {
+            SelectionSheet(
+                onChangeOption = { styleSheetSelectedOption = it },
+                selectedCommandType = styleSheetSelectedOption,
+            )
+        }
     ) {
         val jujubaCommander = rememberJujubaCommander()
         val coroutineScope = rememberCoroutineScope()
@@ -67,11 +76,6 @@ internal fun RootApp() {
             commander = jujubaCommander,
             backgroundColor = Color(BACKGROUND_COLOR),
             modifier = Modifier.fillMaxSize()
-        )
-
-        SelectionSheet(
-            onChangeOption = { styleSheetSelectedOption = it },
-            selectedCommandType = styleSheetSelectedOption,
         )
     }
 }

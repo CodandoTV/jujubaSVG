@@ -9,9 +9,9 @@ plugins {
 }
 
 dependencies {
-    implementation(compose.ui)
-    implementation(compose.preview)
-    implementation(compose.material3)
+    implementation(libs.ui)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.material3)
     implementation(libs.compose.activity)
 
     api(projects.jujubasvg)
