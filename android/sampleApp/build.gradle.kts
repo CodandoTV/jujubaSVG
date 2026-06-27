@@ -1,7 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id("android-app-plugin")
+    id("plugins.android-app-plugin")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
     kotlin("android")

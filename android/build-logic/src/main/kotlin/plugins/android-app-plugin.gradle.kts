@@ -1,6 +1,7 @@
+package plugins
+
 import config.Config
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.application")
     kotlin("android")
