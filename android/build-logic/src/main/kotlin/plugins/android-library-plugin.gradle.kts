@@ -1,10 +1,11 @@
 @file:Suppress("UnstableApiUsage")
 
+package plugins
+
 import config.Config
 
 import org.gradle.kotlin.dsl.kotlin
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.library")
     kotlin("android")

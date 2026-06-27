@@ -1,9 +1,8 @@
 import com.vanniktech.maven.publish.SonatypeHost
 import java.util.Properties
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("android-library-plugin")
+    id("plugins.android-library-plugin")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
     id("maven-publish")
