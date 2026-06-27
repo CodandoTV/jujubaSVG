@@ -17,6 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.viewinterop.AndroidView
 import com.github.codandotv.jujubasvg.core.bridge.JujubaSVGWebInterface
 import com.github.codandotv.jujubasvg.core.commander.Command
@@ -35,10 +36,10 @@ public fun JujubaSVG(
     @RawRes svgRawRes: Int,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColor: Color = Color.White,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Color.White
 ) {
-    val resources = LocalContext.current.resources
+    val resources = LocalResources.current
     var svgText by remember {
         mutableStateOf<String?>(null)
     }
@@ -67,10 +68,11 @@ public fun JujubaSVG(
     svgText: String,
     commander: JujubaCommander,
     onElementClick: (NodeInfo) -> Unit,
-    backgroundColor: Color = Color.White,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    backgroundColor: Color = Color.White
 ) {
     val context = LocalContext.current
+    val resources = LocalResources.current
 
     val coroutineScope = rememberCoroutineScope()
     val webViewComponent = remember {
@@ -95,13 +97,13 @@ public fun JujubaSVG(
         factory = { _ ->
             coroutineScope.launch {
                 val jsCodeDeferred = coroutineScope.async(Dispatchers.IO) {
-                    context.resources.openRawResource(R.raw.base_js).fileTextContent()
+                    resources.openRawResource(R.raw.base_js).fileTextContent()
                 }
 
                 val htmlCode = coroutineScope.async(Dispatchers.IO) {
                     val htmlBuilder = StringBuilder()
 
-                    context.resources.openRawResource(R.raw.jujuba).fileTextLines()
+                    resources.openRawResource(R.raw.jujuba).fileTextLines()
                         .forEach { line ->
                             when (line) {
                                 Const.SVG_CODE_SIGN -> {
