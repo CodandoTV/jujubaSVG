@@ -27,5 +27,6 @@ ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", v
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 jetbrains_compose = { id = "org.jetbrains.compose", version.ref = "compose_plugin" }
+kotlin_multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 vanniktech-maven-publish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktech"}
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref="kotlin"}
