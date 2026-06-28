@@ -4,15 +4,6 @@ import config.Config
 
 plugins {
     id("com.android.application")
-    kotlin("android")
-}
-
-kotlin {
-    explicitApi()
-
-    compilerOptions {
-        jvmTarget.set(Config.JAVA_VM_TARGET)
-    }
 }
 
 android {
@@ -26,8 +17,6 @@ android {
 
         testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
         vectorDrawables.useSupportLibrary = true
-
-        applicationId = Config.APPLICATION_ID
 
         vectorDrawables.useSupportLibrary = true
 
@@ -45,6 +34,4 @@ android {
     }
 
     buildFeatures.compose = true
-
-    namespace = Config.APPLICATION_ID
 }

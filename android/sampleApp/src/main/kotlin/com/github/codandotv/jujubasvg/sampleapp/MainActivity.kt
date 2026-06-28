@@ -1,4 +1,4 @@
-package com.github.codandotv.sampleapp
+package com.github.codandotv.jujubasvg.sampleapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

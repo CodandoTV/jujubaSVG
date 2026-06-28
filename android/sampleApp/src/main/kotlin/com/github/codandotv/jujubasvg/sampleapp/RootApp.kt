@@ -1,4 +1,4 @@
-package com.github.codandotv.sampleapp
+package com.github.codandotv.jujubasvg.sampleapp
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.BottomSheetScaffold
@@ -17,9 +17,8 @@ import androidx.compose.ui.unit.dp
 import com.github.codandotv.jujubasvg.core.JujubaSVG
 import com.github.codandotv.jujubasvg.core.commander.Command
 import com.github.codandotv.jujubasvg.core.rememberJujubaCommander
-import com.codandotv.sample.R
-import com.github.codandotv.sampleapp.components.SelectionCommandType
-import com.github.codandotv.sampleapp.components.SelectionSheet
+import com.github.codandotv.jujubasvg.sampleapp.components.SelectionCommandType
+import com.github.codandotv.jujubasvg.sampleapp.components.SelectionSheet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.InputStream

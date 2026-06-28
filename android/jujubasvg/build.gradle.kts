@@ -1,4 +1,3 @@
-import com.android.build.api.dsl.androidLibrary
 import com.vanniktech.maven.publish.SonatypeHost
 import java.util.Properties
 
