@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 }
 
 include(
-    ":sampleApp",
+    ":androidSampleApp",
     ":jujubasvg",
 )
 
