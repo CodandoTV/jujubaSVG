@@ -1,5 +1,6 @@
 [versions]
 composeWebviewMultiplatformVersion = "2.0.3"
+kermitVersion = "2.0.4"
 kotlin = "2.4.0"
 activity_compose_version = "1.13.0"
 coroutines = "1.11.0"
@@ -10,10 +11,13 @@ uiToolingPreviewVersion = "1.11.1"
 vanniktech = "0.28.0"
 turbine = "1.2.1"
 compose_plugin = "1.11.1"
+compose-components-resources = "1.10.3"
 
 [libraries]
 compose-webview-multiplatform = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "composeWebviewMultiplatformVersion" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose-components-resources" }
 jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
+kermit = { module = "co.touchlab:kermit", version.ref = "kermitVersion" }
 kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3Version" }
 turbine = { group ="app.cash.turbine", name = "turbine", version.ref = "turbine" }

@@ -1,8 +1,9 @@
+import com.android.build.api.dsl.androidLibrary
 import com.vanniktech.maven.publish.SonatypeHost
 import java.util.Properties
 
 plugins {
-    id("plugins.android-library-plugin")
+    id("plugins.kmp-library-plugin")
     id("maven-publish")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
@@ -10,27 +11,33 @@ plugins {
     alias(libs.plugins.serialization)
 }
 
-android {
-    namespace = "com.github.gabrielbmoro.jujubasvg"
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
-    }
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "com.github.codandotv.jujubasvg.resources"
+    generateResClass = always
 }
 
-dependencies {
-    implementation(libs.ui)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.material3)
-    implementation(libs.compose.activity)
-    implementation(libs.compose.webview.multiplatform)
-    implementation(libs.jetbrains.kotlinx.serialization.json)
-    testImplementation(kotlin("test"))
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.turbine)
-    debugImplementation(libs.ui.tooling)
+kotlin {
+    android {
+        namespace = "com.github.gabrielbmoro.jujubasvg"
+    }
+    sourceSets {
+        commonMain.dependencies {
+            implementation(libs.ui)
+            implementation(libs.ui.tooling)
+            implementation(libs.ui.tooling.preview)
+            implementation(libs.compose.components.resources)
+            implementation(libs.material3)
+            implementation(libs.compose.activity)
+            implementation(libs.compose.webview.multiplatform)
+            implementation(libs.jetbrains.kotlinx.serialization.json)
+            implementation(libs.kermit)
+        }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(libs.kotlinx.coroutines.test)
+        }
+    }
 }
 
 val versionPropertiesFile = file("../jujubasvg/version.properties")
