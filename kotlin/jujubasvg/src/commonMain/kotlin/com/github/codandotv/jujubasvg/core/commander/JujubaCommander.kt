@@ -1,23 +1,20 @@
 package com.github.codandotv.jujubasvg.core.commander
 
-import android.util.Log
-import com.github.codandotv.jujubasvg.core.Const.TAG
 import com.github.codandotv.jujubasvg.core.ext.toHex
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
-public class JujubaCommander {
+class JujubaCommander {
 
     private val _command = MutableSharedFlow<String>()
-    public val command: SharedFlow<String> = _command.asSharedFlow()
+    val command: SharedFlow<String> = _command.asSharedFlow()
 
-    public suspend fun execute(vararg command: Command) {
+    suspend fun execute(vararg command: Command) {
         val commandJS = command.map {
             convertToJSCode(it)
         }.reduce { acc, s -> acc.plus("\n").plus(s) }
 
-        Log.d(TAG, "execute: $commandJS")
         _command.emit(commandJS)
     }
 

@@ -3,7 +3,6 @@ package com.github.codandotv.jujubasvg.core
 public object Const {
     internal const val SVG_CODE_SIGN = "        <!-- svg here -->"
     internal const val JS_CODE_SIGN = "        // baseJS here"
-    internal const val TAG = "JujubaSVG"
     internal const val JS_CLICK_EVENT = """
     function onClickEvent (event) {
         const id = event.target.id

@@ -5,7 +5,7 @@ import androidx.compose.runtime.Stable
 
 @Immutable
 @Stable
-public data class NodeInfo(
+data class NodeInfo(
     val id: String,
     val coordinate: NodeCoordinate,
 )
