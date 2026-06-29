@@ -33,7 +33,8 @@ kotlin {
             implementation(libs.kermit)
         }
         commonTest.dependencies {
-            implementation(kotlin("test"))
+            implementation(libs.kotlin.test)
+            implementation(libs.kotlin.test.common)
             implementation(libs.kotlinx.coroutines.test)
         }
     }
