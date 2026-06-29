@@ -14,16 +14,18 @@ Verify architectural consistency and dependency rules.
 When invoked:
 
 1. **Detect project structure:**
-   - Kotlin/Android: modules defined in `android/settings.gradle.kts` (`:jujubasvg`, `:sampleApp`)
-   - Convention plugins: `android/build-logic/`
+   - Kotlin/KMP: modules defined in `kotlin/settings.gradle.kts` (`:jujubasvg`, `:androidSampleApp`)
+   - Convention plugins: `kotlin/build-logic/`
+   - Source sets: `commonMain`, `androidMain`, `commonTest` within `:jujubasvg`
    - Flutter: package at `flutter/jujuba_svg/`, sample at `flutter/sample/`
 
 2. **Analyze dependencies between modules/packages:**
 
-   ### Kotlin / Android
-   - `:sampleApp` depends on `:jujubasvg`
-   - `:build-logic` provides convention plugins used by both
-   - No circular dependencies between `:jujubasvg` and `:sampleApp`
+   ### Kotlin / KMP
+   - `:androidSampleApp` depends on `:jujubasvg`
+   - `:build-logic` provides convention plugins (`kmp-library-plugin`, `android-app-plugin`) used by both
+   - No circular dependencies between `:jujubasvg` and `:androidSampleApp`
+   - `commonMain` code must not depend on Android-specific APIs
 
    ### Flutter
    - `flutter/sample` depends on `flutter/jujuba_svg` (local path dependency)
@@ -31,10 +33,12 @@ When invoked:
 
 3. **Verify architecture rules:**
 
-   ### Kotlin
-   - `:jujubasvg` should not depend on `:sampleApp`
+   ### Kotlin / KMP
+   - `:jujubasvg` should not depend on `:androidSampleApp`
    - Internal packages should not leak into public API surface
    - `explicitApi()` should be enforced (set in convention plugin)
+   - `commonMain` should not reference Android SDK types (use `expect`/`actual`)
+   - Android-specific implementations should live in `androidMain`
 
    ### Gradle Plugins
    - Convention plugins should only expose necessary configuration

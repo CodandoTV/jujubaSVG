@@ -1,24 +1,31 @@
 # Module Dependency Graph — JujubaSVG
 
-## Android (Gradle)
+## Kotlin (Gradle / KMP)
 
 ```
 :build-logic (convention plugins)
-  ├── provides android-app-plugin   → :sampleApp
-  └── provides android-library-plugin → :jujubasvg
+  ├── provides kmp-library-plugin   → :jujubasvg
+  └── provides android-app-plugin   → :androidSampleApp
 
-:jujubasvg (Kotlin library)
-  └── no internal Android dependencies (pure Compose + coroutines)
+:jujubasvg (KMP library)
+  ├── src/commonMain/    ← shared cross-platform code
+  │     (SVG rendering, commander, models, JS bridge)
+  ├── src/androidMain/   ← Android-specific composable overloads
+  │     (loads SVG from Android resources)
+  └── src/commonTest/    ← shared cross-platform tests
 
-:sampleApp (Android app)
+:androidSampleApp (Android app)
   └── depends on :jujubasvg (public API consumption)
 ```
 
 ### Rules
-- `:jujubasvg` **must never** depend on `:sampleApp`
-- `:build-logic` is a composed build (`includeBuild("build-logic")` in settings)
+- `:jujubasvg` **must never** depend on `:androidSampleApp`
+- `:build-logic` is an included build (`includeBuild("build-logic")` in settings)
 - Convention plugins are applied; their classes must not leak into consumer classpaths
 - `explicitApi()` is enabled on all Kotlin modules — types must be explicitly marked `public`
+- `commonMain` code must not use Android-specific APIs (use `expect`/`actual`)
+- `androidMain` code extends `commonMain`; may use Android-specific APIs
+- Compose Multiplatform Resources stored in `commonMain/composeResources/`
 
 ---
 
@@ -44,10 +51,12 @@ sample/ (Flutter app)
 
 ## Cross-Platform Boundaries
 
-| Concern | Android | Flutter |
-|---------|---------|---------|
-| SVG parsing & rendering | Compose-based (custom) | WebView-based (`webview_flutter`) |
-| Commander pattern | `JujubaCommander` class | `JujubaCommander` class |
-| Command types | `Command.RemoveNode`, etc. | Mirroring Android API |
-| Asset handling | Android resources | `pubspec.yaml` assets |
-| Testing | JUnit 5 + kotlinx-coroutines-test + Turbine | flutter_test + mockito |
+| Concern | Kotlin (KMP) | Flutter |
+|---------|-------------|---------|
+| SVG rendering | Compose Multiplatform WebView + JS bridge | WebView-based (`webview_flutter`) |
+| Commander pattern | `JujubaCommander` class (SharedFlow) | `JujubaCommander` class |
+| Command types | `Command.UpdateBackgroundColor`, etc. | Mirroring Kotlin API |
+| Asset handling | Compose Resources (`Res.readBytes`) | `pubspec.yaml` assets |
+| Logging | Kermit (multiplatform) | Dart `print` |
+| JS bridge | `WebViewJsBridge` + kotlinx.serialization | `WebViewController.evaluateJavascript` |
+| Testing | `kotlin.test` + `kotlinx-coroutines-test` | `flutter_test` |

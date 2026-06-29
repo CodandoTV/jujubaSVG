@@ -20,7 +20,7 @@ When invoked:
 2. **Validate links:**
 
    ### Internal
-   - Verify referenced files exist (e.g. `android/sampleApp`, `flutter/sample/`)
+   - Verify referenced files exist (e.g. `kotlin/androidSampleApp`, `flutter/sample/`)
    - Verify referenced paths in docs resolve correctly
 
    ### External
@@ -29,8 +29,8 @@ When invoked:
 3. **Verify configuration examples match actual project:**
 
    ### Kotlin / Gradle
-   - Version catalog snippets match `android/gradle/libs.versions.toml`
-   - `build.gradle.kts` examples match `android/jujubasvg/build.gradle.kts`
+   - Version catalog snippets match `kotlin/gradle/libs.versions.toml`
+   - `build.gradle.kts` examples match `kotlin/jujubasvg/build.gradle.kts`
    - Plugin coordinates match actual publishing config (`io.github.codandotv:jujubaSVG`)
 
    ### Flutter
