@@ -72,6 +72,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 | `minimum-requirements` | Determine/update consumption requirements |
 | `release-notes` | Prepare a release |
 | `validate-architecture` | Verify module dependency rules |
+| `open-pr` | Compare branch vs main and open a pull request via gh CLI |
 
 ---
 

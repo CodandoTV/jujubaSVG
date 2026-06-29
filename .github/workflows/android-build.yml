@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: ["main"]
     paths:
-      - 'android/**'
+      - 'kotlin/**'
 
 jobs:
   android-build:
@@ -20,9 +20,9 @@ jobs:
           cache: "gradle"
 
       - name: Grant execute permission for gradlew
-        working-directory: android
+        working-directory: kotlin
         run: chmod +x gradlew
 
       - name: Run Unit Test
-        working-directory: android
+        working-directory: kotlin
         run: ./gradlew jujubasvg:testAndroidHostTest
