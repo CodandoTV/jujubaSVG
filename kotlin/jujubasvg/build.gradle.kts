@@ -19,6 +19,7 @@ compose.resources {
 kotlin {
     android {
         namespace = "com.github.gabrielbmoro.jujubasvg"
+        withHostTest {}
     }
     sourceSets {
         commonMain.dependencies {
