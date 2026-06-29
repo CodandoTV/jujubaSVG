@@ -12,7 +12,6 @@ vanniktech = "0.28.0"
 turbine = "1.2.1"
 compose_plugin = "1.11.1"
 compose-components-resources = "1.10.3"
-coreKtxVersion = "1.19.0"
 
 [libraries]
 compose-webview-multiplatform = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "composeWebviewMultiplatformVersion" }
@@ -21,14 +20,12 @@ jetbrains-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx
 kermit = { module = "co.touchlab:kermit", version.ref = "kermitVersion" }
 kotlinx_coroutines_test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "material3Version" }
-turbine = { group ="app.cash.turbine", name = "turbine", version.ref = "turbine" }
 compose_activity = { group = "androidx.activity", name ="activity-compose", version.ref = "activity_compose_version" }
 gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
 kotlin_gradle_plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "uiToolingPreviewVersion" }
 ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "uiToolingPreviewVersion" }
 ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreviewVersion" }
-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtxVersion" }
 
 [plugins]
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

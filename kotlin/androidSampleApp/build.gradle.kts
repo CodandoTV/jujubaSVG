@@ -12,7 +12,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.core.ktx)
     implementation(libs.ui)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
