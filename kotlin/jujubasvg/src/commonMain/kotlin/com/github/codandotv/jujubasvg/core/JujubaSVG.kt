@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import co.touchlab.kermit.Logger
 import com.github.codandotv.jujubasvg.core.bridge.OnClickedJSMessageHandler
+import com.github.codandotv.jujubasvg.core.commander.Command
 import com.github.codandotv.jujubasvg.core.commander.JujubaCommander
 import com.github.codandotv.jujubasvg.core.ext.fileTextContent
 import com.github.codandotv.jujubasvg.core.ext.fileTextLines
@@ -20,6 +21,9 @@ import com.multiplatform.webview.jsbridge.WebViewJsBridge
 import com.multiplatform.webview.web.rememberWebViewStateWithHTMLData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
 import kotlin.text.StringBuilder
 
 @Suppress("LongMethod")
@@ -39,6 +43,14 @@ fun JujubaSVG(
         OnClickedJSMessageHandler(
             onElementClick = onElementClick
         )
+    }
+
+    var readyToReceiveFirstCommand by remember {
+        mutableStateOf(false)
+    }
+
+    var backgroundColorApplied by remember {
+        mutableStateOf(false)
     }
 
     LaunchedEffect(Unit) {
@@ -91,12 +103,27 @@ fun JujubaSVG(
 
 
         LaunchedEffect(Unit) {
-            commander.command.collect { jsCommand ->
-                jsBridge.webView?.evaluateJavaScript(jsCommand) {
-                    Logger.d {
-                        "WebviewComponent: $jsCommand -> result: $it"
+            commander.command
+                .onStart {
+                    readyToReceiveFirstCommand = true
+                }
+                .onEach { jsCommand ->
+                    jsBridge.webView?.evaluateJavaScript(jsCommand) {
+                        Logger.d {
+                            "WebviewComponent: $jsCommand -> result: $it"
+                        }
                     }
                 }
+                .launchIn(this)
+        }
+
+        LaunchedEffect(readyToReceiveFirstCommand, webViewState.isLoading) {
+            val isReady = readyToReceiveFirstCommand && webViewState.isLoading.not()
+            if (isReady && backgroundColorApplied.not()) {
+                commander.execute(
+                    Command.UpdateRootBackgroundColor(color = backgroundColor)
+                )
+                backgroundColorApplied = true
             }
         }
 

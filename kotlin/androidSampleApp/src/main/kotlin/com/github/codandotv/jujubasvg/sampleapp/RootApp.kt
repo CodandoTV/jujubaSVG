@@ -39,6 +39,7 @@ internal fun InputStream.fileTextContent(): String {
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
+@Suppress("LongMethod")
 @Composable
 internal fun RootApp() {
     var styleSheetSelectedOption by remember { mutableStateOf(SelectionCommandType.CHANGE_BACKGROUND_COLOR) }
