@@ -15,7 +15,7 @@ jobs:
       - name: Compare two files
         run: |
           FLUTTER_LIBRARY_JS="flutter/jujuba_svg/js/base_js.js"
-          ANDROID_LIBRARY_JS="android/jujubasvg/src/main/res/raw/base_js.js"
+          ANDROID_LIBRARY_JS="kotlin/jujubasvg/src/commonMain/composeResources/files/base_js.js"
 
           echo "Comparing $FLUTTER_LIBRARY_JS and $ANDROID_LIBRARY_JS..."
 

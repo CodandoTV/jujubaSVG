@@ -21,7 +21,7 @@ jobs:
           java-version: "17"
 
       - name: Publish to Maven Central
-        working-directory: android
+        working-directory: kotlin
         run: |
           echo "ORG_GRADLE_PROJECT_signingInMemoryKey: $ORG_GRADLE_PROJECT_signingInMemoryKey"
           echo "ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: $ORG_GRADLE_PROJECT_signingInMemoryKeyPassword"

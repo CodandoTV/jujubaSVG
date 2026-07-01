@@ -1,0 +1,36 @@
+package plugins
+
+import config.Config
+
+plugins {
+    id("com.android.application")
+}
+
+android {
+    compileSdk = Config.COMPILE_SDK
+
+    defaultConfig {
+        minSdk = Config.MIN_SDK
+        targetSdk = Config.TARGET_SDK
+        versionCode = 1
+        versionName = "1.0.0"
+
+        testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
+        vectorDrawables.useSupportLibrary = true
+
+        vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled = true
+    }
+
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
+
+    compileOptions {
+        sourceCompatibility = Config.javaCompatibilityVersion
+        targetCompatibility = Config.javaCompatibilityVersion
+    }
+
+    buildFeatures.compose = true
+}

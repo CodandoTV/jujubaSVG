@@ -14,7 +14,7 @@ Generate release notes and prepare the next release.
 When invoked:
 
 1. **Detect current version** from:
-   - `android/jujubasvg/version.properties` (property `VERSION`)
+   - `kotlin/jujubasvg/version.properties` (property `VERSION`)
    - `flutter/jujuba_svg/pubspec.yaml` (field `version`)
 
 2. **Get latest Git tag:**
@@ -67,5 +67,5 @@ When invoked:
    ```
 
 10. **Verify publishing metadata:**
-    - Maven Central: check `android/jujubasvg/build.gradle.kts` for `mavenPublishing` block
+    - Maven Central: check `kotlin/jujubasvg/build.gradle.kts` for `mavenPublishing` block
     - pub.dev: check `flutter/jujuba_svg/pubspec.yaml` for publish configuration

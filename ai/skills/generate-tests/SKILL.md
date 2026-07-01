@@ -15,15 +15,16 @@ When invoked:
 
 1. **Detect testing framework:**
 
-   ### Kotlin / Android
-   - Check for JUnit 5 (`kotlin("test")`) in `android/jujubasvg/build.gradle.kts`
+   ### Kotlin / KMP
+   - Check for `kotlin("test")` in `kotlin/jujubasvg/build.gradle.kts`
    - Check for additional libraries: `kotlinx-coroutines-test`, `turbine`
+   - Tests live in `commonTest/` (shared across platforms)
 
    ### Flutter
    - Check for `flutter_test` in `flutter/jujuba_svg/pubspec.yaml`
 
 2. **Analyze existing tests:**
-   - Kotlin: `android/jujubasvg/src/test/` — examine file names, class structure, assertion style
+   - Kotlin: `kotlin/jujubasvg/src/commonTest/` — examine file names, class structure, assertion style
    - Flutter: `flutter/jujuba_svg/test/` — examine file names, widget test patterns, assertion style
 
 3. **Follow current naming conventions:**
@@ -32,10 +33,11 @@ When invoked:
 
 4. **Generate appropriate test types:**
 
-   ### Kotlin
+   ### Kotlin / KMP
    - Unit tests for `JujubaCommander`, `Command` execution, SVG node manipulation
+   - Place tests in `commonTest/` unless they require Android-specific APIs
    - Use `kotlin.test` assertions + `kotlinx.coroutines.test` for coroutine testing
-   - Use `Turbine` for `Flow`/`Channel` testing
+   - Use `Turbine` for `Flow`/`SharedFlow` testing
 
    ### Flutter
    - Unit tests for `JujubaCommander` logic
