@@ -24,19 +24,23 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.ui)
-            implementation(libs.ui.tooling)
-            implementation(libs.ui.tooling.preview)
             implementation(libs.compose.components.resources)
             implementation(libs.material3)
-            implementation(libs.compose.activity)
             implementation(libs.compose.webview.multiplatform)
             implementation(libs.jetbrains.kotlinx.serialization.json)
             implementation(libs.kermit)
+        }
+        androidMain.dependencies {
+            implementation(libs.ui.tooling)
+            implementation(libs.ui.tooling.preview)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
             implementation(libs.kotlin.test.common)
             implementation(libs.kotlinx.coroutines.test)
+        }
+        getByName("androidHostTest").dependencies {
+            implementation(libs.kotlin.test)
         }
     }
 }

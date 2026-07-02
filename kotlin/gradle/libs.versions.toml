@@ -11,7 +11,7 @@ uiToolingPreviewVersion = "1.11.1"
 vanniktech = "0.28.0"
 turbine = "1.2.1"
 compose_plugin = "1.11.1"
-compose-components-resources = "1.10.3"
+compose-components-resources = "1.11.1"
 
 [libraries]
 compose-webview-multiplatform = { module = "io.github.kevinnzou:compose-webview-multiplatform", version.ref = "composeWebviewMultiplatformVersion" }

@@ -21,6 +21,7 @@ dependencyResolutionManagement {
 include(
     ":androidSampleApp",
     ":jujubasvg",
+    ":sampleApp",
 )
 
 rootProject.name = "jujubaSVGProject"

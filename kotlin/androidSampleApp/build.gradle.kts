@@ -17,5 +17,5 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.compose.activity)
 
-    api(projects.jujubasvg)
+    implementation(projects.sampleApp)
 }
