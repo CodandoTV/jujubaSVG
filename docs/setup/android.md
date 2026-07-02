@@ -2,10 +2,10 @@
 
 ## Minimum Requirements
 
-- Kotlin 2.1.0+
+- Kotlin 2.4.0+
 - JDK 17+
-- Gradle 9.0+
-- Android Gradle Plugin 8.13.1+
+- Gradle 9.3.1+
+- Android Gradle Plugin 9.1.0+
 - Android API 22+
 
 ## 1. Add the Dependency
@@ -19,7 +19,6 @@ implementation("io.github.codandotv:jujubaSVG:<library version>")
 Make sure your application has internet permission. This is required to run javascript commands:
 
 ```xml
-// AndroidManifest.xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
