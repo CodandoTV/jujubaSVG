@@ -39,6 +39,7 @@ public fun RootApp() {
     }
 
     BottomSheetScaffold(
+        modifier = Modifier.fillMaxSize(),
         sheetPeekHeight = 145.dp,
         sheetContent = {
             SelectionSheet(
