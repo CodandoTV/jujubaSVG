@@ -11,9 +11,9 @@ internal fun Color.toHex(): String {
     val argb = this.toArgb()
     return buildString {
         append('#')
-        append(Integer.toHexString((argb shr 16) and 0xFF).padStart(2, '0')) // alpha
-        append(Integer.toHexString((argb shr 8) and 0xFF).padStart(2, '0'))  // red
-        append(Integer.toHexString(argb and 0xFF).padStart(2, '0'))          // green
-        append(Integer.toHexString((argb shr 24) and 0xFF).padStart(2, '0')) // blue
+        append(((argb shr 16) and 0xFF).toString(16).padStart(2, '0')) // alpha
+        append(((argb shr 8) and 0xFF).toString(16).padStart(2, '0'))  // red
+        append((argb and 0xFF).toString(16).padStart(2, '0'))          // green
+        append(((argb shr 24) and 0xFF).toString(16).padStart(2, '0')) // blue
     }
 }

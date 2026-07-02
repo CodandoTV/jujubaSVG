@@ -13,4 +13,7 @@ kotlin {
         minSdk = Config.MIN_SDK
         androidResources.enable = true
     }
+
+    iosArm64()
+    iosSimulatorArm64()
 }
