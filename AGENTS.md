@@ -39,7 +39,7 @@ jujubaSVG/
 │   │   ├── lib/{core,model,util}/
 │   │   └── test/
 │   └── sample/                  # Flutter sample application
-├── docs/                        # MkDocs documentation source
+├── docs/                        # Zensical documentation source
 ├── scripts/
 ├── mkdocs.yml
 ├── README.md
@@ -57,7 +57,7 @@ Load the appropriate instruction file based on what you are modifying:
 | **Kotlin Multiplatform**      | `ai/instructions/kotlin.md`                          |
 | **Flutter / Dart**            | `ai/instructions/flutter.md`                         |
 | **Both / cross-platform**     | Read both `ai/instructions/kotlin.md` and `ai/instructions/flutter.md` |
-| **Documentation**             | `docs/` — MkDocs source                              |
+| **Documentation**             | `docs/` — Zensical source                            |
 
 ---
 
@@ -87,7 +87,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 | Flutter (deps) | `flutter pub get` | `flutter/jujuba_svg/` |
 | Flutter (test) | `flutter test` | `flutter/jujuba_svg/` |
 | Flutter (analyze) | `dart analyze` | `flutter/` |
-| Documentation | `mkdocs serve` | root |
+| Documentation | `zensical serve` | root |
 
 ### When to Mark Done
 
@@ -116,7 +116,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 |----------|---------|--------------|
 | `android-build.yml` | PR to `main` touching `kotlin/` | Runs `jujubasvg:testAndroidHostTest` |
 | `flutter-build.yml` | PR to `main` touching `flutter/` | Runs `flutter test` + `dart analyze` |
-| `documentation.yml` | PR to `main` touching `docs/` or `mkdocs.yml` | Builds & deploys MkDocs to GitHub Pages |
+| `documentation.yml` | PR to `main` touching `docs/` or `mkdocs.yml` | Builds & deploys docs with Zensical to GitHub Pages |
 | `megalinter.yml` | (all PRs) | MegaLinter static analysis |
 | `js-validator.yml` | (as configured) | JavaScript validation |
 | `publish-android.yml` | `workflow_dispatch` | Publishes to Maven Central |
