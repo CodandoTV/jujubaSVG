@@ -5,9 +5,9 @@
 
 ![JujubaSVG logo](./img/jujuba_icon.png)
 
-jujubaSVG is a user-friendly library for handling SVG files in Android and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
+jujubaSVG is a user-friendly library for handling SVG files in Kotlin (Compose Multiplatform) and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
-**Minimum requirements:** Kotlin 2.4.0+ / JDK 17+ / Gradle 9.3.1+ / AGP 9.1.0+ / Android API 22+ / Dart ^3.5.0+
+**Minimum requirements:** Kotlin 2.4.0+ / JDK 17+ / Gradle 9.3.1+ / AGP 9.1.0+ / Android API 23+ / Dart ^3.5.0+
 
 Take a look at our [repository](https://github.com/CodandoTV/jujubaSVG).
 
@@ -15,7 +15,7 @@ Take a look at our [repository](https://github.com/CodandoTV/jujubaSVG).
 
 ### 1. Setup
 
-- [Android](./setup/android.md)
+- [Kotlin](./setup/kotlin.md)
 
 - [Flutter](./setup/flutter.md)
 

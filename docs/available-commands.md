@@ -2,7 +2,7 @@
 
 jujubaSVG already provides some commands. This page we will demonstrate how to use them in Kotlin and Dart (Flutter).
 
-!!!tip "Support added - Android v1.3.0 / Flutter v1.1.0"
+!!!tip "Support added — Kotlin v1.3.0+ (KMP from v1.4.0) / Flutter v1.1.0+"
 
 ## Custom command
 
@@ -149,7 +149,7 @@ Add a rounded image into the same parent of the elementId.
 ```kotlin
 // KOTLIN
 jujubaCommander.execute(
-    AddRoundedImage(
+    Command.AddRoundedImage(
         elementId = nodeInfo.id,
         imageId = "imageId",
         imageUrl = "https://i.imgur.com/LQIsf.jpeg",
