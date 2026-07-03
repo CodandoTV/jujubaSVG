@@ -4,7 +4,11 @@ All notable changes to the JujubaSVG Kotlin/Android library.
 
 ---
 
-## [Unreleased]
+## 1.4.0
+
+- Compose Multiplatform Support
+
+## 1.3.0
 
 ### Added
 - `CustomCommand` — execute arbitrary JavaScript inside the SVG WebView ([#81](https://github.com/CodandoTV/jujubaSVG/pull/81))
