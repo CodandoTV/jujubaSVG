@@ -11,13 +11,12 @@ You need to add jujuba_svg library in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  jujuba_svg: ^1.0.0
+  jujuba_svg: ^1.1.1
 ```
 
 For Android, make sure your application has internet permission. This is required to run javascript commands.
 
 ```xml
-// AndroidManifest.xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 

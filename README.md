@@ -1,4 +1,4 @@
-[![Kotlin](https://img.shields.io/badge/kotlin-2.1.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-2.4.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Flutter](https://img.shields.io/badge/Flutter-%252302569B.svg?style=flat&logo=Flutter&logoColor=white&labelColor=%2301579b&color=%2303a9f4)](https://docs.flutter.dev/)
 ![badge-android](http://img.shields.io/badge/platform-android-6EDB8D.svg?style=flat)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/CodandoTV/jujubaSVG/issues)
@@ -29,12 +29,9 @@ jujubaSVG is a user-friendly library for handling SVG files in Android and Flutt
 You need to add the following line in your desired `module/build.gradle.kts`:
 
 ```kotlin
-// ...
 dependencies {
     implementation("io.github.codandotv:jujubaSVG:<library version>")
-    // ...
 }
-    // ...
 ```
 
 After that, you need to define at the top level of your composable function the
@@ -83,7 +80,7 @@ You need to add jujuba_svg library in your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  jujuba_svg: ^1.0.0
+  jujuba_svg: ^1.1.1
 ```
 
 Let's say you want to use the library in your `my_beatiful_screen.dart`. You need to initialize the controller:
@@ -118,7 +115,7 @@ The library provides a widget called `JujubaSVGWidget`, there you can the `comma
 
 ### Android
 
-More details you can check at our [sample project](android/sampleApp)
+More details you can check at our [sample project](kotlin/androidSampleApp)
 
 <img src="img/teaser.gif" height="500"  alt="teaser showing the app working with SVG image, where onClick deletes a State from Brazil."/>
 
@@ -130,16 +127,16 @@ More details you can check at our [sample project](android/sampleApp)
 
 - iOS
 
-<img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on Android with SVG image."/>
+<img src="img/jujuba-svg-ios-teaser.gif" height="500"  alt="teaser showing the app working on iOS with SVG image."/>
 
 ## Minimum Requirements
 
 ### Kotlin Library
 
-- Kotlin 2.1.0+
+- Kotlin 2.4.0+
 - JDK 17+
-- Gradle 9.0+
-- Android Gradle Plugin 8.13.1+
+- Gradle 9.3.1+
+- Android Gradle Plugin 9.1.0+
 - Android API 22+
 
 ### Flutter Package

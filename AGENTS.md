@@ -11,7 +11,7 @@
 | Kotlin version | 2.4.0 |
 | Dart SDK | ^3.5.0 |
 | Min Android API | 23 |
-| License | Custom (see `license` file) |
+| License | MIT (see `license` file) |
 
 ---
 
@@ -82,8 +82,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 
 | Platform | Command | Work Directory |
 |----------|---------|----------------|
-| Kotlin (unit tests) | `./gradlew jujubasvg:allTests` | `kotlin/` |
-| Kotlin (Android tests) | `./gradlew jujubasvg:testDebugUnitTest` | `kotlin/` |
+| Kotlin (Android host tests) | `./gradlew jujubasvg:testAndroidHostTest` | `kotlin/` |
 | Kotlin (build) | `./gradlew assemble` | `kotlin/` |
 | Flutter (deps) | `flutter pub get` | `flutter/jujuba_svg/` |
 | Flutter (test) | `flutter test` | `flutter/jujuba_svg/` |
@@ -115,12 +114,12 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 
 | Workflow | Trigger | What it does |
 |----------|---------|--------------|
-| `kotlin-build.yml` | PR to `main` touching `kotlin/` | Runs `jujubasvg:allTests` |
+| `android-build.yml` | PR to `main` touching `kotlin/` | Runs `jujubasvg:testAndroidHostTest` |
 | `flutter-build.yml` | PR to `main` touching `flutter/` | Runs `flutter test` + `dart analyze` |
 | `documentation.yml` | PR to `main` touching `docs/` or `mkdocs.yml` | Builds & deploys MkDocs to GitHub Pages |
 | `megalinter.yml` | (all PRs) | MegaLinter static analysis |
 | `js-validator.yml` | (as configured) | JavaScript validation |
-| `publish-kotlin.yml` | `workflow_dispatch` | Publishes to Maven Central |
+| `publish-android.yml` | `workflow_dispatch` | Publishes to Maven Central |
 | `publish-flutter.yml` | Tag `jujubasvg-flutter-*` | Publishes to pub.dev |
 
 ---
@@ -130,7 +129,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 Before submitting a pull request, verify:
 
 - [ ] All new code has corresponding tests (unit tests for logic, widget tests for UI)
-- [ ] `./gradlew jujubasvg:allTests` passes (if Kotlin changed)
+- [ ] `./gradlew jujubasvg:testAndroidHostTest` passes (if Kotlin changed)
 - [ ] `flutter test` passes (if Flutter changed)
 - [ ] `dart analyze` passes (if Flutter changed)
 - [ ] Public API is documented with KDoc/Doc comments

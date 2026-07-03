@@ -54,11 +54,11 @@ fun JujubaSVG(
     }
 
     LaunchedEffect(Unit) {
-        val jsCodeDeferred = async(Dispatchers.IO) {
+        val jsCodeDeferred = async(Dispatchers.Default) {
             Res.readBytes("files/base_js.js").fileTextContent()
         }
 
-        htmlCode = async(Dispatchers.IO) {
+        htmlCode = async(Dispatchers.Default) {
             val htmlBuilder = StringBuilder()
             Res.readBytes("files/jujuba.html")
                 .fileTextLines()
