@@ -3,7 +3,6 @@ import java.util.Properties
 
 plugins {
     id("plugins.kmp-library-plugin")
-    id("maven-publish")
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.vanniktech.maven.publish)
@@ -54,7 +53,9 @@ val versionPublish: String = versionProperties.getProperty("VERSION")
 
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
-    signAllPublications()
+    if (System.getenv("ORG_GRADLE_PROJECT_signingInMemoryKeyId") != null) {
+        signAllPublications()
+    }
 
     coordinates(
         project.property("GROUP_ID") as String,
@@ -63,9 +64,9 @@ mavenPublishing {
     )
 
     pom {
-        name.set(project.property("ARTIFACT_ID") as String)
-        description.set(project.property("ARTIFACT_ID") as String)
-        inceptionYear.set("2024")
+        name.set(project.property("POM_NAME") as String)
+        description.set(project.property("POM_DESCRIPTION") as String)
+        inceptionYear.set(project.property("POM_INCEPTION_YEAR") as String)
         url.set(project.property("POM_URL") as String)
 
         licenses {
@@ -75,8 +76,8 @@ mavenPublishing {
             }
         }
         scm {
-            connection.set("scm:git@github.com:CodandoTV/jujubaSVG.git")
-            url.set("https://github.com/CodandoTV/jujubaSVG.git")
+            connection.set(project.property("POM_SCM_CONNECTION") as String)
+            url.set(project.property("POM_SCM_URL") as String)
         }
         developers {
             developer {
