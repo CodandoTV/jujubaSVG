@@ -11,7 +11,7 @@
 
 Welcome to the jujubaSVG library! A CodandoTV library 👋
 
-jujubaSVG is a user-friendly library for handling SVG files in Android and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
+jujubaSVG is a user-friendly library for handling SVG files in Kotlin (Compose Multiplatform) and Flutter applications. It enables granular manipulation of SVG elements - you can access any element by its ID to modify properties like background color, stroke, and other attributes.
 
 <p align="center">
   <img src="img/jujuba_icon.png" width="200" height="200" alt="Logo">
@@ -24,7 +24,7 @@ jujubaSVG is a user-friendly library for handling SVG files in Android and Flutt
 
 ## How to use? 🤔
 
-### Android
+### Kotlin (Compose Multiplatform)
 
 You need to add the following line in your desired `module/build.gradle.kts`:
 
@@ -113,7 +113,7 @@ The library provides a widget called `JujubaSVGWidget`, there you can the `comma
 
 ## Sample project
 
-### Android
+### Kotlin
 
 More details you can check at our [sample project](kotlin/androidSampleApp)
 
@@ -137,7 +137,7 @@ More details you can check at our [sample project](kotlin/androidSampleApp)
 - JDK 17+
 - Gradle 9.3.1+
 - Android Gradle Plugin 9.1.0+
-- Android API 22+
+- Android API 23+
 
 ### Flutter Package
 

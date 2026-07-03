@@ -34,7 +34,7 @@ theme:
 
 nav:
   - Setup ✨:
-    - Android: setup/android.md
+    - Kotlin: setup/kotlin.md
     - Flutter: setup/flutter.md
   - Available Commands 📐: available-commands.md
   - Contributions 🤝: contributions.md

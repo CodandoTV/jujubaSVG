@@ -1,4 +1,4 @@
-# Android
+# Kotlin (Compose Multiplatform)
 
 ## Minimum Requirements
 
@@ -6,7 +6,8 @@
 - JDK 17+
 - Gradle 9.3.1+
 - Android Gradle Plugin 9.1.0+
-- Android API 22+
+- Android API 23+
+- Compose Multiplatform support from v1.4.0
 
 ## 1. Add the Dependency
 
