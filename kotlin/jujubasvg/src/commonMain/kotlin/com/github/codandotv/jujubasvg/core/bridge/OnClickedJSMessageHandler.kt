@@ -28,7 +28,7 @@ internal class OnClickedJSMessageHandler(
                     id = nodeClicked.id,
                     coordinate = NodeCoordinate(
                         x = nodeClicked.x,
-                        y = nodeClicked.x
+                        y = nodeClicked.y
                     )
                 )
             )

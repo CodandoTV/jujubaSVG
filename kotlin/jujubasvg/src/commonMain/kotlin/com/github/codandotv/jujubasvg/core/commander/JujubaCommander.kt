@@ -1,21 +1,21 @@
 package com.github.codandotv.jujubasvg.core.commander
 
 import com.github.codandotv.jujubasvg.core.ext.toHex
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.receiveAsFlow
 
 class JujubaCommander {
 
-    private val _command = MutableSharedFlow<String>()
-    val command: SharedFlow<String> = _command.asSharedFlow()
+    private val _command = Channel<String>(Channel.UNLIMITED)
+    val command: Flow<String> = _command.receiveAsFlow()
 
     suspend fun execute(vararg command: Command) {
         val commandJS = command.map {
             convertToJSCode(it)
         }.reduce { acc, s -> acc.plus("\n").plus(s) }
 
-        _command.emit(commandJS)
+        _command.send(commandJS)
     }
 
     private fun convertToJSCode(command: Command): String {
