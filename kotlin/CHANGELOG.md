@@ -4,6 +4,13 @@ All notable changes to the JujubaSVG Kotlin/Android library.
 
 ---
 
+## 1.4.2
+
+### Added
+- `rootCoordinate` property to `NodeInfo` — provides root/window-level click coordinates via `event.x`/`event.y` alongside element-relative coordinates ([#112](https://github.com/CodandoTV/jujubaSVG/pull/112))
+
+---
+
 ## 1.4.1
 
 ### Changed

@@ -11,11 +11,15 @@ public object Const {
         const x = boundingClientRect.x
         const y = boundingClientRect.y
 
-        window.kmpJsBridge.callNative("onElementClicked",JSON.stringify({paramId: id, paramX: x, paramY: y}),
+        window.kmpJsBridge.callNative(
+            "onElementClicked",
+            JSON.stringify(
+                {paramId: id, paramX: x, paramY: y, rootX: event.x, rootY: event.y}
+            ),
             function (data) {
                 console.log(event.target.id)
             }
-        );        
+        );     
     }
     """;
 }
