@@ -4,6 +4,16 @@ All notable changes to the JujubaSVG Kotlin/Android library.
 
 ---
 
+## 1.4.1
+
+### Changed
+- Replaced `MutableSharedFlow` with `Channel` for command handling to improve backpressure and lifecycle safety ([#111](https://github.com/CodandoTV/jujubaSVG/pull/111))
+
+### Fixed
+- Corrected y-coordinate assignment in `OnClickedJSMessageHandler` so click coordinates map accurately ([#111](https://github.com/CodandoTV/jujubaSVG/pull/111))
+
+---
+
 ## 1.4.0
 
 - Compose Multiplatform Support
