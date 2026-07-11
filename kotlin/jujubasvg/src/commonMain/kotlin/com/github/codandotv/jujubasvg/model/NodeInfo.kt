@@ -8,4 +8,5 @@ import androidx.compose.runtime.Stable
 data class NodeInfo(
     val id: String,
     val coordinate: NodeCoordinate,
+    val rootCoordinate: NodeCoordinate,
 )

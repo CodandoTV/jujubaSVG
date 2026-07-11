@@ -13,4 +13,10 @@ internal data class NodeClicked(
 
     @SerialName("paramY")
     val y: Float,
+
+    @SerialName("rootX")
+    val rootX: Float,
+
+    @SerialName("rootY")
+    val rootY: Float,
 )

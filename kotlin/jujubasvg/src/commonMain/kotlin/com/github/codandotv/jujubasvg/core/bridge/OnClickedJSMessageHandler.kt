@@ -29,6 +29,10 @@ internal class OnClickedJSMessageHandler(
                     coordinate = NodeCoordinate(
                         x = nodeClicked.x,
                         y = nodeClicked.y
+                    ),
+                    rootCoordinate = NodeCoordinate(
+                        x = nodeClicked.rootX,
+                        y = nodeClicked.rootY,
                     )
                 )
             )
