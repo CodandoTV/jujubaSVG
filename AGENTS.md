@@ -70,7 +70,7 @@ Before starting any task, list directories in `ai/skills/`, identify which cover
 | `documentation-review` | Validate docs against implementation |
 | `generate-tests` | Write new tests following conventions |
 | `minimum-requirements` | Determine/update consumption requirements |
-| `release-notes` | Prepare a release |
+| `trigger-release` | Trigger a Kotlin or Flutter release with version bump, changelog, and tag |
 | `validate-architecture` | Verify module dependency rules |
 | `open-pr` | Compare branch vs main and open a pull request via gh CLI |
 
