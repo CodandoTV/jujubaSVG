@@ -14,7 +14,7 @@ public object Const {
         window.kmpJsBridge.callNative(
             "onElementClicked",
             JSON.stringify(
-                {paramId: id, paramX: x, paramY: y, rootX: event.x, rootY: event.y}
+                {id: id, elementX: x, elementY: y, cursorX: event.x, cursorY: event.y}
             ),
             function (data) {
                 console.log(event.target.id)

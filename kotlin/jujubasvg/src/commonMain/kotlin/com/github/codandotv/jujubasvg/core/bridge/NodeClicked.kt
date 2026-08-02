@@ -5,18 +5,18 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 internal data class NodeClicked(
-    @SerialName("paramId")
+    @SerialName("id")
     val id: String,
 
-    @SerialName("paramX")
-    val x: Float,
+    @SerialName("elementX")
+    val elementX: Float,
 
-    @SerialName("paramY")
-    val y: Float,
+    @SerialName("elementY")
+    val elementY: Float,
 
-    @SerialName("rootX")
-    val rootX: Float,
+    @SerialName("cursorX")
+    val cursorX: Float,
 
-    @SerialName("rootY")
-    val rootY: Float,
+    @SerialName("cursorY")
+    val cursorY: Float,
 )
