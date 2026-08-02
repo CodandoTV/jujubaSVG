@@ -75,7 +75,7 @@ public fun RootApp() {
                                     imageUrl = "https://i.imgur.com/LQIsf.jpeg",
                                     widthInPx = 100,
                                     heightInPx = 100,
-                                    coordinate = nodeInfo.coordinate,
+                                    coordinate = nodeInfo.elementPosition,
                                 )
 
                                 SelectionCommandType.REMOVE_ELEMENT -> Command.RemoveNode(nodeInfo.id)

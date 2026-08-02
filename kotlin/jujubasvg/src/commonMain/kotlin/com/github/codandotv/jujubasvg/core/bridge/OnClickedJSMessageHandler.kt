@@ -26,13 +26,13 @@ internal class OnClickedJSMessageHandler(
             onElementClick(
                 NodeInfo(
                     id = nodeClicked.id,
-                    coordinate = NodeCoordinate(
-                        x = nodeClicked.x,
-                        y = nodeClicked.y
+                    elementPosition = NodeCoordinate(
+                        x = nodeClicked.elementX,
+                        y = nodeClicked.elementY
                     ),
-                    rootCoordinate = NodeCoordinate(
-                        x = nodeClicked.rootX,
-                        y = nodeClicked.rootY,
+                    cursorPosition = NodeCoordinate(
+                        x = nodeClicked.cursorX,
+                        y = nodeClicked.cursorY,
                     )
                 )
             )
