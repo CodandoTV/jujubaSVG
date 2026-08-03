@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:jujuba_svg/core/commander/jujuba_commander.dart';
 import 'package:jujuba_svg/core/constants.dart';
-import 'package:jujuba_svg/model/node_coordinate.dart';
 import 'package:jujuba_svg/model/node_info.dart';
 import 'package:jujuba_svg/util/asset_helper.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -30,7 +29,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 ///   svgText: '<svg><circle id="circle1" cx="10" cy="10" r="5" fill="red" /></svg>',
 ///   commander: commander,
 ///   onElementClick: (node) {
-///     print('Clicked node: ${node.id} at (${node.coordinate.x}, ${node.coordinate.y})');
+  ///     print('Clicked node: ${node.id} at (${node.elementPosition.x}, ${node.elementPosition.y})');
 ///   },
 /// );
 ///
@@ -137,20 +136,14 @@ class _JujubaWebViewState extends State<JujubaSVGWidget> {
 
   /// Handles messages sent from the JavaScript layer.
   ///
-  /// The expected format is `"id,x,y"`, where:
-  /// - `id` is the SVG element identifier.
-  /// - `x` and `y` are the element’s coordinates.
+  /// The expected format is a JSON string with keys:
+  /// `id`, `elementX`, `elementY`, `cursorX`, `cursorY`.
   ///
-  /// Converts the message into a [NodeInfo] instance and invokes [onElementClick].
+  /// Converts the message into a [NodeInfo] instance via [NodeInfo.fromJson]
+  /// and invokes [onElementClick].
   void _processJSMessage(String jsMessage) {
     try {
-      final elements = jsMessage.split(',');
-      final id = elements[0];
-      final x = double.parse(elements[1]);
-      final y = double.parse(elements[2]);
-
-      final nodeCoordinate = NodeCoordinate(x: x, y: y);
-      final nodeInfo = NodeInfo(id: id, coordinate: nodeCoordinate);
+      final nodeInfo = NodeInfo.fromJson(jsMessage);
       widget.onElementClick(nodeInfo);
     } catch (e) {
       debugPrint(e.toString());

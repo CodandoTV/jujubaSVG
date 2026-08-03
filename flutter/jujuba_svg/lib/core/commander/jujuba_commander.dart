@@ -78,8 +78,8 @@ class JujubaCommander {
             '\'${command.imageUrl}\','
             '\'${command.widthInPx}\','
             '\'${command.heightInPx}\','
-            '\'${command.coordinate.x}\','
-            '\'${command.coordinate.y}\''
+            '\'${command.elementPosition.x}\','
+            '\'${command.elementPosition.y}\''
             ');';
       case CustomCommand():
         return command.jsCode;

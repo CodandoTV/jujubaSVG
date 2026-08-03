@@ -24,10 +24,14 @@ function onClickEvent (event) {
   const id = event.target.id
 
   const boundingClientRect = event.target.getBoundingClientRect()
-  const x = boundingClientRect.x
-  const y = boundingClientRect.y
 
-  $jujubaFlutterChannelName.postMessage(id + "," + x + "," + y);
+  $jujubaFlutterChannelName.postMessage(JSON.stringify({
+    id: id,
+    elementX: boundingClientRect.x,
+    elementY: boundingClientRect.y,
+    cursorX: event.x,
+    cursorY: event.y
+  }));
   console.log(event.target.id)
 }
 ''';

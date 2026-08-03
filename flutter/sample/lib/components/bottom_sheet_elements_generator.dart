@@ -9,31 +9,31 @@ class BottomSheetElementsGenerator {
         nodeId: nodeInfo.id,
         commandName: 'Change element background color',
         type: CommandType.changeElementBackgroundColor,
-        coordinate: nodeInfo.coordinate,
+        elementPosition: nodeInfo.elementPosition,
       ),
       CommandUiModel(
         nodeId: nodeInfo.id,
         commandName: 'Change root SVG background Color',
         type: CommandType.changeRootBackgroundColor,
-        coordinate: nodeInfo.coordinate,
+        elementPosition: nodeInfo.elementPosition,
       ),
       CommandUiModel(
         nodeId: nodeInfo.id,
         commandName: 'Add rounded image',
         type: CommandType.addRoundedImage,
-        coordinate: nodeInfo.coordinate,
+        elementPosition: nodeInfo.elementPosition,
       ),
       CommandUiModel(
         nodeId: nodeInfo.id,
         commandName: 'Remove element',
         type: CommandType.removeElement,
-        coordinate: nodeInfo.coordinate,
+        elementPosition: nodeInfo.elementPosition,
       ),
       CommandUiModel(
         nodeId: nodeInfo.id,
         commandName: '[Custom Command] Apply black',
         type: CommandType.customCommand,
-        coordinate: nodeInfo.coordinate,
+        elementPosition: nodeInfo.elementPosition,
       ),
     ];
     return uiModels;

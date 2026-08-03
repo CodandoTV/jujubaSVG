@@ -13,13 +13,13 @@ class CommandUiModel extends BottomSheetUiModel {
   String nodeId;
   String commandName;
   CommandType type;
-  NodeCoordinate coordinate;
+  NodeCoordinate elementPosition;
 
   CommandUiModel({
     required this.nodeId,
     required this.commandName,
     required this.type,
-    required this.coordinate,
+    required this.elementPosition,
   });
 }
 
