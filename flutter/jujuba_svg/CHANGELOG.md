@@ -1,3 +1,7 @@
+## 2.0.0
+
+- Adding support for cursor coordinates and rename the element coordinates to improve dev experience
+
 ## 1.1.1
 
 - Solve memory leaks.
