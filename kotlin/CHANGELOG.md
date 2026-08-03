@@ -4,6 +4,13 @@ All notable changes to the JujubaSVG Kotlin/Android library.
 
 ---
 
+## 2.0.0
+
+### Changed
+- Rename the new properties exposed by NodeInfo (via the click event) to clearly distinguish between element coordinates and cursor coordinates.
+
+---
+
 ## 1.4.2
 
 ### Added
