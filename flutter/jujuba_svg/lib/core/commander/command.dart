@@ -86,7 +86,7 @@ class UpdateRootBackgroundColor extends Command {
 /// [imageUrl] The url where the image is available
 /// [widthInPx] The width of the image in pixels
 /// [heightInPx] The height of the image in pixels
-/// [coordinate] The coordinates where the image will be added
+/// [elementPosition] The coordinates where the image will be added
 class AddRoundedImage implements Command {
   /// Target node id
   final String elementId;
@@ -103,8 +103,8 @@ class AddRoundedImage implements Command {
   /// Height in pixels
   final int heightInPx;
 
-  /// Specific coordinate where the image will be added
-  final NodeCoordinate coordinate;
+  /// Specific element position where the image will be added
+  final NodeCoordinate elementPosition;
 
   /// Create a new AddRoundedImage command object.
   const AddRoundedImage({
@@ -113,7 +113,7 @@ class AddRoundedImage implements Command {
     required this.imageUrl,
     required this.widthInPx,
     required this.heightInPx,
-    required this.coordinate,
+    required this.elementPosition,
   });
 }
 

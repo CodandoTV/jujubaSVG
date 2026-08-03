@@ -93,7 +93,7 @@ void main() {
       imageUrl: 'http://example.com/image.png',
       widthInPx: 100,
       heightInPx: 200,
-      coordinate: NodeCoordinate(x: 50, y: 75),
+      elementPosition: NodeCoordinate(x: 50, y: 75),
     );
 
     expectLater(
