@@ -1,3 +1,7 @@
+## 2.0.1
+
+- Add example/README.md for pub.dev Example tab
+
 ## 2.0.0
 
 - Adding support for cursor coordinates and rename the element coordinates to improve dev experience
