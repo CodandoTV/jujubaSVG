@@ -10,7 +10,7 @@ material3Version = "1.9.0"
 uiToolingPreviewVersion = "1.11.1"
 vanniktech = "0.28.0"
 turbine = "1.2.1"
-compose_plugin = "1.11.1"
+compose_plugin = "1.12.2"
 compose-components-resources = "1.11.1"
 
 [libraries]
